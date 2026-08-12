@@ -1,4 +1,4 @@
-"""Typed LLM endpoint — five stages in one file."""
+"""Typed LLM API with document ingestion for RAG."""
 
 import time
 from pathlib import Path
@@ -16,8 +16,13 @@ load_dotenv(_ENV_PATH)
 app = FastAPI()
 client = OpenAI()  # Reads OPENAI_API_KEY from the environment; never hardcode keys.
 
-# Stage 4 default — strong general model; swap at request time for the live demo.
 DEFAULT_MODEL = "gpt-4o"
+EMBEDDING_MODEL = "text-embedding-3-small"
+CHUNK_SIZE = 200  # words per chunk
+CHUNK_OVERLAP = 20  # words of overlap between chunks
+
+# In-memory document store: document_id -> list of {text, embedding}
+_document_store: dict[str, list[dict]] = {}
 
 # Stage 5 — per-1K-token input/output USD (derived from OpenAI list prices).
 MODEL_PRICES_PER_1K: dict[str, tuple[float, float]] = {
@@ -51,6 +56,27 @@ class AskResponse(BaseModel):
     model: str
     latency_ms: int
     cost_usd: float
+
+
+class IngestRequest(BaseModel):
+    document_id: str
+    text: str
+
+
+class IngestResponse(BaseModel):
+    document_id: str
+    chunks: int
+    tokens_used: int
+
+
+def chunk_text(text: str) -> list[str]:
+    words = text.split()
+    result = []
+    for i in range(0, len(words), CHUNK_SIZE - CHUNK_OVERLAP):
+        chunk = " ".join(words[i : i + CHUNK_SIZE])
+        if chunk:
+            result.append(chunk)
+    return result
 
 
 def compute_cost_usd(model: str, prompt_tokens: int, completion_tokens: int) -> float:
@@ -156,4 +182,28 @@ def ask(body: AskRequest) -> AskResponse:
     raise HTTPException(
         status_code=502,
         detail=f"Model response failed schema validation after retry: {last_error}",
+    )
+
+
+@app.post("/ingest")
+def ingest(body: IngestRequest) -> IngestResponse:
+    """Chunk plain text and store embeddings for later retrieval."""
+
+    chunks = chunk_text(body.text)
+    if not chunks:
+        raise HTTPException(status_code=422, detail="text must not be empty")
+
+    response = client.embeddings.create(model=EMBEDDING_MODEL, input=chunks)
+    embeddings = [e.embedding for e in response.data]
+    tokens_used = response.usage.total_tokens if response.usage else 0
+
+    _document_store[body.document_id] = [
+        {"text": chunk, "embedding": embedding}
+        for chunk, embedding in zip(chunks, embeddings)
+    ]
+
+    return IngestResponse(
+        document_id=body.document_id,
+        chunks=len(chunks),
+        tokens_used=tokens_used,
     )
