@@ -1,6 +1,9 @@
 # Environment — never commit real keys
 .env
 
+# Raw data — large files, regenerate with scripts/collect_pubmed.py
+data/
+
 # Python
 __pycache__/
 *.py[cod]
