@@ -51,20 +51,18 @@ with ask_tab:
 
     question = st.text_input("Question", placeholder="How much protein do I need to build muscle?")
 
-    col1, col2, col3 = st.columns([2, 1, 1])
+    col1, col2 = st.columns([2, 1])
     with col1:
         model = st.selectbox("Model", ["gpt-4o", "gpt-4o-mini", "o3-mini"], index=0)
     with col2:
-        generate = st.checkbox("Generate answer", value=True, help="Uncheck to retrieve sources only — no LLM call, no cost")
-    with col3:
         force_bad = st.checkbox("force_bad (guardrail demo)")
 
     if st.button("Ask", type="primary", disabled=not question.strip()):
-        with st.spinner("Retrieving sources..." if not generate else "Retrieving and answering..."):
+        with st.spinner("Retrieving and answering..."):
             status, data = call(
                 "post",
                 f"{base_url}/ask",
-                json={"question": question, "model": model, "generate": generate, "force_bad": force_bad},
+                json={"question": question, "model": model, "force_bad": force_bad},
             )
 
         if status == 0 or "error" in (data if isinstance(data, dict) else {}):
@@ -72,25 +70,22 @@ with ask_tab:
         elif status != 200:
             st.error(f"HTTP {status}: {data}")
         else:
-            answer = data.get("answer")
+            answer = data.get("answer", {})
             sources = data.get("sources", [])
 
             # Answer
-            if not generate:
-                st.info("Generate is off — showing retrieved sources only. No LLM was called.")
-            elif not sources:
-                st.warning(answer.get("answer", "") if answer else "")
+            if not sources:
+                st.warning(answer.get("answer", ""))
             else:
-                st.success(answer.get("answer", "") if answer else "")
+                st.success(answer.get("answer", ""))
 
-            # Metrics (only when generate=True)
-            if generate and answer:
-                m1, m2, m3, m4, m5 = st.columns(5)
-                m1.metric("Confidence", f"{answer.get('confidence', 0):.0%}")
-                m2.metric("Sources needed", "Yes" if answer.get("sources_needed") else "No")
-                m3.metric("Tokens", data.get("tokens_used", 0))
-                m4.metric("Latency", f"{data.get('latency_ms', 0)} ms")
-                m5.metric("Cost", f"${data.get('cost_usd', 0):.6f}")
+            # Metrics
+            m1, m2, m3, m4, m5 = st.columns(5)
+            m1.metric("Confidence", f"{answer.get('confidence', 0):.0%}")
+            m2.metric("Sources needed", "Yes" if answer.get("sources_needed") else "No")
+            m3.metric("Tokens", data.get("tokens_used", 0))
+            m4.metric("Latency", f"{data.get('latency_ms', 0)} ms")
+            m5.metric("Cost", f"${data.get('cost_usd', 0):.6f}")
 
             # Sources
             if sources:
