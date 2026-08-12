@@ -36,12 +36,12 @@ uvicorn main:app --host 127.0.0.1 --port 8000 --reload
 Deployed on Render:
 
 ```bash
-curl -s -X POST https://ask-engine-s7nv.onrender.com/ask \
+curl -s -X POST https://synapse-5w9z.onrender.com/ask \
   -H "Content-Type: application/json" \
   -d '{"question": "What is Retrieval-Augmented Generation in one sentence?"}'
 ```
 
-Interactive docs: https://ask-engine-s7nv.onrender.com/docs
+Interactive docs: https://synapse-5w9z.onrender.com/docs
 
 > **Note:** Free tier spins down after inactivity — first request may take ~30s to wake up.
 
