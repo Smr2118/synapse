@@ -48,10 +48,17 @@ class AskRequest(BaseModel):
     model: str | None = None  # Stage 4 — optional override to swap models live.
 
 
+class Source(BaseModel):
+    chunk_id: str
+    document_id: str
+    score: float
+
+
 class AskResponse(BaseModel):
     """Typed response so callers always get the same shape back."""
 
     answer: Answer
+    sources: list[Source]
     tokens_used: int
     model: str
     latency_ms: int
@@ -79,6 +86,39 @@ def chunk_text(text: str) -> list[str]:
     return result
 
 
+RAG_TOP_K = 5
+RAG_SCORE_THRESHOLD = 0.30  # below this score, chunks are too weak to be useful
+
+SYSTEM_PROMPT = """You are Synapse, a research-grounded fitness and nutrition assistant.
+
+Answer the question using ONLY the context provided below.
+- Be specific and grounded — your answer must be supported by the context.
+- If the context does not contain enough information, say so clearly and set sources_needed=true.
+- Do not fabricate facts not present in the context.
+- Set confidence based on how well the context supports your answer."""
+
+
+def retrieve_chunks(question: str, top_k: int = RAG_TOP_K) -> list[dict]:
+    response = client.embeddings.create(model=EMBEDDING_MODEL, input=[question])
+    query_vector = response.data[0].embedding
+    results = _index.query(vector=query_vector, top_k=top_k, include_metadata=True)
+    return [
+        {
+            "chunk_id": match.id,
+            "document_id": match.metadata.get("document_id", ""),
+            "score": round(match.score, 4),
+            "text": match.metadata.get("text", ""),
+        }
+        for match in results.matches
+        if match.score >= RAG_SCORE_THRESHOLD
+    ]
+
+
+def build_context(chunks: list[dict]) -> str:
+    parts = [f"[{c['chunk_id']}]\n{c['text']}" for c in chunks]
+    return "\n\n---\n\n".join(parts)
+
+
 def compute_cost_usd(model: str, prompt_tokens: int, completion_tokens: int) -> float:
     """Turn real usage into dollars — same prompt, different model, different cost."""
 
@@ -87,15 +127,18 @@ def compute_cost_usd(model: str, prompt_tokens: int, completion_tokens: int) -> 
     return (prompt_tokens / 1000 * input_per_1k) + (completion_tokens / 1000 * output_per_1k)
 
 
-def call_model_structured(question: str, model: str) -> tuple[Answer, int, int, int]:
-    """
-    Stage 2 center: OpenAI structured output forces exactly the Answer schema.
-    Returns parsed answer plus token counts from billing metadata.
-    """
+def call_model_structured(question: str, model: str, context: str = "") -> tuple[Answer, int, int, int]:
+    messages = []
+    if context:
+        messages.append({
+            "role": "system",
+            "content": f"{SYSTEM_PROMPT}\n\nContext:\n{context}",
+        })
+    messages.append({"role": "user", "content": question})
 
     completion = client.chat.completions.parse(
         model=model,
-        messages=[{"role": "user", "content": question}],
+        messages=messages,
         response_format=Answer,
     )
 
@@ -143,17 +186,19 @@ def call_model_unsafe(question: str, model: str) -> tuple[Answer, int, int, int]
 
 @app.post("/ask")
 def ask(body: AskRequest) -> AskResponse:
-    """Answer one question with structured output, guardrails, and cost visibility."""
+    """Retrieve relevant chunks from Pinecone, then answer with grounded context."""
 
     model = body.model or DEFAULT_MODEL
     last_error: str | None = None
 
-    # Stage 3: one retry keeps the logic legible while still protecting callers.
+    chunks = retrieve_chunks(body.question)
+    context = build_context(chunks)
+    sources = [Source(chunk_id=c["chunk_id"], document_id=c["document_id"], score=c["score"]) for c in chunks]
+
     for attempt in range(2):
         try:
             start = time.perf_counter()
 
-            # First attempt with force_bad uses the unsafe path; retry uses structured output.
             use_bad_path = body.force_bad and attempt == 0
             if use_bad_path:
                 answer, tokens_used, prompt_tokens, completion_tokens = call_model_unsafe(
@@ -161,7 +206,7 @@ def ask(body: AskRequest) -> AskResponse:
                 )
             else:
                 answer, tokens_used, prompt_tokens, completion_tokens = call_model_structured(
-                    body.question, model
+                    body.question, model, context=context
                 )
 
             latency_ms = int((time.perf_counter() - start) * 1000)
@@ -169,6 +214,7 @@ def ask(body: AskRequest) -> AskResponse:
 
             return AskResponse(
                 answer=answer,
+                sources=sources,
                 tokens_used=tokens_used,
                 model=model,
                 latency_ms=latency_ms,
@@ -178,7 +224,6 @@ def ask(body: AskRequest) -> AskResponse:
             last_error = str(exc)
             continue
 
-    # Clean failure — never leak a half-parsed response to the client.
     raise HTTPException(
         status_code=502,
         detail=f"Model response failed schema validation after retry: {last_error}",
