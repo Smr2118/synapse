@@ -185,6 +185,34 @@ def ask(body: AskRequest) -> AskResponse:
     )
 
 
+class RetrievedChunk(BaseModel):
+    document_id: str
+    score: float
+    text: str
+
+
+@app.get("/debug/retrieve")
+def debug_retrieve(q: str, top_k: int = 5) -> list[RetrievedChunk]:
+    """Embed a query and return top-k chunks from Pinecone — no LLM call."""
+
+    if not q.strip():
+        raise HTTPException(status_code=422, detail="q must not be empty")
+
+    response = client.embeddings.create(model=EMBEDDING_MODEL, input=[q])
+    query_vector = response.data[0].embedding
+
+    results = _index.query(vector=query_vector, top_k=top_k, include_metadata=True)
+
+    return [
+        RetrievedChunk(
+            document_id=match.metadata.get("document_id", ""),
+            score=round(match.score, 4),
+            text=match.metadata.get("text", ""),
+        )
+        for match in results.matches
+    ]
+
+
 @app.post("/ingest")
 def ingest(body: IngestRequest) -> IngestResponse:
     """Chunk plain text and store embeddings for later retrieval."""
