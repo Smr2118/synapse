@@ -197,7 +197,7 @@ def ask(body: AskRequest) -> AskResponse:
     if not chunks:
         return AskResponse(
             answer=Answer(
-                answer="I don't have relevant information in my knowledge base to answer this question. Please consult a qualified nutritionist or fitness professional.",
+                answer="Synapse is designed to answer questions about fitness, nutrition, supplementation, and recovery grounded in peer-reviewed research. This question falls outside that scope. Please consult a qualified nutritionist or fitness professional for personalised advice.",
                 confidence=0.0,
                 sources_needed=True,
             ),
