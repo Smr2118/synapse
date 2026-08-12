@@ -192,8 +192,23 @@ def ask(body: AskRequest) -> AskResponse:
     last_error: str | None = None
 
     chunks = retrieve_chunks(body.question)
-    context = build_context(chunks)
     sources = [Source(chunk_id=c["chunk_id"], document_id=c["document_id"], score=c["score"]) for c in chunks]
+
+    if not chunks:
+        return AskResponse(
+            answer=Answer(
+                answer="I don't have relevant information in my knowledge base to answer this question. Please consult a qualified nutritionist or fitness professional.",
+                confidence=0.0,
+                sources_needed=True,
+            ),
+            sources=[],
+            tokens_used=0,
+            model=model,
+            latency_ms=0,
+            cost_usd=0.0,
+        )
+
+    context = build_context(chunks)
 
     for attempt in range(2):
         try:
