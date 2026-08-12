@@ -92,11 +92,12 @@ Retrieves relevant chunks from Pinecone and answers grounded in the retrieved co
 curl -s -X POST https://synapse-5w9z.onrender.com/ask -H "Content-Type: application/json" -d '{"question": "How much protein do I need to build muscle?"}'
 ```
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `question` | `str` | Yes | Fitness or nutrition question |
-| `model` | `str` | No | Model override — `gpt-4o`, `gpt-4o-mini`, `o3-mini` |
-| `force_bad` | `bool` | No | Demo knob — triggers the validation guardrail |
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `question` | `str` | required | Fitness or nutrition question |
+| `generate` | `bool` | `true` | `false` — retrieve chunks only, skip LLM call, zero cost |
+| `model` | `str` | `gpt-4o` | Model override — `gpt-4o`, `gpt-4o-mini`, `o3-mini` |
+| `force_bad` | `bool` | `false` | Demo knob — triggers the validation guardrail |
 
 Example response:
 ```json
@@ -197,6 +198,7 @@ Returns `400` if `q` is empty.
 - [x] Retrieval debugger — `GET /debug/retrieve`
 - [x] Refusal guard — out-of-scope questions return a clear message without calling the LLM
 - [x] Streamlit UI — Ask, Ingest, and Debug Retrieve tabs
+- [x] `generate` field — retrieve-only mode skips LLM call at zero cost
 - [ ] Source type tagging — research paper vs official guideline vs fact sheet
 - [ ] Agent — contradiction detection, refusal tool, PubMed live search
 - [ ] Memory — remember user goals and dietary restrictions across sessions
