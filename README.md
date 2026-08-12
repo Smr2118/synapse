@@ -54,9 +54,27 @@ pip install -r requirements.txt
 
 ## Running
 
+**API server:**
 ```bash
 uvicorn main:app --host 127.0.0.1 --port 8000 --reload
 ```
+
+**Streamlit UI** (in a second terminal):
+```bash
+streamlit run app.py
+```
+
+Open `http://localhost:8501`. Set the API base URL in the sidebar to `http://127.0.0.1:8000` for local or `https://synapse-5w9z.onrender.com` for the live deployment.
+
+## Streamlit UI
+
+Three tabs covering the full pipeline:
+
+| Tab | What it does |
+|-----|-------------|
+| 💬 **Ask** | Question input, model selector, `force_bad` toggle — shows answer, confidence, latency, cost, and retrieved sources with scores |
+| 📥 **Ingest** | Document ID + text area — chunks, embeds, and stores in Pinecone. Shows chunks created and tokens used |
+| 🔍 **Debug Retrieve** | Query input with top_k slider — returns raw Pinecone chunks with similarity scores. No LLM call |
 
 ## Live API
 
@@ -178,6 +196,7 @@ Returns `400` if `q` is empty.
 - [x] Source citations — chunk IDs and similarity scores in every response
 - [x] Retrieval debugger — `GET /debug/retrieve`
 - [x] Refusal guard — out-of-scope questions return a clear message without calling the LLM
+- [x] Streamlit UI — Ask, Ingest, and Debug Retrieve tabs
 - [ ] Source type tagging — research paper vs official guideline vs fact sheet
 - [ ] Agent — contradiction detection, refusal tool, PubMed live search
 - [ ] Memory — remember user goals and dietary restrictions across sessions
