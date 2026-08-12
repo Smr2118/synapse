@@ -44,6 +44,7 @@ class AskRequest(BaseModel):
     """Typed request body so bad input is rejected before we spend tokens."""
 
     question: str
+    generate: bool = True   # False = retrieve only, skip LLM call
     force_bad: bool = False  # Stage 3 demo knob — first attempt breaks schema on purpose.
     model: str | None = None  # Stage 4 — optional override to swap models live.
 
@@ -57,7 +58,7 @@ class Source(BaseModel):
 class AskResponse(BaseModel):
     """Typed response so callers always get the same shape back."""
 
-    answer: Answer
+    answer: Answer | None
     sources: list[Source]
     tokens_used: int
     model: str
@@ -202,6 +203,16 @@ def ask(body: AskRequest) -> AskResponse:
                 sources_needed=True,
             ),
             sources=[],
+            tokens_used=0,
+            model=model,
+            latency_ms=0,
+            cost_usd=0.0,
+        )
+
+    if not body.generate:
+        return AskResponse(
+            answer=None,
+            sources=sources,
             tokens_used=0,
             model=model,
             latency_ms=0,
