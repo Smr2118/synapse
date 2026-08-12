@@ -1,28 +1,28 @@
 """Typed LLM API with document ingestion for RAG."""
 
+import os
 import time
 from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from openai import OpenAI
+from pinecone import Pinecone
 from pydantic import BaseModel, Field, ValidationError
 
 # Load .env from this folder so the key is found regardless of shell working directory.
 _ENV_PATH = Path(__file__).resolve().parent / ".env"
 load_dotenv(_ENV_PATH)
 
-# Reuse one client so TLS handshakes are not repeated on every request.
 app = FastAPI()
-client = OpenAI()  # Reads OPENAI_API_KEY from the environment; never hardcode keys.
+client = OpenAI()
+_pc = Pinecone(api_key=os.environ["PINECONE_API_KEY"])
+_index = _pc.Index(os.getenv("PINECONE_INDEX", "synapse"))
 
 DEFAULT_MODEL = "gpt-4o"
 EMBEDDING_MODEL = "text-embedding-3-small"
 CHUNK_SIZE = 200  # words per chunk
 CHUNK_OVERLAP = 20  # words of overlap between chunks
-
-# In-memory document store: document_id -> list of {text, embedding}
-_document_store: dict[str, list[dict]] = {}
 
 # Stage 5 — per-1K-token input/output USD (derived from OpenAI list prices).
 MODEL_PRICES_PER_1K: dict[str, tuple[float, float]] = {
@@ -197,10 +197,15 @@ def ingest(body: IngestRequest) -> IngestResponse:
     embeddings = [e.embedding for e in response.data]
     tokens_used = response.usage.total_tokens if response.usage else 0
 
-    _document_store[body.document_id] = [
-        {"text": chunk, "embedding": embedding}
-        for chunk, embedding in zip(chunks, embeddings)
+    vectors = [
+        {
+            "id": f"{body.document_id}#{i}",
+            "values": embedding,
+            "metadata": {"text": chunk, "document_id": body.document_id},
+        }
+        for i, (chunk, embedding) in enumerate(zip(chunks, embeddings))
     ]
+    _index.upsert(vectors=vectors)
 
     return IngestResponse(
         document_id=body.document_id,
