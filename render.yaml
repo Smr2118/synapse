@@ -11,3 +11,12 @@ services:
         sync: false
       - key: PINECONE_INDEX
         value: synapse
+
+  - type: web
+    name: synapse-ui
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    envVars:
+      - key: API_BASE_URL
+        value: https://synapse-5w9z.onrender.com

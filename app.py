@@ -6,10 +6,12 @@ Run:
 Set the API base URL in the sidebar to point at local or Render.
 """
 
+import os
+
 import httpx
 import streamlit as st
 
-DEFAULT_URL = "https://synapse-5w9z.onrender.com"
+DEFAULT_URL = os.getenv("API_BASE_URL", "https://synapse-5w9z.onrender.com")
 
 
 def call(method: str, url: str, **kwargs) -> tuple[int, dict | str]:
