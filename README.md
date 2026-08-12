@@ -126,6 +126,31 @@ Example response:
 
 ---
 
+### Refusal — out of scope
+
+When no retrieved chunks pass the similarity threshold, Synapse refuses without calling the LLM — zero cost, no hallucination:
+
+```bash
+curl -s -X POST https://synapse-5w9z.onrender.com/ask -H "Content-Type: application/json" -d '{"question": "What is the best programming language to learn in 2025?"}'
+```
+
+```json
+{
+  "answer": {
+    "answer": "Synapse is designed to answer questions about fitness, nutrition, supplementation, and recovery grounded in peer-reviewed research. This question falls outside that scope. Please consult a qualified nutritionist or fitness professional for personalised advice.",
+    "confidence": 0.0,
+    "sources_needed": true
+  },
+  "sources": [],
+  "tokens_used": 0,
+  "model": "gpt-4o",
+  "latency_ms": 0,
+  "cost_usd": 0.0
+}
+```
+
+---
+
 ### `GET /debug/retrieve`
 
 Embeds a query and returns top-k chunks from Pinecone — **no LLM call**. Use this to verify retrieval quality before trusting `/ask`.
@@ -152,6 +177,7 @@ Returns `400` if `q` is empty.
 - [x] RAG — retrieve from Pinecone and ground answers in context
 - [x] Source citations — chunk IDs and similarity scores in every response
 - [x] Retrieval debugger — `GET /debug/retrieve`
+- [x] Refusal guard — out-of-scope questions return a clear message without calling the LLM
 - [ ] Source type tagging — research paper vs official guideline vs fact sheet
 - [ ] Agent — contradiction detection, refusal tool, PubMed live search
 - [ ] Memory — remember user goals and dietary restrictions across sessions
