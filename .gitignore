@@ -4,6 +4,9 @@
 # Raw data — large files, regenerate with scripts/collect_pubmed.py
 data/
 
+# Personal reference — not for public repo
+TESTING.md
+
 # Python
 __pycache__/
 *.py[cod]
