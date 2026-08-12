@@ -196,7 +196,7 @@ def debug_retrieve(q: str, top_k: int = 5) -> list[RetrievedChunk]:
     """Embed a query and return top-k chunks from Pinecone — no LLM call."""
 
     if not q.strip():
-        raise HTTPException(status_code=422, detail="q must not be empty")
+        raise HTTPException(status_code=400, detail="q must not be empty")
 
     response = client.embeddings.create(model=EMBEDDING_MODEL, input=[q])
     query_vector = response.data[0].embedding
@@ -217,9 +217,12 @@ def debug_retrieve(q: str, top_k: int = 5) -> list[RetrievedChunk]:
 def ingest(body: IngestRequest) -> IngestResponse:
     """Chunk plain text and store embeddings for later retrieval."""
 
+    if not body.document_id.strip():
+        raise HTTPException(status_code=400, detail="document_id must not be empty")
+    if not body.text.strip():
+        raise HTTPException(status_code=400, detail="text must not be empty")
+
     chunks = chunk_text(body.text)
-    if not chunks:
-        raise HTTPException(status_code=422, detail="text must not be empty")
 
     response = client.embeddings.create(model=EMBEDDING_MODEL, input=chunks)
     embeddings = [e.embedding for e in response.data]
