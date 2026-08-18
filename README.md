@@ -75,6 +75,7 @@ Three tabs covering the full pipeline:
 |-----|-------------|
 | 💬 **Ask** | Question input, model selector, `force_bad` toggle — shows answer, confidence, latency, cost, and retrieved sources with scores |
 | 🤖 **Agent Ask** | Multi-agent pipeline — Pinecone retrieval + live PubMed search via MCP tool. Shows strategy, sources from both, and per-source text |
+| 🧠 **Agentic Ask** | True agentic tool use — LLM decides whether to call PubMed. Shows `tool_calls` with the exact query the LLM formulated |
 | 📥 **Ingest** | Document ID + text area — chunks, embeds, and stores in Pinecone. Shows chunks created and tokens used |
 | 🔍 **Debug Retrieve** | Query input with top_k slider — returns raw Pinecone chunks with similarity scores. No LLM call |
 
@@ -120,6 +121,16 @@ Example response:
   "latency_ms": 3937,
   "cost_usd": 0.00603
 }
+```
+
+---
+
+### `POST /agentic/ask`
+
+True agentic tool use: the LLM receives Pinecone context and a `search_pubmed` tool definition, then decides at runtime whether to call it. The `tool_calls` field in the response shows exactly what query the LLM formulated — or is empty if local context was sufficient.
+
+```bash
+curl -s -X POST https://synapse-5w9z.onrender.com/agentic/ask -H "Content-Type: application/json" -d '{"question": "What does recent research say about NMN supplementation and athletic performance?"}'
 ```
 
 ---
@@ -213,6 +224,7 @@ Returns `400` if `q` is empty.
 - [x] Streamlit UI — Ask, Agent Ask, Ingest, and Debug Retrieve tabs
 - [x] MCP server — PubMed live search exposed as a FastMCP tool
 - [x] Multi-agent pipeline — Pinecone retrieval + PubMed via MCP, synthesised answer with dual sources
+- [x] Agentic tool use — LLM decides at runtime whether to call `search_pubmed` via OpenAI function calling
 - [ ] Memory — remember user goals and dietary restrictions across sessions
 - [ ] Evals — TRACE suite: grounding, hallucination, refusal accuracy
 

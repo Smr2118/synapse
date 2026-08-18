@@ -85,6 +85,19 @@ class AgentAskResponse(BaseModel):
     strategy: str  # pinecone_only | pubmed_only | pinecone+pubmed | refused
 
 
+class AgenticAskResponse(BaseModel):
+    answer: Answer
+    sources: list[AgentSource]
+    pinecone_chunks: int
+    pubmed_results: int
+    tool_calls: list[dict]  # which tools the LLM chose to invoke and with what args
+    tokens_used: int
+    model: str
+    latency_ms: int
+    cost_usd: float
+    strategy: str
+
+
 class IngestRequest(BaseModel):
     document_id: str
     text: str
@@ -293,6 +306,44 @@ def agent_ask(body: AskRequest) -> AgentAskResponse:
         sources=[AgentSource(**s) for s in result["sources"]],
         pinecone_chunks=result["pinecone_chunks"],
         pubmed_results=result["pubmed_results"],
+        tokens_used=result["tokens_used"],
+        model=result["model"],
+        latency_ms=result["latency_ms"],
+        cost_usd=result["cost_usd"],
+        strategy=result["strategy"],
+    )
+
+
+@app.post("/agentic/ask")
+def agentic_ask(body: AskRequest) -> AgenticAskResponse:
+    """True agentic ask: the LLM decides at runtime whether to call search_pubmed.
+
+    The model receives Pinecone context and a tool definition. It invokes the
+    PubMed MCP tool only when it judges the local context insufficient.
+    tool_calls in the response shows exactly what the LLM chose to call.
+    """
+    from agents.agentic import run as agentic_run
+
+    model = body.model or DEFAULT_MODEL
+    pinecone_chunks = retrieve_chunks(body.question)
+
+    result = agentic_run(
+        question=body.question,
+        pinecone_chunks=pinecone_chunks,
+        build_context_fn=build_context,
+        model=model,
+        client=client,
+        system_prompt=SYSTEM_PROMPT,
+        answer_schema=Answer,
+        compute_cost_fn=compute_cost_usd,
+    )
+
+    return AgenticAskResponse(
+        answer=result["answer"],
+        sources=[AgentSource(**s) for s in result["sources"]],
+        pinecone_chunks=result["pinecone_chunks"],
+        pubmed_results=result["pubmed_results"],
+        tool_calls=result["tool_calls"],
         tokens_used=result["tokens_used"],
         model=result["model"],
         latency_ms=result["latency_ms"],
