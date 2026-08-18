@@ -65,6 +65,26 @@ class AskResponse(BaseModel):
     cost_usd: float
 
 
+class AgentSource(BaseModel):
+    source_type: str  # "pinecone" or "pubmed"
+    id: str
+    document_id: str
+    score: float | None
+    text: str
+
+
+class AgentAskResponse(BaseModel):
+    answer: Answer
+    sources: list[AgentSource]
+    pinecone_chunks: int
+    pubmed_results: int
+    tokens_used: int
+    model: str
+    latency_ms: int
+    cost_usd: float
+    strategy: str  # pinecone_only | pubmed_only | pinecone+pubmed | refused
+
+
 class IngestRequest(BaseModel):
     document_id: str
     text: str
@@ -242,6 +262,42 @@ def ask(body: AskRequest) -> AskResponse:
     raise HTTPException(
         status_code=502,
         detail=f"Model response failed schema validation after retry: {last_error}",
+    )
+
+
+@app.post("/agent/ask")
+def agent_ask(body: AskRequest) -> AgentAskResponse:
+    """Multi-agent ask: Pinecone retrieval first, PubMed live search as fallback.
+
+    Strategy is chosen automatically:
+    - pinecone_only   — local chunks are sufficient
+    - pubmed_only     — no local chunks passed threshold
+    - pinecone+pubmed — local chunks exist but evidence is thin
+    - refused         — no evidence found anywhere
+    """
+    from agents.orchestrator import run as orchestrate
+
+    model = body.model or DEFAULT_MODEL
+
+    result = orchestrate(
+        question=body.question,
+        retrieve_fn=retrieve_chunks,
+        build_context_fn=build_context,
+        call_model_fn=call_model_structured,
+        compute_cost_fn=compute_cost_usd,
+        model=model,
+    )
+
+    return AgentAskResponse(
+        answer=result["answer"],
+        sources=[AgentSource(**s) for s in result["sources"]],
+        pinecone_chunks=result["pinecone_chunks"],
+        pubmed_results=result["pubmed_results"],
+        tokens_used=result["tokens_used"],
+        model=result["model"],
+        latency_ms=result["latency_ms"],
+        cost_usd=result["cost_usd"],
+        strategy=result["strategy"],
     )
 
 

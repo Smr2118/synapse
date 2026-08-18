@@ -17,7 +17,8 @@ A research-grounded fitness and nutrition assistant — answers questions about 
 - **Observability** — every response includes token usage, latency, model name, and cost in USD
 - **Document ingestion** — plain text is chunked, embedded via `text-embedding-3-small`, and stored in Pinecone
 - **Retrieval debugger** — `GET /debug/retrieve` inspects what Pinecone returns without calling the LLM
-- **Agentic reasoning** — contradiction detection, refusal tool, PubMed live search *(coming)*
+- **MCP server** — `mcp_server/pubmed.py` exposes PubMed live search as a callable tool via FastMCP
+- **Multi-agent pipeline** — orchestrator runs Pinecone retrieval + live PubMed search, synthesises from both
 - **Evals** — TRACE suite measuring grounding, hallucination, and refusal accuracy *(coming)*
 
 ## How RAG works in this project
@@ -73,6 +74,7 @@ Three tabs covering the full pipeline:
 | Tab | What it does |
 |-----|-------------|
 | 💬 **Ask** | Question input, model selector, `force_bad` toggle — shows answer, confidence, latency, cost, and retrieved sources with scores |
+| 🤖 **Agent Ask** | Multi-agent pipeline — Pinecone retrieval + live PubMed search via MCP tool. Shows strategy, sources from both, and per-source text |
 | 📥 **Ingest** | Document ID + text area — chunks, embeds, and stores in Pinecone. Shows chunks created and tokens used |
 | 🔍 **Debug Retrieve** | Query input with top_k slider — returns raw Pinecone chunks with similarity scores. No LLM call |
 
@@ -119,6 +121,18 @@ Example response:
   "cost_usd": 0.00603
 }
 ```
+
+---
+
+### `POST /agent/ask`
+
+Multi-agent pipeline: Pinecone retrieval + live PubMed search via MCP tool, synthesised into one grounded answer.
+
+```bash
+curl -s -X POST https://synapse-5w9z.onrender.com/agent/ask -H "Content-Type: application/json" -d '{"question": "Does creatine help with strength?"}'
+```
+
+Response includes `strategy` (`pinecone+pubmed`, `pubmed_only`, or `refused`), `pinecone_chunks`, `pubmed_results`, and sources from both systems with full text.
 
 ---
 
@@ -196,9 +210,9 @@ Returns `400` if `q` is empty.
 - [x] Source citations — chunk IDs and similarity scores in every response
 - [x] Retrieval debugger — `GET /debug/retrieve`
 - [x] Refusal guard — out-of-scope questions return a clear message without calling the LLM
-- [x] Streamlit UI — Ask, Ingest, and Debug Retrieve tabs
-- [ ] Source type tagging — research paper vs official guideline vs fact sheet
-- [ ] Agent — contradiction detection, refusal tool, PubMed live search
+- [x] Streamlit UI — Ask, Agent Ask, Ingest, and Debug Retrieve tabs
+- [x] MCP server — PubMed live search exposed as a FastMCP tool
+- [x] Multi-agent pipeline — Pinecone retrieval + PubMed via MCP, synthesised answer with dual sources
 - [ ] Memory — remember user goals and dietary restrictions across sessions
 - [ ] Evals — TRACE suite: grounding, hallucination, refusal accuracy
 

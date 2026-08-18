@@ -41,7 +41,7 @@ with st.sidebar:
     st.markdown("FastAPI · OpenAI · Pinecone · Pydantic")
 
 # ── Tabs ───────────────────────────────────────────────────────────────────────
-ask_tab, ingest_tab, debug_tab = st.tabs(["💬 Ask", "📥 Ingest", "🔍 Debug Retrieve"])
+ask_tab, agent_tab, ingest_tab, debug_tab = st.tabs(["💬 Ask", "🤖 Agent Ask", "📥 Ingest", "🔍 Debug Retrieve"])
 
 
 # ── Ask ────────────────────────────────────────────────────────────────────────
@@ -95,6 +95,76 @@ with ask_tab:
                         st.code(s["chunk_id"])
             else:
                 st.info("No relevant sources found — question is outside the knowledge base.")
+
+
+# ── Agent Ask ──────────────────────────────────────────────────────────────────
+with agent_tab:
+    st.header("Agent ask")
+    st.caption(
+        "Orchestrator runs Pinecone retrieval + live PubMed search via MCP tool, "
+        "then synthesises a grounded answer from both sources."
+    )
+
+    agent_question = st.text_input(
+        "Question",
+        placeholder="Does creatine help with strength?",
+        key="agent_question",
+    )
+    agent_model = st.selectbox("Model", ["gpt-4o", "gpt-4o-mini", "o3-mini"], index=0, key="agent_model")
+
+    if st.button("Ask Agent", type="primary", disabled=not agent_question.strip()):
+        with st.spinner("Running Pinecone retrieval + PubMed search..."):
+            status, data = call(
+                "post",
+                f"{base_url}/agent/ask",
+                json={"question": agent_question, "model": agent_model},
+            )
+
+        if status == 0 or "error" in (data if isinstance(data, dict) else {}):
+            st.error(data.get("error", data))
+        elif status != 200:
+            st.error(f"HTTP {status}: {data}")
+        else:
+            answer = data.get("answer", {})
+            sources = data.get("sources", [])
+            strategy = data.get("strategy", "")
+
+            STRATEGY_LABELS = {
+                "pinecone+pubmed": "🔀 Pinecone + PubMed",
+                "pinecone_only": "📦 Pinecone only",
+                "pubmed_only": "🔬 PubMed only",
+                "refused": "🚫 Refused",
+            }
+            st.info(f"Strategy: **{STRATEGY_LABELS.get(strategy, strategy)}**")
+
+            if not sources:
+                st.warning(answer.get("answer", ""))
+            else:
+                st.success(answer.get("answer", ""))
+
+            m1, m2, m3, m4, m5, m6 = st.columns(6)
+            m1.metric("Confidence", f"{answer.get('confidence', 0):.0%}")
+            m2.metric("Pinecone chunks", data.get("pinecone_chunks", 0))
+            m3.metric("PubMed results", data.get("pubmed_results", 0))
+            m4.metric("Tokens", data.get("tokens_used", 0))
+            m5.metric("Latency", f"{data.get('latency_ms', 0)} ms")
+            m6.metric("Cost", f"${data.get('cost_usd', 0):.6f}")
+
+            pinecone_sources = [s for s in sources if s.get("source_type") == "pinecone"]
+            pubmed_sources = [s for s in sources if s.get("source_type") == "pubmed"]
+
+            if pinecone_sources:
+                st.subheader("Pinecone sources")
+                for s in pinecone_sources:
+                    with st.expander(f"{s['document_id']} — score: {s['score']}"):
+                        st.code(s["id"])
+                        st.write(s.get("text", ""))
+
+            if pubmed_sources:
+                st.subheader("PubMed live results")
+                for s in pubmed_sources:
+                    with st.expander(f"PMID {s['id']}"):
+                        st.write(s.get("text", ""))
 
 
 # ── Ingest ─────────────────────────────────────────────────────────────────────
