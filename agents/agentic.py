@@ -172,8 +172,15 @@ def run(
     total_prompt_tokens = 0
     total_completion_tokens = 0
 
+    logger.info("THINK  | question: %r | tools available: %s",
+                question, [t["function"]["name"] for t in _TOOLS])
+
     # ── Agentic loop ───────────────────────────────────────────────────────────
-    for _ in range(_MAX_TOOL_ROUNDS):
+    round_num = 0
+    for round_num in range(_MAX_TOOL_ROUNDS):
+        logger.info("THINK  | round %d | calling LLM with %d messages in context",
+                    round_num + 1, len(messages))
+
         response = client.chat.completions.create(
             model=model,
             messages=messages,
@@ -188,7 +195,12 @@ def run(
         choice = response.choices[0]
 
         if choice.finish_reason != "tool_calls":
+            logger.info("THINK  | round %d | LLM chose not to call any tools — ready to answer",
+                        round_num + 1)
             break
+
+        tool_names = [tc.function.name for tc in choice.message.tool_calls]
+        logger.info("THINK  | round %d | LLM decided to call: %s", round_num + 1, tool_names)
 
         # Append assistant message with tool_calls so the thread stays valid
         messages.append(choice.message)
@@ -199,9 +211,11 @@ def run(
             tool_calls_log.append({"tool": fn_name, "args": fn_args})
 
             if fn_name in _TOOL_FNS:
-                logger.info("TOOL CALL: %s | args: %s", fn_name, fn_args)
+                logger.info("ACT    | calling %s | args: %s", fn_name, fn_args)
                 tool_result = _TOOL_FNS[fn_name](**fn_args)
-                logger.info("TOOL RESULT: %s | returned %d items", fn_name, len(tool_result) if isinstance(tool_result, list) else 1)
+                n = len(tool_result) if isinstance(tool_result, list) else 1
+                logger.info("OBSERVE| %s returned %d result(s)", fn_name, n)
+
                 if fn_name == "search_pubmed":
                     pubmed_results.extend(r for r in tool_result if r.get("abstract"))
                 elif fn_name == "search_nih":
@@ -210,6 +224,7 @@ def run(
                     exercise_results.extend(r for r in tool_result if r.get("name"))
             else:
                 tool_result = {"error": f"Unknown tool: {fn_name}"}
+                logger.warning("OBSERVE| unknown tool requested: %s", fn_name)
 
             messages.append({
                 "role": "tool",
@@ -218,6 +233,7 @@ def run(
             })
 
     # ── Final structured output ────────────────────────────────────────────────
+    logger.info("THINK  | synthesising final answer from %d message(s) in context", len(messages))
     final = client.chat.completions.parse(
         model=model,
         messages=messages,
@@ -229,6 +245,7 @@ def run(
         total_completion_tokens += final.usage.completion_tokens
 
     answer = final.choices[0].message.parsed
+    logger.info("ANSWER | confidence=%.2f sources_needed=%s", answer.confidence, answer.sources_needed)
     latency_ms = int((time.perf_counter() - start) * 1000)
     total_tokens = total_prompt_tokens + total_completion_tokens
     cost_usd = compute_cost_fn(model, total_prompt_tokens, total_completion_tokens)
