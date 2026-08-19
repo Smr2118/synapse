@@ -1,8 +1,11 @@
 """Typed LLM API with document ingestion for RAG."""
 
+import logging
 import os
 import time
 from pathlib import Path
+
+logging.basicConfig(level=logging.INFO)
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
@@ -90,6 +93,8 @@ class AgenticAskResponse(BaseModel):
     sources: list[AgentSource]
     pinecone_chunks: int
     pubmed_results: int
+    nih_results: int
+    exercise_results: int
     tool_calls: list[dict]  # which tools the LLM chose to invoke and with what args
     tokens_used: int
     model: str
@@ -129,6 +134,17 @@ Answer the question using ONLY the context provided below.
 - If the context does not contain enough information, say so clearly and set sources_needed=true.
 - Do not fabricate facts not present in the context.
 - Set confidence based on how well the context supports your answer."""
+
+AGENTIC_SYSTEM_PROMPT = """You are Synapse, a research-grounded fitness and nutrition assistant.
+
+You have access to tools — use them whenever the local context is insufficient.
+- search_pubmed: for peer-reviewed research on nutrition, supplementation, and training.
+- search_nih: for official dietary guidelines and recommended intake levels.
+- search_exercises: for specific exercises, muscle targeting, and workout structure.
+
+Call whatever tools the question needs. You may call more than one.
+Ground your answer in the retrieved content and cite sources where possible.
+Set confidence based on how well the combined evidence supports your answer."""
 
 
 def retrieve_chunks(question: str, top_k: int = RAG_TOP_K) -> list[dict]:
@@ -325,15 +341,14 @@ def agentic_ask(body: AskRequest) -> AgenticAskResponse:
     from agents.agentic import run as agentic_run
 
     model = body.model or DEFAULT_MODEL
-    pinecone_chunks = retrieve_chunks(body.question)
 
     result = agentic_run(
         question=body.question,
-        pinecone_chunks=pinecone_chunks,
+        pinecone_chunks=[],  # LLM drives retrieval via tools — no pre-loading
         build_context_fn=build_context,
         model=model,
         client=client,
-        system_prompt=SYSTEM_PROMPT,
+        system_prompt=AGENTIC_SYSTEM_PROMPT,
         answer_schema=Answer,
         compute_cost_fn=compute_cost_usd,
     )
@@ -343,6 +358,8 @@ def agentic_ask(body: AskRequest) -> AgenticAskResponse:
         sources=[AgentSource(**s) for s in result["sources"]],
         pinecone_chunks=result["pinecone_chunks"],
         pubmed_results=result["pubmed_results"],
+        nih_results=result["nih_results"],
+        exercise_results=result["exercise_results"],
         tool_calls=result["tool_calls"],
         tokens_used=result["tokens_used"],
         model=result["model"],

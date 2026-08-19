@@ -6,6 +6,7 @@ data/
 
 # Personal reference — not for public repo
 TESTING.md
+ask.sh
 
 # Python
 __pycache__/

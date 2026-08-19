@@ -171,9 +171,9 @@ with agent_tab:
 with agentic_tab:
     st.header("Agentic ask")
     st.caption(
-        "The LLM decides at runtime whether to call the PubMed MCP tool. "
-        "Empty tool_calls = LLM judged local context sufficient. "
-        "Non-empty = LLM chose to search PubMed and formulated the query itself."
+        "The LLM has three tools: search_pubmed (research), search_nih (guidelines), "
+        "search_exercises (exercise DB). It decides which to call based on the question. "
+        "tool_calls shows exactly what the LLM invoked and with what query."
     )
 
     agentic_question = st.text_input(
@@ -201,13 +201,11 @@ with agentic_tab:
             strategy = data.get("strategy", "")
             tool_calls = data.get("tool_calls", [])
 
-            STRATEGY_LABELS = {
-                "pinecone+pubmed": "🔀 Pinecone + PubMed",
-                "pinecone_only": "📦 Pinecone only",
-                "pubmed_only": "🔬 PubMed only",
-                "refused": "🚫 Refused",
-            }
-            st.info(f"Strategy: **{STRATEGY_LABELS.get(strategy, strategy)}**")
+            # Strategy — dynamic label from whatever sources were active
+            ICON = {"pinecone": "📦", "pubmed": "🔬", "nih": "🏛️", "exercise": "🏋️"}
+            parts = strategy.split("+") if strategy != "refused" else []
+            strategy_display = " + ".join(f"{ICON.get(p, '')} {p}" for p in parts) if parts else "🚫 Refused"
+            st.info(f"Strategy: **{strategy_display}**")
 
             # Tool call transparency
             if tool_calls:
@@ -223,27 +221,42 @@ with agentic_tab:
             else:
                 st.success(answer.get("answer", ""))
 
-            m1, m2, m3, m4, m5, m6 = st.columns(6)
+            m1, m2, m3, m4, m5, m6, m7 = st.columns(7)
             m1.metric("Confidence", f"{answer.get('confidence', 0):.0%}")
-            m2.metric("Pinecone chunks", data.get("pinecone_chunks", 0))
-            m3.metric("PubMed results", data.get("pubmed_results", 0))
-            m4.metric("Tokens", data.get("tokens_used", 0))
-            m5.metric("Latency", f"{data.get('latency_ms', 0)} ms")
-            m6.metric("Cost", f"${data.get('cost_usd', 0):.6f}")
+            m2.metric("Pinecone", data.get("pinecone_chunks", 0))
+            m3.metric("PubMed", data.get("pubmed_results", 0))
+            m4.metric("NIH", data.get("nih_results", 0))
+            m5.metric("Exercise", data.get("exercise_results", 0))
+            m6.metric("Latency", f"{data.get('latency_ms', 0)} ms")
+            m7.metric("Cost", f"${data.get('cost_usd', 0):.6f}")
 
             pinecone_sources = [s for s in sources if s.get("source_type") == "pinecone"]
             pubmed_sources = [s for s in sources if s.get("source_type") == "pubmed"]
+            nih_sources = [s for s in sources if s.get("source_type") == "nih"]
+            exercise_sources = [s for s in sources if s.get("source_type") == "exercise"]
 
             if pinecone_sources:
-                st.subheader("Pinecone sources")
+                st.subheader("📦 Pinecone sources")
                 for s in pinecone_sources:
                     with st.expander(f"{s['document_id']} — score: {s['score']}"):
                         st.write(s.get("text", ""))
 
             if pubmed_sources:
-                st.subheader("PubMed live results")
+                st.subheader("🔬 PubMed live results")
                 for s in pubmed_sources:
                     with st.expander(f"PMID {s['id']}"):
+                        st.write(s.get("text", ""))
+
+            if nih_sources:
+                st.subheader("🏛️ NIH guidelines")
+                for s in nih_sources:
+                    with st.expander(s["id"] or s["document_id"]):
+                        st.write(s.get("text", ""))
+
+            if exercise_sources:
+                st.subheader("🏋️ Exercises")
+                for s in exercise_sources:
+                    with st.expander(s["id"]):
                         st.write(s.get("text", ""))
 
 
