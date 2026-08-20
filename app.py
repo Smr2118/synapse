@@ -201,20 +201,36 @@ with agentic_tab:
             strategy = data.get("strategy", "")
             tool_calls = data.get("tool_calls", [])
 
-            # Strategy — dynamic label from whatever sources were active
+            # ── Agent loop trace (Think / Act / Observe) ───────────────────────
             ICON = {"pinecone": "📦", "pubmed": "🔬", "nih": "🏛️", "exercise": "🏋️"}
-            parts = strategy.split("+") if strategy != "refused" else []
-            strategy_display = " + ".join(f"{ICON.get(p, '')} {p}" for p in parts) if parts else "🚫 Refused"
-            st.info(f"Strategy: **{strategy_display}**")
+            TOOL_ICON = {"search_pubmed": "🔬", "search_nih": "🏛️", "search_exercises": "🏋️"}
+            RESULT_COUNT = {
+                "search_pubmed": data.get("pubmed_results", 0),
+                "search_nih": data.get("nih_results", 0),
+                "search_exercises": data.get("exercise_results", 0),
+            }
 
-            # Tool call transparency
-            if tool_calls:
-                st.success(f"LLM called {len(tool_calls)} tool(s)")
+            with st.status("Agent decision loop", expanded=True) as status_box:
+                # THINK — initial reasoning
+                if tool_calls:
+                    tools_chosen = ", ".join(f"`{tc['tool']}`" for tc in tool_calls)
+                    st.write(f"🧠 **THINK** — LLM decided to call: {tools_chosen}")
+                else:
+                    st.write("🧠 **THINK** — LLM judged local context sufficient, no tools needed")
+
+                # ACT + OBSERVE — one pair per tool call
                 for tc in tool_calls:
-                    with st.expander(f"Tool call: `{tc['tool']}`"):
-                        st.json(tc["args"])
-            else:
-                st.info("LLM did not call any tools — local context was sufficient.")
+                    icon = TOOL_ICON.get(tc["tool"], "🔧")
+                    st.write(f"{icon} **ACT** — `{tc['tool']}` called with query: `{tc['args'].get('query', tc['args'])}`")
+                    n = RESULT_COUNT.get(tc["tool"], "?")
+                    st.write(f"👁️ **OBSERVE** — `{tc['tool']}` returned **{n}** result(s)")
+
+                # ANSWER
+                confidence = answer.get("confidence", 0)
+                st.write(f"✅ **ANSWER** — confidence {confidence:.0%}, synthesising from {len(sources)} source(s)")
+                status_box.update(label="Agent loop complete", state="complete")
+
+            st.divider()
 
             if not sources:
                 st.warning(answer.get("answer", ""))
