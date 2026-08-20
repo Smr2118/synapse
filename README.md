@@ -8,6 +8,8 @@
 
 A research-grounded fitness and nutrition assistant — answers questions about diet, exercise, and supplementation grounded in PubMed abstracts, NIH fact sheets, and USDA dietary guidelines. Not opinion. Not vibes. Sources.
 
+**Live UI:** https://synapse-ui.onrender.com/ · **API docs:** https://synapse-5w9z.onrender.com/docs
+
 ## What this project demonstrates
 
 - **Structured output** — OpenAI's `completions.parse` enforces a Pydantic schema at the model level
@@ -17,8 +19,9 @@ A research-grounded fitness and nutrition assistant — answers questions about 
 - **Observability** — every response includes token usage, latency, model name, and cost in USD
 - **Document ingestion** — plain text is chunked, embedded via `text-embedding-3-small`, and stored in Pinecone
 - **Retrieval debugger** — `GET /debug/retrieve` inspects what Pinecone returns without calling the LLM
-- **MCP server** — `mcp_server/pubmed.py` exposes PubMed live search as a callable tool via FastMCP
+- **MCP servers** — three FastMCP tools: PubMed live search, NIH MedlinePlus guidelines, Wger exercise database
 - **Multi-agent pipeline** — orchestrator runs Pinecone retrieval + live PubMed search, synthesises from both
+- **Agentic tool use** — raw-SDK agent loop (OpenAI function calling): LLM decides which MCP tools to call at runtime. Think / Act / Observe trace visible in logs and Streamlit UI
 - **Evals** — TRACE suite measuring grounding, hallucination, and refusal accuracy *(coming)*
 
 ## How RAG works in this project
@@ -75,7 +78,7 @@ Three tabs covering the full pipeline:
 |-----|-------------|
 | 💬 **Ask** | Question input, model selector, `force_bad` toggle — shows answer, confidence, latency, cost, and retrieved sources with scores |
 | 🤖 **Agent Ask** | Multi-agent pipeline — Pinecone retrieval + live PubMed search via MCP tool. Shows strategy, sources from both, and per-source text |
-| 🧠 **Agentic Ask** | True agentic tool use — LLM decides whether to call PubMed. Shows `tool_calls` with the exact query the LLM formulated |
+| 🧠 **Agentic Ask** | True agentic tool use — LLM decides which of three MCP tools to call (PubMed, NIH, exercise DB). Shows Think / Act / Observe trace and `tool_calls` with the exact query the LLM formulated |
 | 📥 **Ingest** | Document ID + text area — chunks, embeds, and stores in Pinecone. Shows chunks created and tokens used |
 | 🔍 **Debug Retrieve** | Query input with top_k slider — returns raw Pinecone chunks with similarity scores. No LLM call |
 
@@ -127,7 +130,7 @@ Example response:
 
 ### `POST /agentic/ask`
 
-True agentic tool use: the LLM receives Pinecone context and a `search_pubmed` tool definition, then decides at runtime whether to call it. The `tool_calls` field in the response shows exactly what query the LLM formulated — or is empty if local context was sufficient.
+True agentic tool use (raw-SDK, clearly traced). The LLM receives three MCP tool definitions and decides at runtime which to call — `search_pubmed` (research), `search_nih` (guidelines), or `search_exercises` (exercise DB). The execution path is not fixed. `tool_calls` in the response shows exactly what the LLM invoked and with what query. Think / Act / Observe steps are logged server-side and rendered in the Streamlit UI.
 
 ```bash
 curl -s -X POST https://synapse-5w9z.onrender.com/agentic/ask -H "Content-Type: application/json" -d '{"question": "What does recent research say about NMN supplementation and athletic performance?"}'
@@ -224,7 +227,8 @@ Returns `400` if `q` is empty.
 - [x] Streamlit UI — Ask, Agent Ask, Ingest, and Debug Retrieve tabs
 - [x] MCP server — PubMed live search exposed as a FastMCP tool
 - [x] Multi-agent pipeline — Pinecone retrieval + PubMed via MCP, synthesised answer with dual sources
-- [x] Agentic tool use — LLM decides at runtime whether to call `search_pubmed` via OpenAI function calling
+- [x] Agentic tool use — raw-SDK agent loop (OpenAI function calling): LLM decides which MCP tool to call at runtime. Think / Act / Observe trace in logs and Streamlit UI
+- [x] Three MCP servers — `search_pubmed` (PubMed), `search_nih` (NIH MedlinePlus), `search_exercises` (Wger exercise DB)
 - [ ] Memory — remember user goals and dietary restrictions across sessions
 - [ ] Evals — TRACE suite: grounding, hallucination, refusal accuracy
 
@@ -242,6 +246,8 @@ Returns `400` if `q` is empty.
 ## Tech stack
 
 - [FastAPI](https://fastapi.tiangolo.com/) — async API framework
-- [OpenAI Python SDK](https://github.com/openai/openai-python) — structured output + embeddings
+- [OpenAI Python SDK](https://github.com/openai/openai-python) — structured output, embeddings, function calling
 - [Pydantic v2](https://docs.pydantic.dev/) — request/response validation
 - [Pinecone](https://www.pinecone.io/) — managed vector database
+- [FastMCP](https://github.com/jlowin/fastmcp) — MCP server framework (PubMed, NIH, exercise tools)
+- [Streamlit](https://streamlit.io/) — interactive UI with Think/Act/Observe agent trace
