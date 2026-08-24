@@ -6,7 +6,9 @@ Run:
 Set the API base URL in the sidebar to point at local or Render.
 """
 
+import json
 import os
+from pathlib import Path
 
 import httpx
 import streamlit as st
@@ -41,7 +43,7 @@ with st.sidebar:
     st.markdown("FastAPI · OpenAI · Pinecone · Pydantic")
 
 # ── Tabs ───────────────────────────────────────────────────────────────────────
-ask_tab, agent_tab, agentic_tab, ingest_tab, debug_tab = st.tabs(["💬 Ask", "🤖 Agent Ask", "🧠 Agentic Ask", "📥 Ingest", "🔍 Debug Retrieve"])
+ask_tab, agent_tab, agentic_tab, ingest_tab, debug_tab, evals_tab = st.tabs(["💬 Ask", "🤖 Agent Ask", "🧠 Agentic Ask", "📥 Ingest", "🔍 Debug Retrieve", "📊 Evals"])
 
 
 # ── Ask ────────────────────────────────────────────────────────────────────────
@@ -325,3 +327,116 @@ with debug_tab:
                     with st.expander(f"#{i} · {chunk['document_id']} · score: {chunk['score']}"):
                         st.caption(f"Chunk ID: `{chunk['document_id']}`")
                         st.write(chunk["text"])
+
+
+# ── Evals ──────────────────────────────────────────────────────────────────────
+with evals_tab:
+    st.header("Eval suite")
+    st.caption(
+        "Code-based assertions against collected traces. "
+        "Load a traces JSON file to run all checks and see which questions pass or fail."
+    )
+
+    col1, col2 = st.columns(2)
+    with col1:
+        traces_path = st.text_input("Traces file", value="evals/traces.json")
+    with col2:
+        compare_path = st.text_input("Compare file (before/after)", placeholder="evals/traces_after.json")
+
+    if st.button("Run checks", type="primary"):
+        from evals.checks import ALL_CHECKS, run_checks
+
+        CHECK_NAMES = list(ALL_CHECKS.keys())
+
+        def score_traces(path: str) -> list[dict]:
+            traces = json.loads(Path(path).read_text(encoding="utf-8"))
+            results = []
+            for trace in traces:
+                checks = run_checks(trace)
+                row = {
+                    "id": trace["id"],
+                    "question": trace["question"][:52] + "…" if len(trace["question"]) > 52 else trace["question"],
+                    "expected": trace.get("expected", "?"),
+                    "strategy": trace.get("response", {}).get("strategy", "n/a"),
+                }
+                for name, (passed, reason) in checks.items():
+                    row[name] = "PASS" if passed else "FAIL"
+                    row[f"{name}_reason"] = reason
+                row["passed"] = sum(1 for passed, _ in checks.values() if passed)
+                row["total"] = len(checks)
+                results.append(row)
+            return results
+
+        def render_results(results: list[dict], label: str) -> None:
+            total_checks = sum(r["total"] for r in results)
+            total_passed = sum(r["passed"] for r in results)
+            pct = 100 * total_passed / total_checks
+
+            color = "normal" if pct >= 90 else "inverse"
+            st.metric(label=label, value=f"{total_passed}/{total_checks} ({pct:.0f}%)")
+
+            # Per-check pass rates
+            cols = st.columns(len(CHECK_NAMES))
+            for i, name in enumerate(CHECK_NAMES):
+                passed = sum(1 for r in results if r[name] == "PASS")
+                cols[i].metric(
+                    label=name.replace("_", " "),
+                    value=f"{passed}/{len(results)}",
+                    delta=f"{100*passed/len(results):.0f}%",
+                )
+
+            # Results table
+            table_cols = ["id", "question", "expected", "strategy"] + CHECK_NAMES
+            rows = [{c: r[c] for c in table_cols} for r in results]
+
+            def _style(val):
+                if val == "PASS":
+                    return "background-color: #d4edda; color: #155724; font-weight: bold"
+                if val == "FAIL":
+                    return "background-color: #f8d7da; color: #721c24; font-weight: bold"
+                return ""
+
+            import pandas as pd
+            df = pd.DataFrame(rows)
+            styled = df.style.map(_style, subset=CHECK_NAMES)
+            st.dataframe(styled, use_container_width=True, hide_index=True)
+
+            # Failure details
+            failures = [
+                (r["id"], r["question"], name, r[f"{name}_reason"])
+                for r in results
+                for name in CHECK_NAMES
+                if r[name] == "FAIL"
+            ]
+            if failures:
+                with st.expander(f"Failure details ({len(failures)})", expanded=True):
+                    for fid, q, check, reason in failures:
+                        st.error(f"**[{fid}] {check}** — {reason}")
+
+        try:
+            results_a = score_traces(traces_path)
+            render_results(results_a, label=traces_path)
+
+            if compare_path.strip():
+                st.divider()
+                results_b = score_traces(compare_path)
+                render_results(results_b, label=compare_path)
+
+                # Improvement banner
+                passed_a = sum(r["passed"] for r in results_a)
+                total_a = sum(r["total"] for r in results_a)
+                passed_b = sum(r["passed"] for r in results_b)
+                total_b = sum(r["total"] for r in results_b)
+                delta_pp = (passed_b / total_b - passed_a / total_a) * 100
+
+                st.divider()
+                st.success(
+                    f"**Fix impact:** {passed_a/total_a:.0%} → {passed_b/total_b:.0%} "
+                    f"({delta_pp:+.0f} pp)  |  "
+                    f"Failures reduced: {total_a - passed_a} → {total_b - passed_b}"
+                )
+
+        except FileNotFoundError as exc:
+            st.error(f"File not found: {exc}")
+        except Exception as exc:
+            st.exception(exc)
