@@ -4,6 +4,7 @@ Usage:
     python evals/runner.py                          # evals/traces.json
     python evals/runner.py --traces evals/traces_render.json
     python evals/runner.py --traces evals/traces_after.json --compare evals/traces.json
+    python3 -m evals.run_traces --url https://synapse-5w9z.onrender.com --output evals/trace_outputs/traces_before_render_001.json
 """
 
 import argparse

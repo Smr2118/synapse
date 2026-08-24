@@ -1,0 +1,1043 @@
+[
+  {
+    "id": 1,
+    "expected": "answer",
+    "question": "How much protein do I need to build muscle?",
+    "status": "ok",
+    "wall_ms": 68226,
+    "response": {
+      "answer": {
+        "answer": "To build muscle effectively, protein intake is a critical factor to consider. Research suggests that consuming approximately 20-25 grams of a high-quality protein shortly before and within 24 hours following resistance exercise sessions maximizes muscle protein synthesis (MPS) for optimal muscle growth. This recommendation is particularly relevant for young, resistance-trained individuals, and higher intakes may be necessary for older adults or when consuming less optimal proteins [Tipton & Phillips, 2013].\n\nAdditionally, while carbohydrate ingestion does not seem to enhance MPS when consumed alongside protein, the timing and type of protein intake play a significant role in muscle hypertrophy following resistance exercise [Figueiredo, 2019]. Therefore, while general guidelines may suggest 0.8 grams per kilogram of body weight as a base protein requirement, those aiming to build muscle might need to target higher levels, such as around 1.6-2.2 grams per kilogram of body weight daily, depending on exercise intensity and individual factors.",
+        "confidence": 0.85,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "35176198",
+          "document_id": "pubmed_35176198",
+          "score": null,
+          "text": "1. J Cosmet Dermatol. 2022 May;21(5):1849-1856. doi: 10.1111/jocd.14858. Epub\n2022  Feb 28.\n\nEfficacy of botulinum toxin in masseter muscle hypertrophy for lower face \ncontouring.\n\nKundu N(1), Kothari R(2), Shah N(3)(4), Sandhu S(5), Tripathy DM(6), Galadari \nH(7), Gold MH(8), Goldman MP(9)(10), Kassir M(11), Schepler H(12), Grabbe S(12), \nGoldust M(12).\n\nAuthor information:\n(1)Imperial College, London, UK.\n(2)Dermatology, Command Hospital Air Force, Bengaluru, India.\n(3)Cardiff University, Cardiff, UK.\n(4)University of South Wales, Pontypridd, UK.\n(5)Dermatology, 7 Air Force Hospital, Kanpur, India.\n(6)Dermatology, Military Hospital, Agra, India.\n(7)College of Medicine and Health Sciences, United Arab Emirates University, Al \nAin, UAE.\n(8)Gold Skin Care Center, Tennessee Clinical Research Center, Nashville, \nTennessee, USA.\n(9)Cosmetic Laser Dermatology: A West Dermatology Company, San Diego, \nCalifornia, USA.\n(10)Department of Dermatology, University of California, San Diego, California, \nUSA.\n(11)Worldwide laser institute, Dallas, Texas, USA.\n(12)Department of Dermatology, University Medical Center of the Johannes \nGutenberg University, Mainz, Germany.\n\nBACKGROUND: Masseter muscle hypertrophy (MMH) usually presents with cosmetic \nconcerns as it may lead to widening of the lower face. Apart from the \ntraditional surgical approaches, botulinum toxin type A (BTA) injection is a \nnon-invasive treatment option available. There are no standard guidelines for \nthis procedure.\nOBJECTIVES: To study the efficacy of botulinumtoxin A in MMH for lower face \ncontouring.\nMETHODOLOGY: The Cochrane Library, PubMed/MEDLINE, Google-scholar, \nScience-Direct database, and ResearchGate from inception until September 2021 \nwere searched using the keywords \"botulinumtoxin type A,\" \"masseter muscle \nhypertrophy,\" \"lower face contouring,\" and \"masseter botox.\" All available \nretrospective and prospective studies, case-series, case-reports, and expert \nreviews were included with an emphasis on efficacy of BTA in MMH and units \ninjected into the muscle, points of placement, adverse events, and the duration \nof its effect. Reference lists of the resultant articles, as well as relevant \nreviews, were also searched.\nRESULT: 40 articles were shortlisted for the review, of which 14\u00a0studies with \nsample-size \u226510 in accordance with the study requirements were summarized in a \ntabular form for analysis and easy comparison and reference.\nCONCLUSION: BTA injection is a non-invasive, safe, and effective treatment for \nMMH. The optimum number of BTA units could not be ascertained due to wide \nvariability in the studies as well as ethnicity of patients and extent or some \nmeasurement of MMH. The points of placement of injection should be well within \nthe boundaries of the masseter muscle. The maximum effect of BTA after a single \ninjection session is usually seen in ~3\u00a0months, and the duration may last for \n6-12\u00a0months. Multiple injection sessions may be required to maintain a long-term \neffect. Injection technique and total number of injection units of \nneuromodulator must be individualized for each patient.\n\n\u00a9 2022 The Authors. Journal of Cosmetic Dermatology published by Wiley \nPeriodicals LLC.\n\nDOI: 10.1111/jocd.14858"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "23899756",
+          "document_id": "pubmed_23899756",
+          "score": null,
+          "text": "2. Nestle Nutr Inst Workshop Ser. 2013;76:73-84. doi: 10.1159/000350259. Epub\n2013  Jul 25.\n\nDietary protein for muscle hypertrophy.\n\nTipton KD(1), Phillips SM.\n\nAuthor information:\n(1)Health and Exercise Sciences Research Group, University of Stirling, \nStirling, Scotland, UK.\n\nSkeletal muscle hypertrophy is a beneficial adaptation for many individuals. The \nmetabolic basis for muscle hypertrophy is the balance between the rates of \nmuscle protein synthesis (MPS) and muscle protein breakdown (MPB), i.e. net \nmuscle protein balance (NMPB = MPS - MPB). Resistance exercise potentiates the \nresponse of muscle to protein ingestion for up to 24 h following the exercise \nbout. Ingestion of many protein sources in temporal proximity (immediately \nbefore and at least within 24 h after) to resistance exercise increases MPS \nresulting in positive NMPB. Moreover, it seems that not all protein sources are \nequal in their capacity to stimulate MPS. Studies suggest that \u223c20-25 g of a \nhigh-quality protein maximizes the response of MPS following resistance \nexercise, at least in young, resistance-trained males. However, more protein may \nbe required to maximize the response of MPS with less than optimal protein \nsources and/or with older individuals. Ingestion of carbohydrate with protein \ndoes not seem to increase the response of MPS following exercise. The response \nof inactive muscle to protein ingestion is impaired. Ingestion of a high-quality \nprotein within close temporal proximity of exercise is recommended to maximize \nthe potential for muscle growth.\n\nCopyright \u00a9 2013 Nestec Ltd., Vevey/S. Karger AG, Basel.\n\nDOI: 10.1159/000350259"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "31508978",
+          "document_id": "pubmed_31508978",
+          "score": null,
+          "text": "3. Am J Physiol Regul Integr Comp Physiol. 2019 Nov 1;317(5):R709-R718. doi: \n10.1152/ajpregu.00162.2019. Epub 2019 Sep 11.\n\nRevisiting the roles of protein synthesis during skeletal muscle hypertrophy \ninduced by exercise.\n\nFigueiredo VC(1).\n\nAuthor information:\n(1)College of Health Sciences, Department of Rehabilitation Sciences, the Center \nfor Muscle Biology, University of Kentucky, Lexington, Kentucky.\n\nProtein synthesis is deemed the underpinning mechanism enhancing protein balance \nrequired for skeletal muscle hypertrophy in response to resistance exercise. The \ncurrent model of skeletal muscle hypertrophy induced by resistance training \nstates that the acute increase in the rates of protein synthesis after each bout \nof resistance exercise is the basis for muscle growth. Within this paradigm, \neach resistance exercise session would add a specific amount of muscle mass; \ntherefore, muscle hypertrophy could be defined as the result of intermittent and \nshort-lived increases in muscle protein synthesis rates following each \nresistance exercise session. Although a substantial amount of data has \naccumulated in the last decades regarding the acute changes in protein synthesis \n(or translational efficiency) following resistance exercise, considerable gaps \non the mechanism of muscle growth still exist. Ribosome biogenesis and \ntranslational capacity have emerged as important mediators of skeletal muscle \nhypertrophy. Recent advances in the field have demonstrated that skeletal muscle \nhypertrophy is associated with markers of translational capacity and long-term \nchanges in protein synthesis under resting conditions. This review will discuss \nthe caveats of the current model of skeletal muscle hypertrophy induced by \nresistance training while proposing a working model that takes into \nconsideration the novel data generated by independent laboratories utilizing \ndifferent methodologies. It is argued, herein, that the role of protein \nsynthesis in the current model of muscle hypertrophy warrants revisiting.\n\nDOI: 10.1152/ajpregu.00162.2019"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 3,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_nih",
+          "args": {
+            "query": "protein intake for muscle building",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "protein requirements muscle hypertrophy",
+            "max_results": 3
+          }
+        }
+      ],
+      "tokens_used": 5857,
+      "model": "gpt-4o",
+      "latency_ms": 16048,
+      "cost_usd": 0.019,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 2,
+    "expected": "answer",
+    "question": "Does creatine supplementation improve strength and power output?",
+    "status": "ok",
+    "wall_ms": 11063,
+    "response": {
+      "answer": {
+        "answer": "Creatine supplementation is well-supported by research to improve strength and power output. Studies have consistently shown that creatine enhances maximal strength, work output, and power production during high-intensity, short-duration exercises. The supplementation increases the intracellular creatine pool, which enhances the cell's ability to resynthesize ATP, thereby boosting performance outcomes like maximal strength and power output ([Wax et al., 2021](https://pubmed.ncbi.nlm.nih.gov/34199588/)).",
+        "confidence": 0.95,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "34199588",
+          "document_id": "pubmed_34199588",
+          "score": null,
+          "text": "1. Nutrients. 2021 Jun 2;13(6):1915. doi: 10.3390/nu13061915.\n\nCreatine for Exercise and Sports Performance, with Recovery Considerations for \nHealthy Populations.\n\nWax B(1), Kerksick CM(2), Jagim AR(3), Mayo JJ(4), Lyons BC(5), Kreider RB(6).\n\nAuthor information:\n(1)Applied Physiology Laboratory, Department of Kinesiology, Mississippi State \nUniversity, Mississippi State, MS 39759, USA.\n(2)Exercise & Performance Nutrition Laboratory, College of Science, Technology, \nand Health, Lindenwood University, St. Charles, MO 63301, USA.\n(3)Sports Medicine, Mayo Clinic Health System, La Crosse, WI 54601, USA.\n(4)Department of Nutrition and Family Sciences, University of Central Arkansas, \nConway, AR 72035, USA.\n(5)Health, Kinesiology, and Sport Management Department, University of \nWisconsin-Parkside, Kenosha, WI 53141, USA.\n(6)Exercise & Sport Nutrition Lab, Human Clinical Research Facility, Department \nof Health & Kinesiology, Texas A&M University, College Station, TX 77843, USA.\n\nCreatine is one of the most studied and popular ergogenic aids for athletes and \nrecreational weightlifters seeking to improve sport and exercise performance, \naugment exercise training adaptations, and mitigate recovery time. Studies \nconsistently reveal that creatine supplementation exerts positive ergogenic \neffects on single and multiple bouts of short-duration, high-intensity exercise \nactivities, in addition to potentiating exercise training adaptations. In this \nrespect, supplementation consistently demonstrates the ability to enlarge the \npool of intracellular creatine, leading to an amplification of the cell's \nability to resynthesize adenosine triphosphate. This intracellular expansion is \nassociated with several performance outcomes, including increases in maximal \nstrength (low-speed strength), maximal work output, power production (high-speed \nstrength), sprint performance, and fat-free mass. Additionally, creatine \nsupplementation may speed up recovery time between bouts of intense exercise by \nmitigating muscle damage and promoting the faster recovery of lost \nforce-production potential. Conversely, contradictory findings exist in the \nliterature regarding the potential ergogenic benefits of creatine during \nintermittent and continuous endurance-type exercise, as well as in those \nathletic tasks where an increase in body mass may hinder enhanced performance. \nThe purpose of this review was to summarize the existing literature surrounding \nthe efficacy of creatine supplementation on exercise and sports performance, \nalong with recovery factors in healthy populations.\n\nDOI: 10.3390/nu13061915\nPMCID: PMC8228369"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "28190980",
+          "document_id": "pubmed_28190980",
+          "score": null,
+          "text": "2. J Int Soc Sports Nutr. 2017 Feb 7;14:5. doi: 10.1186/s12970-017-0162-2. \neCollection 2017.\n\nEffect of low dose, short-term creatine supplementation on muscle power output \nin elite youth soccer players.\n\nY\u00e1\u00f1ez-Silva A(1), Buzzachera CF(2), Pi\u00e7arro IDC(3), Januario RSB(2), Ferreira \nLHB(4), McAnulty SR(5), Utter AC(5), Souza-Junior TP(4)(5).\n\nAuthor information:\n(1)Direcci\u00f3n de Investigaci\u00f3n, Universidad Mayor Santiago de Chile; Universidad \nSanto Tom\u00e1s, Talca. Chile. Carrera de Educaci\u00f3n F\u00edsica, Santiago de Chile, \nChile.\n(2)Department of Physical Education, North University of Parana, Londrina, \nBrazil.\n(3)School of Physical Education, Max Planck Faculty, Indaiatuba, Brazil.\n(4)Department of Physical Education, Research Group on Metabolism, Nutrition and \nStrength Training, Curitiba, Brazil.\n(5)Department of Health and Exercise Science, Appalachian State University, \nBoone, USA.\n\nBACKGROUND: To determine the effects of a low dose, short-term Creatine \nmonohydrate (Cr) supplementation (0.03\u00a0g.kg.d-1 during 14 d) on muscle power \noutput in elite youth soccer players.\nMETHODS: Using a two-group matched, double blind, placebo-controlled design, \nnineteen male soccer players (mean age\u2009=\u200917.0\u2009\u00b1\u20090.5\u00a0years) were randomly \nassigned to either Cr (N\u2009=\u20099) or placebo (N\u2009=\u200910) group. Before and after \nsupplementation, participants performed a 30s Wingate Anaerobic Test (WAnT) to \nassess peak power output (PPO), mean power output (MPO), fatigue index (FI), and \ntotal work.\nRESULTS: There were significant increases in both PPO and MPO after the Cr \nsupplementation period (P\u2009\u2264\u20090.05) but not the placebo period. There were also \nsignificant increases in total work, but not FI, after the Cr supplementation \nand placebo periods (P\u2009\u2264\u20090.05). Notably, there were differences in total work \nbetween the Cr and placebo groups after (P\u2009\u2264\u20090.05) but not before the 14 d \nsupplementation period.\nCONCLUSION: There is substantial evidence to indicate that a low-dose, \nshort-term oral Cr supplementation beneficially affected muscle power output in \nelite youth soccer players.\n\nDOI: 10.1186/s12970-017-0162-2\nPMCID: PMC5296953"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "11828245",
+          "document_id": "pubmed_11828245",
+          "score": null,
+          "text": "3. Med Sci Sports Exerc. 2002 Feb;34(2):332-43. doi: \n10.1097/00005768-200202000-00023.\n\nEffects of creatine supplementation on muscle power, endurance, and sprint \nperformance.\n\nIzquierdo M(1), Iba\u00f1ez J, Gonz\u00e1lez-Badillo JJ, Gorostiaga EM.\n\nAuthor information:\n(1)Centro de Investigaci\u00f3n y Medicina del Deporte, Gobierno de Navarra, Navarra, \nSpain. mizquierdo@jet.es\n\nPURPOSE: To determine the effects of creatine (Cr) supplementation (20 g x d(-1) \nduring 5 d) on maximal strength, muscle power production during repetitive \nhigh-power-output exercise bouts (MRPB), repeated running sprints, and endurance \nin handball players.\nMETHODS: Nineteen trained male handball players were randomly assigned in a \ndouble-blind fashion to either creatine (N = 9) or placebo (N = 10) group. \nBefore and after supplementation, subjects performed one-repetition maximum \nhalf-squat (1RM(HS) and bench press (1RM(BP)), 2 sets of MRPB consisting of one \nset of 10 continuous repetitions (R10) followed by 1 set until exhaustion \n(R(max)), with exactly 2-min rest periods between each set, during bench-press \nand half-squat protocols with a resistance equal to 60 and 70% of the subjects' \n1RM, respectively. In addition, a countermovement jumping test (CMJ) \ninterspersed before and after the MRPB half-squat exercise bouts and a repeated \nsprint running test and a maximal multistage discontinuous incremental running \ntest (MDRT) were performed.\nRESULTS: Cr supplementation significantly increased body mass (from 79.4 +/- 8 \nto 80 +/- 8 kg; P < 0.05), number of repetitions performed to fatigue, and total \naverage power output values in the R(max) set of MRPB during bench press (21% \nand 17%, respectively) and half-squat (33% and 20%, respectively), the 1RM(HS) \n(11%), as well as the CMJ values after the MRPB half-squat (5%), and the average \nrunning times during the first 5 m of the six repeated 15-m sprints (3%). No \nchanges were observed in the strength, running velocity, or body mass measures \nin the placebo group during the experimental period.\nCONCLUSION: Short-term Cr supplementation leads to significant improvements in \nlower-body maximal strength, maximal repetitive upper- and lower-body high-power \nexercise bouts, and total repetitions performed to fatigue in the R(max) set of \nMRPB, as well as enhanced repeated sprint performance and attenuated decline in \njumping ability after MRPB in highly trained handball players. Cr \nsupplementation did not result in any improvement in upper-body maximal strength \nand in endurance running performance.\n\nDOI: 10.1097/00005768-200202000-00023"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "33441158",
+          "document_id": "pubmed_33441158",
+          "score": null,
+          "text": "4. J Int Soc Sports Nutr. 2021 Jan 13;18(1):9. doi: 10.1186/s12970-020-00405-1.\n\nThe effect of Omega-3 polyunsaturated fatty acid supplementation on \nexercise-induced muscle damage.\n\nKyriakidou Y(1), Wood C(1)(2), Ferrier C(1), Dolci A(1), Elliott B(3).\n\nAuthor information:\n(1)Translational Physiology Research Group, School of Life Sciences, College of \nLiberal Arts and Sciences, University of Westminster, London, W1W 6UW, UK.\n(2)School of Sport, Rehabilitation and Exercise Sciences, University of Essex, \nEssex, UK.\n(3)Translational Physiology Research Group, School of Life Sciences, College of \nLiberal Arts and Sciences, University of Westminster, London, W1W 6UW, UK. \nb.elliott@westminster.ac.uk.\n\nBACKGROUND: Exercise-induced muscle damage (EIMD) results in transient muscle \ninflammation, strength loss, muscle soreness and may cause subsequent exercise \navoidance. Omega-3 (n-3) supplementation may minimise EIMD via its \nanti-inflammatory properties, however, its efficacy remains unclear.\nMETHODS: Healthy males (n\u2009=\u200914, 25.07\u2009\u00b1\u20094.05\u2009years) were randomised to 3\u2009g/day \nn-3 supplementation (N-3, n\u2009=\u20097) or placebo (PLA, n\u2009=\u20097). Following 4\u2009weeks \nsupplementation, a downhill running protocol (60\u2009min, 65% V\u0307O2max, -\u200910% \ngradient) was performed. Creatine kinase (CK), interleukin (IL)-6 and tumour \nnecrosis factor (TNF)-\u03b1, perceived muscle soreness, maximal voluntary isometric \ncontraction (MVIC) and peak power were quantified pre, post, and 24, 48 and 72\u2009h \npost-EIMD.\nRESULTS: Muscle soreness was significantly lower in N-3 vs PLA group at 24\u2009h \npost-EIMD (p\u2009=\u20090.034). IL-6 was increased in PLA (p\u00a0=\u20090.009) but not in N-3 \n(p\u00a0=\u20090.434) following EIMD, however, no significant differences were noted \nbetween groups. Peak power was significantly suppressed in PLA relative to \npre-EIMD but not in N-3 group at 24\u2009h post-EIMD. However, no significant \ndifference in peak power output was observed between groups. MVIC, CK and TNF-\u03b1 \nwere altered by EIMD but did not differ between groups.\nCONCLUSION: N-3 supplementation for 4\u2009weeks may successfully attenuate minor \naspects of EIMD. Whilst not improving performance, these findings may have \nrelevance to soreness-associated exercise avoidance.\n\nDOI: 10.1186/s12970-020-00405-1\nPMCID: PMC7807509"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "19387397",
+          "document_id": "pubmed_19387397",
+          "score": null,
+          "text": "5. J Strength Cond Res. 2009 May;23(3):818-26. doi: 10.1519/JSC.0b013e3181a2ed11.\n\nEffects of creatine monohydrate and polyethylene glycosylated creatine \nsupplementation on muscular strength, endurance, and power output.\n\nHerda TJ(1), Beck TW, Ryan ED, Smith AE, Walter AA, Hartman MJ, Stout JR, Cramer \nJT.\n\nAuthor information:\n(1)Department of Health and Exercise Science, University of Oklahoma, Norman, \nOklahoma, USA.\n\nThe purpose of this study was to examine the effects of a moderate dose of \ncreatine monohydrate (CM) and two smaller doses of polyethylene glycosylated \n(PEG) creatine on muscular strength, endurance, and power output. Fifty-eight \nhealthy men (mean +/- SD: age, 21 +/- 2 years; height, 176 +/- 6 cm; body mass \n[BM], 75 +/- 14 kg) volunteered and were randomly assigned to 1 of 4 groups: (a) \nplacebo (PL; 3.6 g of microcrystalline cellulose; n = 15), (b) CM (5 g of \ncreatine; n = 13), (c) small-dose PEG creatine (1.25 g of creatine: PEG1.25; n = \n14), or (d) moderate-dose PEG creatine (2.50 g of creatine: PEG2.50; n = 16). \nTesting was conducted before (pre-) and after (post-) a 30-day supplementation \nperiod. Measurements included body mass, countermovement vertical jump (CVJ) \nheight, power output during the Wingate test (peak power [PP] and mean power \n[MP]), 1 repetition maximum bench press (1RMBP), 1RM leg press (1RMLP) strength, \nand repetitions to failure at 80% of the 1RM for bench press (REPBP) and leg \npress (REPLP). BM and MP (W) increased (p <or= 0.05) from pre- to \npostsupplementation for the CM group only, whereas 1RMBP and 1RMLP increased (p \n<or= 0.05) for the CM, PEG1.25, and PEG2.50 groups. CVJ height (cm and cm.kg), \nMP (W.kg), PP (W and W.kg), REPBP, and REPLP increased (p <or= 0.05) for all \ngroups. These findings indicated that the recommended safe dose of 5 g.d of CM \nincreased BM and improved muscle strength (1RMBP and 1RMLP). Smaller doses of \nPEG creatine (1.25 and 2.50 g.d) improved muscle strength (1RMBP and 1RMLP) to \nthe same extent as 5 g.d of CM, but did not alter BM, power output, or \nendurance. When compared to the PL group, neither CM nor PEG creatine \nsupplementation improved peak power output (CVJ or PP), MP, or muscle endurance \n(REPBP or REPLP). Thus, PEG creatine may have ergogenic effects that are \ncomparable to those of CM, but with a smaller dose of creatine.\n\nDOI: 10.1519/JSC.0b013e3181a2ed11"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 5,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "creatine supplementation strength power output"
+          }
+        }
+      ],
+      "tokens_used": 9410,
+      "model": "gpt-4o",
+      "latency_ms": 10760,
+      "cost_usd": 0.02693,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 3,
+    "expected": "answer",
+    "question": "What is the recommended daily intake of vitamin D for athletes?",
+    "status": "ok",
+    "wall_ms": 11582,
+    "response": {
+      "answer": {
+        "answer": "The recommended daily intake (RDA) of vitamin D for athletes does not differ significantly from that of the general population. According to research, the general RDA for vitamin D is set at 600 International Units (IU) for most adults, which includes athletes. This level is intended to maintain adequate bone health and overall health in most people. However, it's worth noting that athletes might have increased demands due to their physical activity, and they should ensure they meet these levels through diet, supplements, or sun exposure to prevent deficiency. In a study, it was reported that many collegiate athletes had a median intake below the RDA, suggesting a need for greater awareness and potentially supplementation in some cases [Leitch et al., 2021].",
+        "confidence": 0.85,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "31373981",
+          "document_id": "pubmed_31373981",
+          "score": null,
+          "text": "1. J Strength Cond Res. 2021 Oct 1;35(10):2742-2748. doi: \n10.1519/JSC.0000000000003240.\n\nVitamin D Awareness and Intake in Collegiate Athletes.\n\nLeitch BA(1), Wilson PB(2), Ufholz KE(3), Roemmich JN(3), Orysiak J(4), Walch \nTJ(1), Short SE(1), Fitzgerald JS(1).\n\nAuthor information:\n(1)Department of Education, Health and Behavior Studies, University of North \nDakota, Grand Forks, North Dakota.\n(2)Human Movement Sciences, Old Dominion University, Norfolk, Virginia.\n(3)USDA, Agricultural Research Service, Grand Forks Human Nutrition Research \nCenter, Grand Forks, North Dakota; and.\n(4)Department of Nutrition Physiology and Dietetics, Institute of Sport, \nNational Research Institute, Warsaw, Poland.\n\nLeitch, BA, Wilson, PB, Ufholz, KE, Roemmich, JN, Orysiak, J, Walch, TJ, Short, \nSE, and Fitzgerald, JS. Vitamin D awareness and intake in collegiate athletes. J \nStrength Cond Res 35(10): 2742-2748, 2021-Poor vitamin D status is a risk factor \nfor negative health and performance outcomes in athletes, but little is known \nabout how athletes' awareness and beliefs about vitamin D affect their \nconsumption of vitamin D. This observational study investigated awareness of \nvitamin D for health and performance among collegiate athletes and evaluated the \nassociation of vitamin D awareness with its dietary intake. Fifty-two female and \n29 male Division I collegiate athletes completed an online vitamin D awareness \nand dietary intake questionnaire between November 1, 2015, and January 30, 2016. \nMedian intake of vitamin D was 330 International Units (IU), which is below the \nrecommended daily allowance (RDA) of 600 IU, but was greater in male athletes \n(693 IU) than female athletes (263 IU, p < 0.01). The RDA for vitamin D was met \nby 62% of men and 30% of women. Athletes responded that vitamin D \"probably\" or \n\"definitely\" will play a role in their health (88.9%) and athletic performance \n(71.6%). However, only 23.4 and 28.4% of athletes reported concern for their \nvitamin D levels or believed that they were at risk for deficiency, \nrespectively. Results showed small-to-moderate, positive correlations (r = \n0.28-0.495, p < 0.05) between aspects of vitamin D awareness and vitamin D \nintake, particularly with supplemental forms of vitamin D. Given the lack of \nawareness concerning risk of vitamin D deficiency, and the links between aspects \nof vitamin D awareness and vitamin D intake, nutritional education programs \ndesigned to increase vitamin D awareness in athletes may be an effective \nstrategy to reduce deficiency.\n\nCopyright \u00a9 2019 National Strength and Conditioning Association.\n\nDOI: 10.1519/JSC.0000000000003240"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "37127187",
+          "document_id": "pubmed_37127187",
+          "score": null,
+          "text": "2. Adv Nutr. 2023 Jul;14(4):774-795. doi: 10.1016/j.advnut.2023.04.012. Epub 2023\n Apr 29.\n\nNutritional Considerations for the Vegan Athlete.\n\nWest S(1), Monteyne AJ(1), van der Heijden I(1), Stephens FB(1), Wall BT(2).\n\nAuthor information:\n(1)Public Health and Sport Sciences, Faculty of Health and Life Sciences, \nUniversity of Exeter, Exeter, United Kingdom.\n(2)Public Health and Sport Sciences, Faculty of Health and Life Sciences, \nUniversity of Exeter, Exeter, United Kingdom. Electronic address: \nb.t.wall@exeter.ac.uk.\n\nAccepting a continued rise in the prevalence of vegan-type diets in the general \npopulation is also likely to occur in athletic populations, it is of importance \nto assess the potential impact on athletic performance, adaptation, and \nrecovery. Nutritional consideration for the athlete requires optimization of \nenergy, macronutrient, and micronutrient intakes, and potentially the judicious \nselection of dietary supplements, all specified to meet the individual athlete's \ntraining and performance goals. The purpose of this review is to assess whether \nadopting a vegan diet is likely to impinge on such optimal nutrition and, where \nso, consider evidence based yet practical and pragmatic nutritional \nrecommendations. Current evidence does not support that a vegan-type diet will \nenhance performance, adaptation, or recovery in athletes, but equally suggests \nthat an athlete can follow a (more) vegan diet without detriment. A clear \ncaveat, however, is that vegan diets consumed spontaneously may induce \nsuboptimal intakes of key nutrients, most notably quantity and/or quality of \ndietary protein and specific micronutrients (eg, iron, calcium, vitamin B12, and \nvitamin D). As such, optimal vegan sports nutrition requires (more) careful \nconsideration, evaluation, and planning. Individual/seasonal goals, training \nmodalities, athlete type, and sensory/cultural/ethical preferences, among other \nfactors, should all be considered when planning and adopting a vegan diet.\n\nCopyright \u00a9 2023 The Authors. Published by Elsevier Inc. All rights reserved.\n\nDOI: 10.1016/j.advnut.2023.04.012\nPMCID: PMC10334161"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "36862943",
+          "document_id": "pubmed_36862943",
+          "score": null,
+          "text": "3. J Int Soc Sports Nutr. 2023 Dec;20(1):2171314. doi: \n10.1080/15502783.2023.2171314.\n\nInternational society of sports nutrition position stand: energy drinks and \nenergy shots.\n\nJagim AR(1)(2), Harty PS(3), Tinsley GM(4), Kerksick CM(1)(3), Gonzalez AM(5), \nKreider RB(6), Arent SM(7), Jager R(8), Smith-Ryan AE(9), Stout JR(10), Campbell \nBI(11), VanDusseldorp T(12)(13), Antonio J(14).\n\nAuthor information:\n(1)Sports Medicine, Mayo Clinic Health System, La Crosse, WI, USA.\n(2)Exercise & Sport Science, University of Wisconsin - La Crosse, La Crosse, WI, \nUSA.\n(3)Exercise & Performance Nutrition Laboratory, Lindenwood University, St. \nCharles, MO, USA.\n(4)Energy Balance and Body Composition Laboratory, Department of Kinesiology & \nSport Management, Texas Tech University, Lubbock, TX, USA.\n(5)Department of Allied Health and Kinesiology, Hofstra University, Hempstead, \nNY, USA.\n(6)Exercise & Sport Nutrition Lab, Department of Kinesiology and Sport \nManagement, Texas A&M University, College Station, TX, USA.\n(7)Department of Exercise Science, Arnold School of Public Health, University of \nSouth Carolina, Columbia, SC, USA.\n(8)Increnovo LLC, Whitefish Bay, WI, USA.\n(9)Applied Physiology Laboratory, Department of Exercise & Sport Science, \nUniversity of North Carolina, Chapel Hill, NC, USA.\n(10)School of Kinesiology and Rehabilitation Science, University of Central \nFlorida, Orlando, FL, USA.\n(11)Performance & Physique Enhancement Laboratory, University of South Florida, \nTampa, FL, USA.\n(12)Bonafede Health, LLC, JDS Therapeutics, Harrison, NY, USA.\n(13)Department of Health and Exercise Sciences, Jacksonville University, \nJacksonville, FL, USA.\n(14)Department of Health and Human Performance, Nova Southeastern University, \nDavie, FL, USA.\n\nPosition Statement: The International Society of Sports Nutrition (ISSN) bases \nthe following position stand on a critical analysis of the literature regarding \nthe effects of energy drink (ED) or energy shot (ES) consumption on acute \nexercise performance, metabolism, and cognition, along with synergistic \nexercise-related performance outcomes and training adaptations. The following 13 \npoints constitute the consensus of the Society and have been approved by the \nResearch Committee of the Society: Energy drinks (ED) commonly contain caffeine, \ntaurine, ginseng, guarana, carnitine, choline, B vitamins (vitamins B1, B2, B3, \nB5, B6, B9, and B12), vitamin C, vitamin A (beta carotene), vitamin D, \nelectrolytes (sodium, potassium, magnesium, and calcium), sugars (nutritive and \nnon-nutritive sweeteners), tyrosine, and L-theanine, with prevalence for each \ningredient ranging from 1.3 to 100%. Energy drinks can enhance acute aerobic \nexercise performance, largely influenced by the amount of caffeine (> 200\u00a0mg or \n>3\u00a0mg\u2219kg bodyweight [BW-1]) in the beverage. Although ED and ES contain several \nnutrients that are purported to affect mental and/or physical performance, the \nprimary ergogenic nutrients in most ED and ES based on scientific evidence \nappear to be caffeine and/or the carbohydrate provision. The ergogenic value of \ncaffeine on mental and physical performance has been well-established, but the \npotential additive benefits of other nutrients contained in ED and ES remains to \nbe determined. Consuming ED and ES 10-60\u00a0minutes before exercise can improve \nmental focus, alertness, anaerobic performance, and/or endurance performance \nwith doses >3\u00a0mg\u2219kg BW-1. Consuming ED and ES containing at least 3\u00a0mg\u2219kg BW-1 \ncaffeine is most likely to benefit maximal lower-body power production. \nConsuming ED and ES can improve endurance, repeat sprint performance, and \nsport-specific tasks in the context of team sports. Many ED and ES contain \nnumerous ingredients that either have not been studied or evaluated in \ncombination with other nutrients contained in the ED or ES. For this reason, \nthese products need to be studied to demonstrate efficacy of single- and \nmulti-nutrient formulations for physical and cognitive performance as well as \nfor safety. Limited evidence is available to suggest that consumption of \nlow-calorie ED and ES during training and/or weight loss trials may provide \nergogenic benefit and/or promote additional weight control, potentially through \nenhanced training capacity. However, ingestion of higher calorie ED may promote \nweight gain if the energy intake from consumption of ED is not carefully \nconsidered as part of the total daily energy intake. Individuals should consider \nthe impact of regular coingestion of high glycemic index carbohydrates from ED \nand ES on metabolic health, blood glucose, and insulin levels. Adolescents (aged \n12 through 18) should exercise caution and seek parental guidance when \nconsidering the consumption of ED and ES, particularly in excessive amounts \n(e.g. > 400\u00a0mg), as limited evidence is available regarding the safety of these \nproducts among this population. Additionally, ED and ES are not recommended for \nchildren (aged 2-12), those who are pregnant, trying to become pregnant, or \nbreastfeeding and those who are sensitive to caffeine. Diabetics and individuals \nwith preexisting cardiovascular, metabolic, hepatorenal, and/or neurologic \ndisease who are taking medications that may be affected by high glycemic load \nfoods, caffeine, and/or other stimulants should exercise caution and consult \nwith their physician prior to consuming ED. The decision to consume ED or ES \nshould be based upon the beverage's content of carbohydrate, caffeine, and other \nnutrients and a thorough understanding of the potential side effects. \nIndiscriminate use of ED or ES, especially if multiple servings per day are \nconsumed or when consumed with other caffeinated beverages and/or foods, may \nlead to adverse effects. The purpose of this review is to provide an update to \nthe position stand of the International Society of Sports Nutrition (ISSN) \nintegrating current literature on ED and ES in exercise, sport, and medicine. \nThe effects of consuming these beverages on acute exercise performance, \nmetabolism, markers of clinical health, and cognition are addressed, as well as \nmore chronic effects when evaluating ED/ES use with exercise-related training \nadaptions.\n\nDOI: 10.1080/15502783.2023.2171314\nPMCID: PMC9987737"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 3,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_nih",
+          "args": {
+            "query": "vitamin D recommended daily intake for athletes"
+          }
+        },
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "vitamin D intake recommendations athletes",
+            "max_results": 3
+          }
+        }
+      ],
+      "tokens_used": 8362,
+      "model": "gpt-4o",
+      "latency_ms": 10741,
+      "cost_usd": 0.023838,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 4,
+    "expected": "answer",
+    "question": "Does intermittent fasting cause muscle loss?",
+    "status": "ok",
+    "wall_ms": 10550,
+    "response": {
+      "answer": {
+        "answer": "Intermittent fasting (IF) has become a popular dietary method for weight loss and health improvement. Concerns about muscle loss due to IF have been addressed in existing literature. A systematic review analyzing the effects of IF on sports performance and body composition found that while IF is effective for improving body composition, it generally maintains muscle mass and does not adversely affect physical performance. This suggests that IF does not inherently lead to muscle loss ([Conde-Pip\u00f3 et al., 2024](https://pubmed.ncbi.nlm.nih.gov/38201996/)).\n\nAdditional research indicates that in the context of resistance training and proper nutritional intake, IF might actually support muscle retention or even gains. The practice of IF in conjunction with physical activity is shown to improve or at least maintain muscle mass while reducing fat mass ([Sandoval et al., 2021](https://pubmed.ncbi.nlm.nih.gov/34474513/)).\n\nTherefore, while IF does not inherently cause muscle loss, ensuring adequate protein intake and combining it with resistance exercise can help maintain muscle mass.\n\nOverall, the current research suggests that intermittent fasting, when done properly, does not cause muscle loss and can be part of a healthy lifestyle.\n\n**References:**\n- Conde-Pip\u00f3 J, et al. Intermittent Fasting: Does It Affect Sports Performance? A Systematic Review (2024).\n- Sandoval C, et al. Effectiveness of intermittent fasting to potentiate weight loss or muscle gains in humans younger than 60 years old: a systematic review (2021).",
+        "confidence": 0.85,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "38201996",
+          "document_id": "pubmed_38201996",
+          "score": null,
+          "text": "1. Nutrients. 2024 Jan 4;16(1):168. doi: 10.3390/nu16010168.\n\nIntermittent Fasting: Does It Affect Sports Performance? A Systematic Review.\n\nConde-Pip\u00f3 J(1), Mora-Fernandez A(1), Martinez-Bebia M(2), Gimenez-Blasi N(3), \nLopez-Moro A(1), Latorre JA(2), Almendros-Ruiz A(1), Requena B(4), \nMariscal-Arcas M(1)(5).\n\nAuthor information:\n(1)Health Science and Nutrition Research (HSNR, CTS-1118), Department of \nNutrition and Food Science, University of Granada, Campus of Cartuja s/n, 18071 \nGranada, Spain.\n(2)Department Food Technology, Nutrition and Food Science, Campus of Lorca, \nUniversity of Murcia, 30100 Murcia, Spain.\n(3)Nutrition Area, Faculty of Health Sciences, Catholic University of Avila, \n05005 \u00c1vila, Spain.\n(4)Research and Development Department, Football Science Institute, 18016 \nGranada, Spain.\n(5)Instituto de Investigaci\u00f3n Biosanitaria (ibs.GRANADA), 18012 Granada, Spain.\n\nIntermittent fasting is one of the most popular types of diet at the moment \nbecause it is an effective nutritional strategy in terms of weight loss. The \nmain objective of this review is to analyze the effects that intermittent \nfasting has on sports performance. We analyzed physical capacities: aerobic \ncapacity, anaerobic capacity, strength, and power, as well as their effect on \nbody composition. For this, a bibliographic search was carried out in several \ndatabases where 25 research articles were analyzed to clarify these objectives. \nInclusion criteria: dates between 2013 and present, free full texts, studies \nconducted in adult human athletes, English and/or Spanish languages, and if it \nhas been considered that intermittent fasting is mainly linked to sports \npractice and that this obtains a result in terms of performance or physical \ncapacities. This review was registered in PROSPERO with code ref. 407024, and an \nevaluation of the quality or risk of bias was performed. After this analysis, \nresults were obtained regarding the improvement of body composition and the \nmaintenance of muscle mass. An influence of intermittent fasting on sports \nperformance and body composition is observed. It can be concluded that \nintermittent fasting provides benefits in terms of body composition without \nreducing physical performance, maintenance of lean mass, and improvements in \nmaximum power. But despite this, it is necessary to carry out new studies \nfocusing on the sports field since the samples have been very varied. \nAdditionally, the difference in hours of intermittent fasting should be studied, \nespecially in the case of overnight fasting.\n\nDOI: 10.3390/nu16010168\nPMCID: PMC10780856"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "35684143",
+          "document_id": "pubmed_35684143",
+          "score": null,
+          "text": "2. Nutrients. 2022 Jun 3;14(11):2343. doi: 10.3390/nu14112343.\n\nEffect of Intermittent Fasting on Reproductive Hormone Levels in Females and \nMales: A Review of Human Trials.\n\nCienfuegos S(1), Corapi S(1), Gabel K(1), Ezpeleta M(1), Kalam F(1), Lin S(1), \nPavlou V(1), Varady KA(1).\n\nAuthor information:\n(1)Department of Kinesiology and Nutrition, University of Illinois at Chicago, \nChicago, IL 60647, USA.\n\nIntermittent fasting is a popular diet for weight loss, but concerns have been \nraised regarding the effects of fasting on the reproductive health of women and \nmen. Accordingly, we conducted this literature review to clarify the effects of \nfasting on reproductive hormone levels in humans. Our results suggest that \nintermittent fasting decreases androgen markers (i.e., testosterone and the free \nandrogen index (FAI)) while increasing sex hormone-binding globulin (SHBG) \nlevels in premenopausal females with obesity. This effect was more likely to \noccur when food consumption was confined to earlier in the day (eating all food \nbefore 4 pm). In contrast, fasting did not have any effect on estrogen, \ngonadotropins, or prolactin levels in women. As for men, intermittent fasting \nreduced testosterone levels in lean, physically active, young males, but it did \nnot affect SHBG concentrations. Interestingly, muscle mass and muscular strength \nwere not negatively affected by these reductions in testosterone. In \ninterpreting these findings, it is important to note that very few studies have \nbeen conducted on this topic. Thus, it is difficult to draw solid conclusions at \npresent. From the limited data presented here, it is possible that intermittent \nfasting may decrease androgen markers in both genders. If this is the case, \nthese results would have varied health implications. On the one hand, fasting \nmay prove to be a valuable tool for treating hyperandrogenism in females with \npolycystic ovarian syndrome (PCOS) by improving menstruation and fertility. On \nthe other hand, fasting may be shown to decrease androgens among males, which \ncould negatively affect metabolic health and libido. More research is warranted \nto confirm these preliminary findings.\n\nDOI: 10.3390/nu14112343\nPMCID: PMC9182756"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "34474513",
+          "document_id": "pubmed_34474513",
+          "score": null,
+          "text": "3. Endocrinol Metab (Seoul). 2021 Aug;36(4):745-756. doi: 10.3803/EnM.2021.405. \nEpub 2021 Aug 27.\n\nEffects of Intermittent Fasting on the Circulating Levels and Circadian Rhythms \nof Hormones.\n\nKim BH(1)(2), Joo Y(3), Kim MS(4), Choe HK(5), Tong Q(6), Kwon O(1)(2)(7).\n\nAuthor information:\n(1)Department of Biochemistry and Molecular Biology, Seoul National University \nCollege of Medicine, Seoul, Korea.\n(2)Genomic Medicine Institute, Medical Research Center, Seoul National \nUniversity, Seoul, Korea.\n(3)Seoul National University College of Medicine, Seoul, Korea.\n(4)Division of Endocrinology and Metabolism, Department of Internal Medicine, \nDiabetes Center, Asan Medical Center, University of Ulsan College of Medicine, \nSeoul, Korea.\n(5)Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of \nScience and Technology (DGIST), Daegu, Korea.\n(6)Brown Institute of Molecular Medicine and Department of Neurobiology and \nAnatomy, McGovern Medical School of UTHealth, and MD Anderson Cancer Center & \nUTHealth Graduate School of Biomedical Sciences, Houston, TX, USA.\n(7)Department of Biomedical Sciences, Seoul National University College of \nMedicine, Seoul, Korea.\n\nIntermittent fasting has become an increasingly popular strategy in losing \nweight and associated reduction in obesity-related medical complications. \nOverwhelming studies support metabolic improvements from intermittent fasting in \nblood glucose levels, cardiac and brain function, and other health benefits, in \naddition to weight loss. However, concerns have also been raised on side effects \nincluding muscle loss, ketosis, and electrolyte imbalance. Of particular \nconcern, the effect of intermittent fasting on hormonal circadian rhythms has \nreceived little attention. Given the known importance of circadian hormonal \nchanges to normal physiology, potential detrimental effects by dysregulation of \nhormonal changes deserve careful discussions. In this review, we describe the \nchanges in circadian rhythms of hormones caused by intermittent fasting. We \ncovered major hormones commonly pathophysiologically involved in clinical \nendocrinology, including insulin, thyroid hormones, and glucocorticoids. Given \nthat intermittent fasting could alter both the level and frequency of hormone \nsecretion, decisions on practicing intermittent fasting should take more \nconsiderations on potential detrimental consequences versus beneficial effects \npertaining to individual health conditions.\n\nDOI: 10.3803/EnM.2021.405\nPMCID: PMC8419605"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "33397167",
+          "document_id": "pubmed_33397167",
+          "score": null,
+          "text": "4. Int J Food Sci Nutr. 2021 Sep;72(6):734-745. doi:\n10.1080/09637486.2020.1868412.  Epub 2021 Jan 4.\n\nEffectiveness of intermittent fasting to potentiate weight loss or muscle gains \nin humans younger than 60 years old: a systematic review.\n\nSandoval C(1), Santiba\u00f1ez S(2), Villagr\u00e1n F(3).\n\nAuthor information:\n(1)Department of Preclinical Sciences, Faculty of Medicine, Universidad de La \nFrontera, Temuco, Chile.\n(2)Undergraduate Program of Nutrition and Diet, Faculty of Sciences, Universidad \nMayor, Temuco, Chile.\n(3)Doctoral Program in Morphological Sciences, Faculty of Medicine, Universidad \nde La Frontera, Temuco, Chile.\n\nComment in\n    Int J Food Sci Nutr. 2021 Sep;72(6):721-722. doi: \n10.1080/09637486.2021.1967301.\n\nThe aim was to determinate if the intermittent fasting enhances weight loss or \nmuscle gains in humans younger than 60\u2009years old. Multiple databases were \nsearched up to May 2020 for studies in English, using MeSH terms and text words \nrelating intermittent fasting, weight loss and muscle gains. The protocol was \nregistered in PROSPERO. Study quality was assessed using NICE methodology. A \ntotal of 10 original articles were evaluated. Eight papers collected data \nthrough randomised controlled trials and two from cross-sectional study. \nIntermittent fasting could be beneficial in resistance trained subjects or in \noverweight individuals to improve body composition by decreasing fat mass and at \nleast maintain muscle mass; decrease in GLP-1 levels and; improving \nhealth-related biomarkers such glucose and insulin levels. However, future \nstudies are needed in order to better elucidate the effect of intermittent \nfasting on body composition.\n\nDOI: 10.1080/09637486.2020.1868412"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "33849562",
+          "document_id": "pubmed_33849562",
+          "score": null,
+          "text": "5. J Transl Med. 2021 Apr 13;19(1):148. doi: 10.1186/s12967-021-02817-2.\n\nEight-hour time-restricted feeding improves endocrine and metabolic profiles in \nwomen with\u00a0anovulatory polycystic ovary syndrome.\n\nLi C(1), Xing C(1), Zhang J(1), Zhao H(1), Shi W(1), He B(2).\n\nAuthor information:\n(1)Shengjing Hospital of China Medical University, No. 36 Sanhao Street, Heping \nDistrict, Shenyang, Liaoning, China.\n(2)Shengjing Hospital of China Medical University, No. 36 Sanhao Street, Heping \nDistrict, Shenyang, Liaoning, China. hebing7557@163.com.\n\nBACKGROUND: Time-restricted feeding (TRF) is a form of intermittent fasting, \nwhich is beneficial for weight loss and cardiometabolic health. Polycystic ovary \nsyndrome (PCOS) is one of the most common reproductive endocrine and metabolic \ndiseases affecting women of childbearing age. It is associated with an increased \nprevalence of metabolic syndrome, cardiovascular diseases and type 2 diabetes. \nThe effects of TRF on PCOS patients remains undefined, here we investigated the \nimpact of TRF on women with anovulatory PCOS.\nMETHODS: Eighteen PCOS women aged between 18 and 31 with anovulation \nparticipated in a 6-week trial which were divided into two consecutive periods: \n(1) 1-week baseline weight stabilization period and (2) 5-week TRF period. \nFifteen participants completed the study. Changes in body weight, body mass \nindex (BMI), Waist-to-Hip Ratio, skeletal muscle mass, body fat mass (BFM), body \nfat percentage (BF%), visceral fat area (VFA), luteinizing hormone (LH), \nfollicle-stimulating hormone (FSH), LH/FSH, total testosterone (TT), sex \nhormone-binding globulin (SHBG), free androgen index (FAI), fasting glucose, \nfasting insulin (FINS), homeostasis model assessment-insulin resistance \n(HOMA-IR), area under the curve (AUC) for insulin (AUCIns), area under the curve \n(AUC) for glucose (AUCGlu), AUCIns/AUCGlu Ratio, lipids, uric acid, alanine \naminotransferase (ALT), aspartate aminotransferase, high-sensitivity C-reactive \nprotein (hsCRP), insulin-like growth factor (IGF-1), menstrual cycle and eating \nbehaviors were evaluated.\nRESULTS: Significant changes in body weight, BMI, BFM, BF%, VFA, TT, SHBG, FAI, \nFINS, HOMA-IR, AUCIns, AUCIns/AUCGlu Ratio, ALT, hsCRP and IGF-1 were found \nafter the TRF period. An improvement in menstrual cycle irregularity was \ndetected in 73.3% (11/15) patients.\nCONCLUSION: The diet of TRF may be beneficial to anovulatory PCOS on weight loss \nespecially reducing body fat, improving menstruation, hyperandrogenemia, insulin \nresistance and chronic inflammation. Trial registration Clinicaltrial.gov, \nNCT04580433, registered October 8, 2020, \nhttps://clinicaltrials.gov/ct2/show/NCT04580433.\n\nDOI: 10.1186/s12967-021-02817-2\nPMCID: PMC8045367"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 5,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "intermittent fasting muscle loss",
+            "max_results": 5
+          }
+        }
+      ],
+      "tokens_used": 8728,
+      "model": "gpt-4o",
+      "latency_ms": 9894,
+      "cost_usd": 0.026088,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 5,
+    "expected": "answer",
+    "question": "How do omega-3 fatty acids affect exercise-induced inflammation?",
+    "status": "ok",
+    "wall_ms": 10904,
+    "response": {
+      "answer": {
+        "answer": "Omega-3 fatty acids, particularly in the form of EPA and DHA, have shown potential in mitigating exercise-induced inflammation through their anti-inflammatory properties. Research suggests that supplementation with omega-3s can attenuate exercise-induced muscle damage (EIMD). For instance, omega-3 supplementation was found to significantly reduce muscle soreness and prevent increases in certain inflammatory markers like interleukin-6 following a strenuous exercise protocol [1]. Moreover, another review suggests that omega-3 fatty acids can provide anti-inflammatory, pro-resolving, and analgesic effects that may help reduce delayed onset muscle soreness (DOMS) and inflammation after eccentric exercise, although the evidence is complicated by study design limitations [2]. Overall, while omega-3s do not directly enhance performance, they can aid in reducing soreness-related exercise avoidance, which may indirectly support better training adherence and recovery [1].",
+        "confidence": 0.85,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "33441158",
+          "document_id": "pubmed_33441158",
+          "score": null,
+          "text": "1. J Int Soc Sports Nutr. 2021 Jan 13;18(1):9. doi: 10.1186/s12970-020-00405-1.\n\nThe effect of Omega-3 polyunsaturated fatty acid supplementation on \nexercise-induced muscle damage.\n\nKyriakidou Y(1), Wood C(1)(2), Ferrier C(1), Dolci A(1), Elliott B(3).\n\nAuthor information:\n(1)Translational Physiology Research Group, School of Life Sciences, College of \nLiberal Arts and Sciences, University of Westminster, London, W1W 6UW, UK.\n(2)School of Sport, Rehabilitation and Exercise Sciences, University of Essex, \nEssex, UK.\n(3)Translational Physiology Research Group, School of Life Sciences, College of \nLiberal Arts and Sciences, University of Westminster, London, W1W 6UW, UK. \nb.elliott@westminster.ac.uk.\n\nBACKGROUND: Exercise-induced muscle damage (EIMD) results in transient muscle \ninflammation, strength loss, muscle soreness and may cause subsequent exercise \navoidance. Omega-3 (n-3) supplementation may minimise EIMD via its \nanti-inflammatory properties, however, its efficacy remains unclear.\nMETHODS: Healthy males (n\u2009=\u200914, 25.07\u2009\u00b1\u20094.05\u2009years) were randomised to 3\u2009g/day \nn-3 supplementation (N-3, n\u2009=\u20097) or placebo (PLA, n\u2009=\u20097). Following 4\u2009weeks \nsupplementation, a downhill running protocol (60\u2009min, 65% V\u0307O2max, -\u200910% \ngradient) was performed. Creatine kinase (CK), interleukin (IL)-6 and tumour \nnecrosis factor (TNF)-\u03b1, perceived muscle soreness, maximal voluntary isometric \ncontraction (MVIC) and peak power were quantified pre, post, and 24, 48 and 72\u2009h \npost-EIMD.\nRESULTS: Muscle soreness was significantly lower in N-3 vs PLA group at 24\u2009h \npost-EIMD (p\u2009=\u20090.034). IL-6 was increased in PLA (p\u00a0=\u20090.009) but not in N-3 \n(p\u00a0=\u20090.434) following EIMD, however, no significant differences were noted \nbetween groups. Peak power was significantly suppressed in PLA relative to \npre-EIMD but not in N-3 group at 24\u2009h post-EIMD. However, no significant \ndifference in peak power output was observed between groups. MVIC, CK and TNF-\u03b1 \nwere altered by EIMD but did not differ between groups.\nCONCLUSION: N-3 supplementation for 4\u2009weeks may successfully attenuate minor \naspects of EIMD. Whilst not improving performance, these findings may have \nrelevance to soreness-associated exercise avoidance.\n\nDOI: 10.1186/s12970-020-00405-1\nPMCID: PMC7807509"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "26553492",
+          "document_id": "pubmed_26553492",
+          "score": null,
+          "text": "2. Sports Med. 2015 Nov;45 Suppl 1:S93-104. doi: 10.1007/s40279-015-0398-4.\n\nNutritional Support for Exercise-Induced Injuries.\n\nTipton KD(1).\n\nAuthor information:\n(1)Health and Exercise Sciences Research Group, University of Stirling, Cottrell \nBuilding, Stirling, FK9 4LA, Scotland, UK. k.d.tipton@stir.ac.uk.\n\nNutrition is one method to counter the negative impact of an exercise-induced \ninjury. Deficiencies of energy, protein and other nutrients should be avoided. \nClaims for the effectiveness of many other nutrients following injuries are \nrampant, but the evidence is equivocal. The results of an exercise-induced \ninjury may vary widely depending on the nature of the injury and severity. \nInjuries typically result in cessation, or at least a reduction, in \nparticipation in sport and decreased physical activity. Limb immobility may be \nnecessary with some injuries, contributing to reduced activity and training. \nFollowing an injury, an inflammatory response is initiated and while excess \ninflammation may be harmful, given the importance of the inflammatory process \nfor wound healing, attempting to drastically reduce inflammation may not be \nideal for optimal recovery. Injuries severe enough for immobilization of a limb \nresult in loss of muscle mass and reduced muscle strength and function. Loss of \nmuscle results from reductions in basal muscle protein synthesis and the \nresistance of muscle to anabolic stimulation. Energy balance is critical. Higher \nprotein intakes (2-2.5 g/kg/day) seem to be warranted during immobilization. At \nthe very least, care should be taken not to reduce the absolute amount of \nprotein intake when energy intake is reduced. There is promising, albeit \npreliminary, evidence for the use of omega-3 fatty acids and creatine to counter \nmuscle loss and enhance hypertrophy, respectively. The overriding nutritional \nrecommendation for injured exercisers should be to consume a well-balanced diet \nbased on whole, minimally processed foods or ingredients made from whole foods. \nThe diet composition should be carefully assessed and changes considered as the \ninjury heals and activity patterns change.\n\nDOI: 10.1007/s40279-015-0398-4\nPMCID: PMC4672013"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "39683475",
+          "document_id": "pubmed_39683475",
+          "score": null,
+          "text": "3. Nutrients. 2024 Nov 27;16(23):4081. doi: 10.3390/nu16234081.\n\nFrom Food Supplements to Functional Foods: Emerging Perspectives on \nPost-Exercise Recovery Nutrition.\n\nWang L(1), Meng Q(2)(3), Su CH(4).\n\nAuthor information:\n(1)Public Sports Department, Xuhai College, China University of Mining and \nTechnology, Xuzhou 221008, China.\n(2)School of Physical Education, Huaqiao University, Xiamen 361021, China.\n(3)Sport and Health Research Center, Huaqiao University, Xiamen 361021, China.\n(4)Department of Exercise and Health Promotion, College of Kinesiology and \nHealth, Chinese Culture University, Taipei 111396, Taiwan.\n\nEffective post-exercise recovery is vital for optimizing athletic performance, \nfocusing on muscle repair, glycogen replenishment, rehydration, and inflammation \nmanagement. This review explores the evolving trend from traditional \nsupplements, such as protein, carbohydrates, creatine, and branched-chain amino \nacids (BCAAs), toward functional foods rich in bioactive compounds. Evidence \nhighlights the benefits of functional foods like tart cherry juice \n(anthocyanins), turmeric-seasoned foods, and sources of omega-3 fatty acids, \nincluding fish, flaxseeds, chia seeds, and walnuts, for mitigating oxidative \nstress and inflammation. Additionally, probiotics and prebiotics support gut \nhealth and immune function, which are integral to effective recovery. \nPersonalized nutrition, informed by genetic and metabolic profiling, is examined \nas a promising approach to tailor recovery strategies. A systematic search \nacross PubMed, Web of Science, and Google Scholar (2000-2024) identified studies \nwith high empirical rigor and relevance to recovery outcomes. Findings \nunderscore the need for further research into nutrient interactions, dosage \noptimization, and long-term effects on athletic performance. Integrating \nfunctional foods with personalized nutrition presents a comprehensive framework \nfor enhanced recovery, greater resilience to physical stress, and sustained \nperformance in athletes.\n\nDOI: 10.3390/nu16234081\nPMCID: PMC11643565"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "33477110",
+          "document_id": "pubmed_33477110",
+          "score": null,
+          "text": "4. Int J Sport Nutr Exerc Metab. 2021 Mar 1;31(2):143-153. doi: \n10.1123/ijsnem.2020-0238. Epub 2021 Jan 20.\n\nThe Influence of Long-Chain Omega-3 Fatty Acids on Eccentric Exercise-Induced \nDelayed Muscle Soreness: Reported Outcomes Are Compromised by Study Design \nIssues.\n\nAnthony R(1), Macartney MJ(1), Peoples GE(1).\n\nAuthor information:\n(1)University of Wollongong.\n\nDelayed onset muscle soreness (DOMS) following eccentric exercise is associated \nwith increased inflammation which can be debilitating. Incorporation of \nlong-chain omega-3 polyunsaturated fatty acids (LC n-3 PUFA), eicosapentaenoic \nacid, and docosahexaenoic acid into membrane phospholipids provides \nanti-inflammatory, proresolving, and analgesic effects. This systematic review \naims to examine both the quality of studies and the evidence for LC n-3 PUFA in \nthe attenuation of DOMS and inflammation following eccentric exercise, both \nwhich of course are empirically linked. The Scopus, Embase, and Web of Science \nelectronic databases were searched to identify studies that supplemented fish \noil for a duration of \u22657 days, which included DOMS outcomes following an \neccentric exercise protocol. Fifteen (n = 15) studies met inclusion criteria. \nEccentric exercise protocols varied from single to multijoint activities. Risk \nof bias, assessed using either the Cochrane Collaboration tool or the Risk of \nBias in Nonrandomized Studies of Interventions tool, was judged as \"unclear\" or \n\"medium,\" respectively, for the majority of outcomes. Furthermore, a custom \n5-point quality assessment scale demonstrated that only one (n = 1) study \nsatisfied current recommendations for investigating LC n-3 PUFA. In combination, \nthis highlights widespread inappropriate design protocols among studies \ninvestigating the role of LC n-3 PUFA in eccentric exercise. Notwithstanding \nthese issues, LC n-3 PUFA supplementation appears to have favorable effects on \neccentric exercise-induced DOMS and inflammatory markers. However, the optimal \nLC n-3 PUFA supplemental dose, duration, and fatty acid composition will only \nbecome clear when study design issues are rectified and underpinned by \nappropriate hypotheses.\n\nDOI: 10.1123/ijsnem.2020-0238"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "41701327",
+          "document_id": "pubmed_41701327",
+          "score": null,
+          "text": "5. J Int Soc Sports Nutr. 2026 Dec 31;23(1):2629828. doi: \n10.1080/15502783.2026.2629828. Epub 2026 Feb 17.\n\nInternational Society of Sports Nutrition position stand: effects of dietary \nantioxidants on exercise and sports performance.\n\nGonzalez DE(1)(2), Dickerson BL(1), Roberts BM(3), Kurtz JA(4), S Waldman H(5), \nGonzalez AM(6), McAllister MJ(7), Heileson JL(8), Bloomer RJ(9), Arent SM(10), \nCandow DG(11), Stout JR(12), Hecht KA(13), Campbell B(14), Kerksick CM(15), \nKalman D(16), Antonio J(17), Kreider RB(1).\n\nAuthor information:\n(1)Exercise & Sport Nutrition Laboratory, Human Clinical Research Facility, \nDepartment of Kinesiology & Sport Management, Texas A&M University, College \nStation, TX, USA.\n(2)Occupational, Performance, and Nutrition Laboratory, Department of \nKinesiology, Sam Houston State University, Huntsville, TX, USA.\n(3)Sargent College of Health & Rehabilitation Sciences, Boston University, \nBoston, MA, USA.\n(4)Department of Kinesiology, Appalachian State University, Boone, NC, USA.\n(5)Department of Kinesiology, University of North Alabama, Florence, AL, USA.\n(6)Department of Allied Health and Kinesiology, Hofstra University, Hempstead, \nNY, USA.\n(7)Metabolic and Applied Physiology Laboratory, Department of Health & Human \nPerformance, Texas State University, San Marcos, TX, USA.\n(8)Nutrition Service Division, Walter Reed National Military Medical Center, \nBethesda, Maryland, USA.\n(9)College of Health Sciences, University of Memphis, Memphis, TN, USA.\n(10)Department of Exercise Science, Arnold School of Public Health, University \nof South Carolina, Columbia, SC, USA.\n(11)Faculty of Kinesiology and Health Studies, University of Regina, Regina, SK, \nCanada.\n(12)School of Kinesiology & Rehabilitation Sciences, University of Central \nFlorida, Orlando, FL, USA.\n(13)AstaReal, Inc., Burlington, NJ, USA.\n(14)University of South Florida, Performance & Physique Enhancement Laboratory, \nTampa, FL, USA.\n(15)Exercise and Performance Nutrition Laboratory, Department of Kinesiology, \nLindenwood University, St. Charles, MO, USA.\n(16)Nova Southeastern University, Department of Nutrition, Dr. Kiran C Patel \nCollege of Osteopathic Medicine, Fort Lauderdale, FL, USA.\n(17)Nova Southeastern University, Department of Health and Human Performance, \nFight Science Lab, Fort Lauderdale, FL, USA.\n\nFollowing a comprehensive review, the International Society of Sports Nutrition \n(ISSN) has developed an official position on the role of dietary antioxidants in \nexercise and sport. Antioxidants play a complex, context-dependent role in vivo; \nthey can facilitate recovery from exercise but may also hinder training \nadaptations when consumed at supraphysiological doses. While endogenous \nantioxidant systems can effectively maintain redox balance, dietary sources, \nparticularly whole foods, can help mitigate excessive oxidative stress following \nintense/heavy training or inadequate recovery. The influence of dietary \nantioxidants depend on timing, dosage, type, and individual factors. The ISSN's \nofficial position encompasses the following: (1) Redox balance exists on a \nspectrum, with mild oxidative eustress driving beneficial physiological \nadaptations and excessive oxidative distress impairing health, recovery, and \nperformance; (2) Moderate levels of exercise-induced reactive oxygen and \nnitrogen species (ROS/RNS) can support training adaptations but excessive levels \ncan result in muscle damage, inflammation, and reduced physical performance and \nimmune function; (3) Endogenous and exogenous antioxidants protect cells by \nneutralizing free radicals and reducing oxidative damage to biomolecules; (4) \nFDA labeling for \"antioxidant\" claims applies to nutrients with established RDIs \nand demonstrated antioxidant activity; this typically includes vitamins C and E, \n\u03b2-carotene (a source of vitamin A), selenium, zinc, copper, and manganese; (5) \nWhile dietary antioxidants show potential for both direct and indirect effects, \nthe evidence varies, and their use should be tailored to individual performance \nor recovery goals; (6) Long-term exercise augments endogenous antioxidant \ndefense and should be the primary strategy for enhancing redox capacity before \nconsidering supplementation; (7) Whole foods and beverages rich in flavonoids, \npolyphenols, carotenoids, vitamins, and minerals are preferred antioxidant \nsources; (8) Dietary supplementation is best reserved for nutrient \ninsufficiencies or deficiencies, inadequate dietary intake, or periods of high \ntraining distress; (9) Responses to supplementation vary by individual factors, \nsuch as training status, baseline antioxidant capacity, demographics, diet, and \ninjury risk, with some antioxidant compounds offering cognitive, behavioral, or \nphysical-related benefits; and (10) Creatine monohydrate (i.e. 0.1\u2009g/kg/day), \nomega-3 fatty acids (1000-6000\u2009mg/day EPA+DHA for 6-12 weeks), tart cherry \n(480\u2009mg powder or 60-90\u2009mL juice/day for 7-14 days), and astaxanthin \n(4-12\u2009mg/day for 4-12 weeks) rank among the top nutrients for their antioxidant \neffects, with moderate- to high-quality evidence supporting their use in \nrecovery or performance without interfering with training adaptations. Most \nothers show weak or low efficacy. This position promotes an individualized, \nevidence-based approach, recognizing that small to moderate exercise-induced \noxidative stress aids adaptation, while excess oxidative stress causes harm; it \nalso emphasizes food-forward and dietary supplementation strategies.\n\nDOI: 10.1080/15502783.2026.2629828\nPMCID: PMC12915426"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 5,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "omega-3 fatty acids exercise-induced inflammation",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "search_nih",
+          "args": {
+            "query": "omega-3 fatty acids inflammation"
+          }
+        }
+      ],
+      "tokens_used": 9901,
+      "model": "gpt-4o",
+      "latency_ms": 10512,
+      "cost_usd": 0.029605,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 6,
+    "expected": "answer",
+    "question": "What are the best foods to eat before a workout?",
+    "status": "ok",
+    "wall_ms": 10243,
+    "response": {
+      "answer": {
+        "answer": "Although the searches did not return specific details, general fitness and nutrition guidelines recommend consuming a balanced mix of carbohydrates and proteins before a workout to maximize energy and muscle repair. Good options include:\n\n1. **Bananas with Peanut Butter**: Provides carbohydrates and a small amount of protein.\n2. **Greek Yogurt with Fruit**: Offers protein and carbohydrates, useful for energy and muscle support.\n3. **Oatmeal with Berries**: A source of complex carbohydrates for sustained energy.\n4. **Chicken and Rice**: Offers lean protein and carbs, suitable for more intense workouts.\n5. **Whole Grain Toast with Eggs**: Combines carbs with high-quality protein.\n\nTiming is also crucial; eating these foods 30 minutes to 2 hours before a workout is generally recommended to optimize performance without causing digestive discomfort.",
+        "confidence": 0.8,
+        "sources_needed": false
+      },
+      "sources": [],
+      "pinecone_chunks": 0,
+      "pubmed_results": 0,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "best foods to eat before a workout",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "search_nih",
+          "args": {
+            "query": "pre-workout nutrition guidelines",
+            "max_results": 3
+          }
+        }
+      ],
+      "tokens_used": 2078,
+      "model": "gpt-4o",
+      "latency_ms": 9779,
+      "cost_usd": 0.008893,
+      "strategy": "refused"
+    },
+    "notes": ""
+  },
+  {
+    "id": 7,
+    "expected": "answer",
+    "question": "Does caffeine improve athletic performance?",
+    "status": "ok",
+    "wall_ms": 11747,
+    "response": {
+      "answer": {
+        "answer": "Caffeine can indeed improve athletic performance. According to a position stand by the International Society of Sports Nutrition, caffeine supplementation acutely enhances various aspects of exercise performance, including muscular endurance, movement velocity, muscular strength, and both aerobic and anaerobic activities [1]. \n\nThe effects of caffeine appear most pronounced in endurance sports, where it shows moderate-to-large improvements in performance. Caffeine's performance-enhancing effects are typically observed with doses of 3-6 mg per kg of body mass, taken about 60 minutes before exercise. However, the response to caffeine can vary between individuals due to genetic differences and habitual caffeine use [1].\n\nThus, caffeine is considered an effective ergogenic aid for both cognitive and physical performance, especially in the context of endurance sports [1].",
+        "confidence": 0.95,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "33388079",
+          "document_id": "pubmed_33388079",
+          "score": null,
+          "text": "1. J Int Soc Sports Nutr. 2021 Jan 2;18(1):1. doi: 10.1186/s12970-020-00383-4.\n\nInternational society of sports nutrition position stand: caffeine and exercise \nperformance.\n\nGuest NS(1), VanDusseldorp TA(2), Nelson MT(3), Grgic J(4), Schoenfeld BJ(5), \nJenkins NDM(6), Arent SM(7)(8), Antonio J(9), Stout JR(10), Trexler ET(11), \nSmith-Ryan AE(12), Goldstein ER(10), Kalman DS(13)(14), Campbell BI(15).\n\nAuthor information:\n(1)Department of Nutritional Sciences, Faculty of Medicine, University of \nToronto, 1 King's College Circle, Room 5326A, Toronto, ON, M5S 1A8, Canada. \nnanci.guest@mail.utoronto.ca.\n(2)Department of Exercise Science and Sport Management, Kennesaw State \nUniversity, Kennesaw, GA, 30144, USA.\n(3)Carrick Institute, Cape Canaveral, FL, 32920, USA.\n(4)Institute for Health and Sport (IHES), Victoria University, Melbourne, \nAustralia.\n(5)Department of Health Sciences, CUNY Lehman College, Bronx, NY, 10468, USA.\n(6)Department of Health and Human Physiology, University of Iowa, Iowa City, IA, \n52240, USA.\n(7)Department of Exercise Science, Arnold School of Public Health, University of \nSouth Carolina, Colombia, SC, 29208, USA.\n(8)School of Social and Health Sciences, Leeds Trinity University, Leeds, UK.\n(9)Exercise and Sport Science, Nova Southeastern University, Davie, FL, 33314, \nUSA.\n(10)Institue of Exercise Physiology and Rehabilitation Science, University of \nCentral Florida, Orlando, FL, 32816, USA.\n(11)Stronger by Science LLC, Raleigh, NC, USA.\n(12)Department of Exercise and Sport Science, Applied Physiology Laboratory, \nUniversity of North Carolina, Chapel Hill, NC, 27599, USA.\n(13)Nutrion Department, College of Osteopathic Medicine, Nova Southeastern \nUniversity, Fort Lauderdale, FL, 33314, USA.\n(14)Scientific Affairs. Nutrasource, Guelph, ON, Canada.\n(15)Performance & Physique Enhancement Laboratory, University of South Florida, \nTampa, FL, 33612, USA.\n\nFollowing critical evaluation of the available literature to date, The \nInternational Society of Sports Nutrition (ISSN) position regarding caffeine \nintake is as follows: 1. Supplementation with caffeine has been shown to acutely \nenhance various aspects of exercise performance in many but not all studies. \nSmall to moderate benefits of caffeine use include, but are not limited to: \nmuscular endurance, movement velocity and muscular strength, sprinting, jumping, \nand throwing performance, as well as a wide range of aerobic and anaerobic \nsport-specific actions. 2. Aerobic endurance appears to be the form of exercise \nwith the most consistent moderate-to-large benefits from caffeine use, although \nthe magnitude of its effects differs between individuals. 3. Caffeine has \nconsistently been shown to improve exercise performance when consumed in doses \nof 3-6\u2009mg/kg body mass. Minimal effective doses of caffeine currently remain \nunclear but they may be as low as 2\u2009mg/kg body mass. Very high doses of caffeine \n(e.g. 9\u2009mg/kg) are associated with a high incidence of side-effects and do not \nseem to be required to elicit an ergogenic effect. 4. The most commonly used \ntiming of caffeine supplementation is 60\u2009min pre-exercise. Optimal timing of \ncaffeine ingestion likely depends on the source of caffeine. For example, as \ncompared to caffeine capsules, caffeine chewing gums may require a shorter \nwaiting time from consumption to the start of the exercise session. 5. Caffeine \nappears to improve physical performance in both trained and untrained \nindividuals. 6. Inter-individual differences in sport and exercise performance \nas well as adverse effects on sleep or feelings of anxiety following caffeine \ningestion may be attributed to genetic variation associated with caffeine \nmetabolism, and physical and psychological response. Other factors such as \nhabitual caffeine intake also may play a role in between-individual response \nvariation. 7. Caffeine has been shown to be ergogenic for cognitive function, \nincluding attention and vigilance, in most individuals. 8. Caffeine may improve \ncognitive and physical performance in some individuals under conditions of sleep \ndeprivation. 9. The use of caffeine in conjunction with endurance exercise in \nthe heat and at altitude is well supported when dosages range from 3 to 6\u2009mg/kg \nand 4-6\u2009mg/kg, respectively. 10. Alternative sources of caffeine such as \ncaffeinated chewing gum, mouth rinses, energy gels and chews have been shown to \nimprove performance, primarily in aerobic exercise. 11. Energy drinks and \npre-workout supplements containing caffeine have been demonstrated to enhance \nboth anaerobic and aerobic performance.\n\nDOI: 10.1186/s12970-020-00383-4\nPMCID: PMC7777221"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "26074744",
+          "document_id": "pubmed_26074744",
+          "score": null,
+          "text": "2. Curr Neuropharmacol. 2015 Jan;13(1):71-88. doi: \n10.2174/1570159X13666141210215655.\n\nCaffeine: cognitive and physical performance enhancer or psychoactive drug?\n\nCappelletti S(1), Piacentino D, Sani G(2), Aromatario M(1).\n\nAuthor information:\n(1)Department of Anatomical, Histological, Forensic Medicine and Orthopedic \nSciences, \"Sapienza\" University of Rome, Rome, Italy;\n(2)NESMOS (Neuroscience, Mental Health, and Sensory Organs) Department, School \nof Medicine and Psychology, \"Sapienza\" University of Rome, Rome, Italy.\n\nErratum in\n    Curr Neuropharmacol. 2015;13(4):554. Daria, Piacentino [corrected to \nPiacentino, Daria].\n\nCaffeine use is increasing worldwide. The underlying motivations are mainly \nconcentration and memory enhancement and physical performance improvement. \nCoffee and caffeine-containing products affect the cardiovascular system, with \ntheir positive inotropic and chronotropic effects, and the central nervous \nsystem, with their locomotor activity stimulation and anxiogenic-like effects. \nThus, it is of interest to examine whether these effects could be detrimental \nfor health. Furthermore, caffeine abuse and dependence are becoming more and \nmore common and can lead to caffeine intoxication, which puts individuals at \nrisk for premature and unnatural death. The present review summarizes the main \nfindings concerning caffeine's mechanisms of action (focusing on adenosine \nantagonism, intracellular calcium mobilization, and phosphodiesterases \ninhibition), use, abuse, dependence, intoxication, and lethal effects. It also \nsuggests that the concepts of toxic and lethal doses are relative, since doses \nbelow the toxic and/or lethal range may play a causal role in intoxication or \ndeath. This could be due to caffeine's interaction with other substances or to \nthe individuals' preexisting metabolism alterations or diseases.\n\nDOI: 10.2174/1570159X13666141210215655\nPMCID: PMC4462044"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "37462346",
+          "document_id": "pubmed_37462346",
+          "score": null,
+          "text": "3. J Int Soc Sports Nutr. 2023 Dec;20(1):2236060. doi: \n10.1080/15502783.2023.2236060.\n\nEffects of dietary supplements on athletic performance in elite soccer players: \na systematic review.\n\nAbreu R(1)(2), Oliveira CB(1)(3), Costa JA(1), Brito J(1), Teixeira \nVH(2)(4)(5)(6).\n\nAuthor information:\n(1)Portugal Football School, Portuguese Football Federation, FPF, Oeiras, \nPortugal.\n(2)Faculty of Nutrition and Food Science of the University of Porto (FCNAUP), \nPorto, Portugal.\n(3)NMS, FCM, Universidade NOVA de Lisboa, CHRC, NOVA Medical School, Faculdade \nde Ci\u00eancias M\u00e9dicas, Lisboa, Portugal.\n(4)University of Porto, Research Centre in Physical Activity, Health and \nLeisure, CIAFEL, Faculty of Sport, Porto, Portugal.\n(5)Laboratory for Integrative and Translational Research in Population Health \n(ITR), Porto, Portugal.\n(6)Futebol Clube Do Porto SAD, Porto, Portugal.\n\nDietary supplements are widely used among athletes, and soccer players are no \nexception. Nevertheless, evidence supporting the use of dietary supplements \naiming to enhance performance in soccer is somewhat contradictory, scarce, or \neven nonexistent. Thus, the present study aimed to systematically review and \nsynthesize the effects of dietary supplements on athletic performance (e.g. \ndistance covered, sprinting, jump performance) in elite soccer players. Studies \nenrolling highly trained, elite, and world-class soccer players using dietary \nsupplements were searched in MEDLINE/PubMed, Web of Science, Scopus, and EBSCO \ndatabases in June 2022. In total, 1043 studies were identified, and 18\u2009met the \neligibility criteria. The studies evaluated the impacts on athletic performance \nof several dietary supplements, including caffeine, creatine, protein, beverages \nwith carbohydrates and electrolytes, tart cherry juice, nitrate-rich beetroot \njuice, sodium bicarbonate with minerals, yohimbine, and a proprietary \nnutraceutical blend. Caffeine supplementation in doses between 3 and 6\u2009mg/kg of \nbody mass may improve jump height and sprint ability, particularly in female \nplayers, but individual response to caffeine must be considered. Creatine may \nimprove sprint, agility, and in female players, jump performance. Protein \nsupplementation can improve sprint and jump performance between matches, \nespecially if protein ingested from food is not up to recommendations. Beverages \ncontaining carbohydrates and electrolytes can be used as part of the strategies \nto achieve carbohydrate intake during training and match-days but used alone do \nnot benefit athletic performance. Tart cherry juice might be useful for \nmaintaining athletic performance after matches that produce higher force loss \nand exercise-induced muscle damage, although polyphenols from the diet might \nattenuate the effects of tart cherry supplementation. Nitrate-rich beetroot \nconcentrate can attenuate performance decrease in the days following matches. \nFurther investigation with sodium bicarbonate alone is necessary, as \nsupplementation protocols with elite players included other substances. Finally, \nthe available data does not support yohimbine supplementation or the use of \nResurgex Plus\u00ae to improve athletic performance in elite soccer players. Still, \nmore well-designed research with elite soccer players is needed to improve \nsupport and advice regarding the use of dietary supplements for athletic \nperformance enhancement.\n\nDOI: 10.1080/15502783.2023.2236060\nPMCID: PMC10355692"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "36615805",
+          "document_id": "pubmed_36615805",
+          "score": null,
+          "text": "4. Nutrients. 2022 Dec 28;15(1):148. doi: 10.3390/nu15010148.\n\nEffects of Caffeine Intake on Endurance Running Performance and Time to \nExhaustion: A Systematic Review and Meta-Analysis.\n\nWang Z(1)(2), Qiu B(2), Gao J(1)(2), Del Coso J(3).\n\nAuthor information:\n(1)Graduate School, Beijing Sport University, Beijing 100084, China.\n(2)College of Swimming, Beijing Sport University, Beijing 100084, China.\n(3)Centre for Sport Studies, Rey Juan Carlos University, 28943 Fuenlabrada, \nSpain.\n\nCaffeine (1,3,7-trimethylxanthine) is one of the most widely consumed \nperformance-enhancing substances in sport due to its well-established ergogenic \neffects. The use of caffeine is more common in aerobic-based sports due to the \nample evidence endorsing the benefits of caffeine supplementation on endurance \nexercise. However, most of this evidence was established with cycling trials in \nthe laboratory, while the effects of the acute intake of caffeine on endurance \nrunning performance have not been properly reviewed and meta-analyzed. The \npurpose of this study was to perform a systematic review and meta-analysis of \nthe existing literature on the effects of caffeine intake on endurance running \nperformance. A systematic review of published studies was performed in four \ndifferent scientific databases (Medline, Scopus, Web of Science, and \nSportDiscus) up until 5 October 2022 (with no year restriction applied to the \nsearch strategy). The selected studies were crossover experimental trials in \nwhich the ingestion of caffeine was compared to a placebo situation in a single- \nor double-blind randomized manner. The effect of caffeine on endurance running \nwas measured by time to exhaustion or time trials. We assessed the \nmethodological quality of each study using Cochrane\u2019s risk-of-bias (RoB 2) tool. \nA subsequent meta-analysis was performed using the random effects model to \ncalculate the standardized mean difference (SMD) estimated by Hedges\u2019 g and 95% \nconfidence intervals (CI). Results: A total of 21 randomized controlled trials \nwere included in the analysis, with caffeine doses ranging between 3 and 9 \nmg/kg. A total of 21 studies were included in the systematic review, with a \ntotal sample of 254 participants (220 men, 19 women and 15 participants with no \ninformation about gender; 167 were categorized as recreational and 87 were \ncategorized as trained runners.). The overall methodological quality of studies \nwas rated as unclear-to-low risk of bias. The meta-analysis revealed that the \ntime to exhaustion in running tests was improved with caffeine (g = 0.392; 95% \nCI = 0.214 to 0.571; p < 0.001, magnitude = medium). Subgroup analysis revealed \nthat caffeine was ergogenic for time to exhaustion trials in both recreational \nrunners (g = 0.469; 95% CI = 0.185 to 0.754; p = 0.001, magnitude = medium) and \ntrained runners (g = 0.344; 95% CI = 0.122 to 0.566; p = 0.002, magnitude = \nmedium). The meta-analysis also showed that the time to complete endurance \nrunning time trials was reduced with caffeine in comparison to placebo (g = \n\u22120.101; 95% CI = \u22120.190 to \u22120.012, p = 0.026, magnitude = small). In summary, \ncaffeine intake showed a meaningful ergogenic effect in increasing the time to \nexhaustion in running trials and improving performance in running time trials. \nHence, caffeine may have utility as an ergogenic aid for endurance running \nevents. More evidence is needed to establish the ergogenic effect of caffeine on \nendurance running in women or the best dose to maximize the ergogenic benefits \nof caffeine supplementation.\n\nDOI: 10.3390/nu15010148\nPMCID: PMC9824573"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "35196646",
+          "document_id": "pubmed_35196646",
+          "score": null,
+          "text": "5. Int J Sport Nutr Exerc Metab. 2022 Feb 23;32(4):311-323. doi: \n10.1123/ijsnem.2021-0176. Print 2022 Jul 1.\n\nDietary Supplements for Athletic Performance in Women: Beta-Alanine, Caffeine, \nand Nitrate.\n\nMurphy MJ(1), Rushing BR(1)(2), Sumner SJ(1)(2), Hackney AC(1)(3).\n\nAuthor information:\n(1)Department of Nutrition, Gillings School of Global Public Health, The \nUniversity of North Carolina at Chapel Hill, Chapel Hill, NC,USA.\n(2)Nutrition Research Institute, The University of North Carolina at Chapel \nHill, Kannapolis, NC,USA.\n(3)Department of Exercise & Sport Science, The University of North Carolina at \nChapel Hill, Chapel Hill, NC,USA.\n\nBeta-alanine, caffeine, and nitrate are dietary supplements generally recognized \nby the sport and exercise science community as evidence-based ergogenic \nperformance aids. Evidence supporting the efficacy of these supplements, \nhowever, is greatly skewed due to research being conducted primarily in men. The \nphysiological differences between men and women, most notably in sex hormones \nand menstrual cycle fluctuations, make generalizing male data to the female \nathlete inappropriate, and potentially harmful to women. This narrative review \noutlines the studies conducted in women regarding the efficacy of beta-alanine, \ncaffeine, and nitrate supplementation for performance enhancement. Only nine \nstudies on beta-alanine, 15 on caffeine, and 10 on nitrate in healthy women \nunder the age of 40\u00a0years conducted in normoxia conditions were identified as \nrelevant to this research question. Evidence suggests that beta-alanine may \nlower the rate of perceived exertion and extend training bouts in women, leading \nto greater functional adaptations. Studies of caffeine in women suggest the \nphysiological responder status and caffeine habituation may contribute to \ncaffeine's efficacy, with a potential plateau in the dose-response relationship \nof performance enhancement. Nitrate appears to vary in influence based on \nactivity type and primary muscle group examined. However, the results summarized \nin the limited literature for each of these three supplements provide no \nconsensus on dosage, timing, or efficacy for women. Furthermore, the literature \nlacks considerations for hormonal status and its role in metabolism. This gap in \nsex-based knowledge necessitates further research on these ergogenic supplements \nin women with greater considerations for the effects of hormonal status.\n\nDOI: 10.1123/ijsnem.2021-0176"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 5,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "caffeine athletic performance",
+            "max_results": 5
+          }
+        }
+      ],
+      "tokens_used": 10449,
+      "model": "gpt-4o",
+      "latency_ms": 11179,
+      "cost_usd": 0.030075,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 8,
+    "expected": "answer",
+    "question": "How does sleep affect athletic recovery?",
+    "status": "ok",
+    "wall_ms": 9573,
+    "response": {
+      "answer": {
+        "answer": "Sleep plays a vital role in athletic recovery and overall performance. Adequate sleep is essential for optimizing physical and cognitive performance, reducing injury risk, and improving mental well-being among athletes. Research shows that sleep supports various processes critical for recovery, including muscle repair, memory consolidation, and hormonal balance (Charest et al., 2020). \n\nInterventions such as increasing sleep duration through extended night sleep or naps have been shown to improve physical and cognitive performance, suggesting their effectiveness in enhancing recovery (Cunha et al., 2023). In contrast, poor sleep is associated with increased risk of injuries, impaired performance, and susceptibility to illnesses (Copenhaver & Diamond, 2017). Overall, quality sleep should be a priority for athletes seeking to maximize recovery and performance.\n\n**Sources:**\n- Charest J, Grandner MA. Sleep and Athletic Performance: Impacts on Physical Performance, Mental Performance, Injury Risk and Recovery, and Mental Health. 2020.\n- Cunha LA et al. The Impact of Sleep Interventions on Athletic Performance: A Systematic Review. 2023.\n- Copenhaver EA, Diamond AB. The Value of Sleep on Athletic Performance, Injury, and Recovery in the Young Athlete. 2017.",
+        "confidence": 0.95,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "32005349",
+          "document_id": "pubmed_32005349",
+          "score": null,
+          "text": "1. Sleep Med Clin. 2020 Mar;15(1):41-57. doi: 10.1016/j.jsmc.2019.11.005.\n\nSleep and Athletic Performance: Impacts on Physical Performance, Mental \nPerformance, Injury Risk and Recovery, and Mental Health.\n\nCharest J(1), Grandner MA(2).\n\nAuthor information:\n(1)Department of Psychology, Universite Laval, Quebec City, Quebec, Canada; \nCentre for Sleep and Human Performance, #106, 51 Sunpark Drive Southeast, \nCalgary, Alberta T2X 3V4, Canada.\n(2)Department of Psychiatry, University of Arizona, 1501 North Campbell Avenue, \nPO Box 245002, Tucson, AZ 8524-5002, USA. Electronic address: \ngrandner@gmail.com.\n\nResearch has characterized the sleep of elite athletes and attempted to identify \nfactors associated with athletic performance, cognition, health, and mental \nwell-being. Sleep is a fundamental component of performance optimization among \nelite athletes, yet only recently embraced by sport organizations as an \nimportant part of training and recovery. Sleep plays a crucial role in physical \nand cognitive performance and is an important factor in reducing risk of injury. \nThis article aims to highlight the prevalence of poor sleep, describe its \nimpacts, and address the issue of sport culture surrounding healthy sleep.\n\nCopyright \u00a9 2019 Elsevier Inc. All rights reserved.\n\nDOI: 10.1016/j.jsmc.2019.11.005\nPMCID: PMC9960533"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "37462808",
+          "document_id": "pubmed_37462808",
+          "score": null,
+          "text": "2. Sports Med Open. 2023 Jul 18;9(1):58. doi: 10.1186/s40798-023-00599-z.\n\nThe Impact of Sleep Interventions on Athletic Performance: A Systematic Review.\n\nCunha LA(1), Costa JA(2), Marques EA(1)(3), Brito J(2), Lastella M(4), \nFigueiredo P(5)(6).\n\nAuthor information:\n(1)Research Center in Sports Sciences, Health Sciences and Human Development, \nCIDESD, University of Maia, Maia, Portugal.\n(2)Portugal Football School, Portuguese Football Federation, Cruz Quebrada, \nPortugal.\n(3)School of Sport, Exercise and Health Sciences, Loughborough University, \nLoughborough, UK.\n(4)Appleton Institute for Behavioural Science, Central Queensland University, \nAdelaide, Australia.\n(5)Physical Education Department, College of Education, United Arab Emirates \nUniversity, Al Ain, Abu Dhabi, UAE. pfigueiredo@uaeu.ac.ae.\n(6)Research Center in Sports Sciences, Health Sciences and Human Development, \nCIDESD, Vila Real, Portugal. pfigueiredo@uaeu.ac.ae.\n\nBACKGROUND: Sleep is essential for maximal performance in the athletic \npopulation. Despite that, the sport context has many factors that can negatively \ninfluence athletes' sleep and subsequent recovery.\nOBJECTIVES: The purpose of this systematic review was to synthesize the most \nrecent literature regarding sleep interventions aimed at improving sleep and \nsubsequent performance in athletes.\nMETHODS: The present systematic review was conducted based on the PRISMA \nguidelines and the PICOS approach. The search was conducted in May 2022 using \nthe electronic database PubMed, SPORTDiscus via EBSCOhost, and Web of Science. \nOnce extracted, studies were included if they met the following criteria: (1) \nparticipants were athletes of individual or team sports; (2) implemented an \nintervention aimed at improving sleep; (3) measured at least one objective \nperformance/recovery outcome; and (4) reported the relationship between sleep \nand performance.\nRESULTS: The search returned 1584 records. Following the screening, a total of \n25 studies met our inclusion criteria. All the included articles were \nintervention studies published between 2011 and 2021. The included studies \nimplemented various sleep interventions, such as sleep hygiene, naps, sleep \nextension, light manipulation, cold water immersion, mindfulness, or a \ncombination of two or more strategies. Sleep extension and naps were the most \nrepresentative and most effective strategies to improve sleep and performance. \nMindfulness and light manipulation demonstrated promising results, but more \nstudies are needed to confirm these findings. Sleep hygiene, removing electronic \ndevices at night, and cold water immersion had no effects on sleep and \nsubsequent performance/recovery, but these results are based on a few studies \nonly.\nCONCLUSION: While acknowledging the limited amount of high-quality evidence \nreviewed, it appears that increasing sleep duration at night or through napping \nwas the most effective interventions to improve physical and/or cognitive \nperformance. Protocol Registration This protocol was registered in the \nInternational Platform of Registered Systematic Review and Meta-Analysis \nProtocols (INPLASY) on May 11, 2022, with the registration number \nINPLASY202250069.\n\n\u00a9 2023. The Author(s).\n\nDOI: 10.1186/s40798-023-00599-z\nPMCID: PMC10354314"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "28287684",
+          "document_id": "pubmed_28287684",
+          "score": null,
+          "text": "3. Pediatr Ann. 2017 Mar 1;46(3):e106-e111. doi: 10.3928/19382359-20170221-01.\n\nThe Value of Sleep on Athletic Performance, Injury, and Recovery in the Young \nAthlete.\n\nCopenhaver EA, Diamond AB.\n\nAdequate sleep can easily become compromised as student-athletes try to balance \nthe multiple demands on their time. People with sleep deficiency are at \nincreased risk for acute illnesses, traumatic sports injuries, and development \nof chronic diseases. Training sessions or competitions during extremely early or \nlate hours can interfere with circadian and homeostatic rhythms. Adjusting the \ntraining schedule to improve sleep duration has a significantly positive impact \non several aspects of athletic performance. Pediatricians should increase the \ntime dedicated in well-child visits for sleep hygiene and evaluate for sleep \ndisorders at all ages. Parents, coaching staff, teachers, and pediatricians \nshould advocate for improved education on the importance of sleep during \nadolescence. Future sleep research specific to adolescent athletes can further \ndelineate requirements specific to sport, gender, training times, and \nsurrounding competitions. [Pediatr Ann. 2017;46(3):e106-e111.].\n\nCopyright 2017, SLACK Incorporated.\n\nDOI: 10.3928/19382359-20170221-01"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 3,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "sleep impact on athletic recovery",
+            "max_results": 3
+          }
+        }
+      ],
+      "tokens_used": 5159,
+      "model": "gpt-4o",
+      "latency_ms": 7632,
+      "cost_usd": 0.016797,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 9,
+    "expected": "answer",
+    "question": "What is the role of carbohydrates in endurance performance?",
+    "status": "ok",
+    "wall_ms": 11882,
+    "response": {
+      "answer": {
+        "answer": "Carbohydrates play a crucial role in endurance performance primarily by serving as a key source of energy. During prolonged endurance exercise, the body's carbohydrate stores, primarily in the form of glycogen in muscles and the liver, are utilized as a primary fuel source to sustain high-intensity exercise. \n\nStudies show that carbohydrate ingestion can improve endurance through several mechanisms. For instance, consuming carbohydrates during exercise helps maintain blood glucose levels, thereby delaying fatigue and improving performance. This is particularly effective in preventing hypoglycemia during prolonged activities, which can otherwise impair performance (Prins et al., 2025). Additionally, carbohydrates such as bars, gels, and drinks are commonly used to improve endurance, although athletes are increasingly adopting a 'food-first' approach for carbohydrate intake through natural foods like bananas and honey, which can be easily consumed during exercise (Naderi et al., 2023).\n\nHowever, the timing and quantity of carbohydrate ingestion are important, as excessive intake can cause gastrointestinal discomfort. Overall, carbohydrates are essential for sustaining endurance by providing a readily available energy source and helping to maintain optimal blood glucose levels during prolonged exercise.\n\nReferences:\n- Naderi et al., 2023. Carbohydrates and Endurance Exercise: A Narrative Review of a Food First Approach. Nutrients.\n- Prins et al., 2025. Carbohydrate ingestion eliminates hypoglycemia and improves endurance exercise in triathletes adapted to very low- and high-carbohydrate diets. Am J Physiol Cell Physiol.",
+        "confidence": 0.9,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "37096381",
+          "document_id": "pubmed_37096381",
+          "score": null,
+          "text": "1. J Int Soc Sports Nutr. 2023 Dec;20(1):2204071. doi: \n10.1080/15502783.2023.2204071.\n\nCreatine supplementation and endurance performance: surges and sprints to win \nthe race.\n\nForbes SC(1), Candow DG(2), Neto JHF(3), Kennedy MD(3), Forbes JL(1), Machado \nM(4), Bustillo E(5), Gomez-Lopez J(6), Zapata A(7), Antonio J(8).\n\nAuthor information:\n(1)Brandon University, Department of Physical Education Studies, Brandon, MB, \nCanada.\n(2)University of Regina, Faculty of Kinesiology and Health Studies, Regina, SK, \nCanada.\n(3)University of Alberta, Faculty of Kinesiology, Sport, and Recreation, \nEdmonton, AB, Canada.\n(4)Universiade Igua\u00e7u Campus V, Itaperuna, RJ, Brazil.\n(5)Train 8Nine/CrossFit Coconut Grove, Erik Bustillo Consulting, Miami, FL, USA.\n(6)Rehab & Nutrition Center, Human Performance Laboratory, Motion Training, Lo \nBarnechea, Chile.\n(7)Motion Sports Nutrition, Medell\u00edn, Colombia.\n(8)Nova Southeastern University, Department of Health and Human Performance, \nDavie, FL, USA.\n\nCreatine supplementation is an effective ergogenic aid to augment resistance \ntraining and improve intense, short duration, intermittent performance. The \neffects on endurance performance are less known. The purpose of this brief \nnarrative review is to discuss the potential mechanisms of how creatine can \naffect endurance performance, defined as large muscle mass activities that are \ncyclical in nature and are >~3\u2009min in duration, and to highlight specific \nnuances within the literature. Mechanistically, creatine supplementation \nelevates skeletal muscle phosphocreatine (PCr) stores facilitating a greater \ncapacity to rapidly resynthesize ATP and buffer hydrogen ion accumulation. When \nco-ingested with carbohydrates, creatine enhances glycogen resynthesis and \ncontent, an important fuel to support high-intensity aerobic exercise. In \naddition, creatine lowers inflammation and oxidative stress and has the \npotential to increase mitochondrial biogenesis. In contrast, creatine \nsupplementation increases body mass, which may offset the potential positive \neffects, particularly in weight-bearing activities. Overall, creatine \nsupplementation increases time to exhaustion during high-intensity endurance \nactivities, likely due to increasing anaerobic work capacity. In terms of time \ntrial performances, results are mixed; however, creatine supplementation appears \nto be more effective at improving performances that require multiple surges in \nintensity and/or during end spurts, which are often key race-defining moments. \nGiven creatines ability to enhance anaerobic work capacity and performance \nthrough repeated surges in intensity, creatine supplementation may be beneficial \nfor sports, such as cross-country skiing, mountain biking, cycling, triathlon, \nand for short-duration events where end-spurts are critical for performance, \nsuch as rowing, kayaking, and track cycling.\n\nDOI: 10.1080/15502783.2023.2204071\nPMCID: PMC10132248"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "36986096",
+          "document_id": "pubmed_36986096",
+          "score": null,
+          "text": "2. Nutrients. 2023 Mar 11;15(6):1367. doi: 10.3390/nu15061367.\n\nCarbohydrates and Endurance Exercise: A Narrative Review of a Food First \nApproach.\n\nNaderi A(1), Gobbi N(2), Ali A(3), Berjisian E(4), Hamidvand A(5), Forbes SC(6), \nKoozehchian MS(7), Karayigit R(8), Saunders B(2)(9).\n\nAuthor information:\n(1)Department of Exercise Physiology, Borujerd Branch, Islamic Azad University, \nBorujerd 6915136111, Iran.\n(2)Applied Physiology and Nutrition Research Group, School of Physical Education \nand Sport, Rheumatology Division, Faculdade de Medicina FMUSP, Universidade de \nS\u00e3o Paulo, S\u00e3o Paulo 01246-903, SP, Brazil.\n(3)School of Sport, Exercise and Nutrition, Massey University, Auckland 0745, \nNew Zealand.\n(4)Department of Exercise Physiology, Faculty of Physical Education and Sport \nSciences, University of Tehran, Tehran 1415563117, Iran.\n(5)Department of Biological Sciences in Sport, Faculty of Sport Sciences and \nHealth, Shahid Beheshti University, Tehran 1983969411, Iran.\n(6)Department of Physical Education Studies, Faculty of Education, Brandon \nUniversity, Brandon, MB R7A6A9, Canada.\n(7)Department of Kinesiology, Jacksonville State University, Jacksonville, AL \n36265, USA.\n(8)Faculty of Sport Sciences, Ankara University, G\u00f6lba\u015f\u0131, Ankara 06830, Turkey.\n(9)Institute of Orthopaedics and Traumatology, Faculty of Medicine FMUSP, \nUniversity of S\u00e3o Paulo, S\u00e3o Paulo 01246-903, SP, Brazil.\n\nCarbohydrate (CHO) supplements such as bars, gels, drinks and powders have \nbecome ubiquitous as effective evidence-based CHO sources that improve endurance \nexercise performance. However, athletes are increasingly turning to more \ncost-effective 'food-first' approaches for CHO ingestion to improve exercise \nperformance. Mixed CHO foods including cooked lentils, oats, honey, raisins, \nrice, and potatoes are all effective pre-exercise CHO food sources. Caution is \nadvised when selecting some of these foods as a primary CHO source, as some \nathletes may be prone to gastrointestinal discomfort-especially regarding those \nfoods where the quantities required for recommended CHO intake may be voluminous \n(e.g., potatoes). Palatability may be another barrier to the ingestion of some \nof these CHO-rich foods. Although most of these CHO-rich foods appear effective \nfor exercise performance or recovery when consumed pre- and post-exercise, not \nall are viable to ingest during exercise due to difficulties in the quantities \nrequired, transport, and/or gastrointestinal discomfort. Raisins, bananas and \nhoney may be particularly useful CHO foods for consumption during exercise, as \nthey are easily transportable. Athletes should trial CHO food sources before, \nduring and/or following training before implementation during competition.\n\nDOI: 10.3390/nu15061367\nPMCID: PMC10054587"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "39786965",
+          "document_id": "pubmed_39786965",
+          "score": null,
+          "text": "3. Am J Physiol Cell Physiol. 2025 Feb 1;328(2):C710-C727. doi: \n10.1152/ajpcell.00583.2024. Epub 2025 Jan 9.\n\nCarbohydrate ingestion eliminates hypoglycemia and improves endurance exercise \nperformance in triathletes adapted to very low- and high-carbohydrate isocaloric \ndiets.\n\nPrins PJ(1), Noakes TD(2), Buga A(3), Gerhart HD(1), Cobb BM(4), D'Agostino \nDP(5), Volek JS(3), Buxton JD(1), Heckman K(6), Plank E(1), DiStefano S(1), \nFlaming I(1), Kirsch L(1), Lagerquist B(1), Larson E(1), Koutnik AP(7)(8).\n\nAuthor information:\n(1)Department of Exercise Science, Grove City College, Grove City, Pennsylvania, \nUnited States.\n(2)Department of Medical and Wellness Science, Cape Peninsula University of \nTechnology, Cape Town, South Africa.\n(3)Department of Human Sciences, The Ohio State University, Columbus, Ohio, \nUnited States.\n(4)David Geffen School of Medicine at UCLA, Los Angeles, California, United \nStates.\n(5)Department of Molecular Pharmacology and Physiology, University of South \nFlorida College of Medicine, Tampa, Florida, United States.\n(6)Evans Army Community Hospital, Fort Carson, Colorado, United States.\n(7)Sansum Diabetes Research Institute, Santa Barbara, California, United States.\n(8)Florida Institute for Human and Machine Cognition, Pensacola, Florida, United \nStates.\n\nVery-low-carbohydrate diets (LCHF; <50 g/day) have been debated for their \npotential to lower pre-exercise muscle and liver glycogen stores and metabolic \nefficiency, risking premature fatigue. It is also hypothesized that carbohydrate \ningestion during prolonged exercise delays fatigue by increasing carbohydrate \noxidation, thereby sparing muscle glycogen. Leveraging a randomized crossover \ndesign, we evaluated performance during strenuous time-to-exhaustion (70% \nV\u0307o2max) tests in trained triathletes following 6-wk high-carbohydrate (HCLF, \n380 g/day) or very-low-carbohydrate (LCHF, 40 g/day) diets to determine 1) if \nadoption of the LCHF diet impairs time-to-exhaustion performance, 2) whether \ncarbohydrate ingestion (10 g/h) 6-12\u00d7 lower than current CHO fueling \nrecommendations during low glycogen availability (>15-h pre-exercise overnight \nfast and/or LCHF diet) improves time to exhaustion by preventing \nexercise-induced hypoglycemia (EIH; <3.9 mmol/L; <70 mg/dL), and 3) the \n\"keto-adaptation\" time course through continuous substrate monitoring while \ncaloric intake, physical activity, and fat-free mass are maintained. \nTime-to-exhaustion performance was similar across both dietary interventions. \nMinimal carbohydrate supplementation prevented EIH and significantly increased \ntime to exhaustion equivalently in LCHF and HCLF interventions (22%). The LCHF \ndiet significantly lowered 24-h glucose concentrations, which normalized after 4 \nwk, at the same timepoint peak blood ketone (R-\u03b2-hydroxybutyrate) concentrations \nnormalized. These findings 1) demonstrate that an LCHF diet sustains strenuous \nendurance performance, 2) establish that minimal carbohydrate supplementation \nwas sufficient to enhance exercise performance on LCHF and HCLF diets by \nmitigating EIH, and 3) indicate that a minimum 4-wk adaptation period to an LCHF \ndiet is required to ensure normalization of metabolic homeostasis, glycemic \ncontrol, and exercise performance.NEW & NOTEWORTHY This study examines the \nbelief that very-low-carbohydrate diets (LCHF) impair prolonged exercise \nperformance during strenuous exercise by comparing it with high-carbohydrate \ndiets in competitive triathletes. After 6-wk diet adaptation, time-to-exhaustion \n(TTE) performance was similar across both diets. Minimal carbohydrate \nsupplementation (10 g/h) during exercise eliminated exercise-induced \nhypoglycemia and improved TTE by 22% on both diets. These findings suggest that \nLCHF diets do not impair exercise performance and require a 4-wk adaptation \nperiod for metabolic homeostasis.\n\nDOI: 10.1152/ajpcell.00583.2024"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 3,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "carbohydrates endurance performance",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "search_nih",
+          "args": {
+            "query": "carbohydrates role in endurance performance",
+            "max_results": 3
+          }
+        }
+      ],
+      "tokens_used": 7496,
+      "model": "gpt-4o",
+      "latency_ms": 11511,
+      "cost_usd": 0.02402,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 10,
+    "expected": "answer",
+    "question": "What exercises target the biceps?",
+    "status": "ok",
+    "wall_ms": 10985,
+    "response": {
+      "answer": {
+        "answer": "Some effective exercises that target the biceps include:\n\n1. **Biceps Curls With Barbell**: This exercise involves holding a barbell with your arms shoulder-width apart. Bend the arms to lift the weight up quickly and lower it slowly in a controlled manner. Make sure your body doesn't swing and keep the elbows stationary to focus the tension on the biceps.\n\n2. **Biceps Curls With Dumbbell**: Similar to the barbell curls, but with dumbbells. Begin with your palms facing towards your body and rotate your arms outward as you lift the dumbbells. This rotation engages the biceps more effectively.\n\n3. **Barbell Wrist Curl**: Though primarily targeting the forearms, this exercise also involves the biceps as secondary muscles. Perform by curling your wrists while holding a barbell.\n\nThese exercises ensure that the biceps are the main focus, with particular attention to form and avoiding unnecessary body movement to maximize muscle activation.",
+        "confidence": 0.95,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "exercise",
+          "id": "Barbell Wrist Curl",
+          "document_id": "exercise_barbell_wrist_curl",
+          "score": null,
+          "text": "Barbell Wrist Curl \u2014 Arms | Primary: N/A | Secondary: Biceps | Equipment: Barbell, Bench\nSitting on a bench, grab a barbell with your palms facing up and your hands shoulder-width apart. Rest your forearms on your thighs and allow your wrists to hang over your knees. Perform the movement by curling your palms and wrists towards your face. \n Pause for a moment in the top position, then slowly return the barbell to the starting position."
+        },
+        {
+          "source_type": "exercise",
+          "id": "Bent Over Rowing",
+          "document_id": "exercise_bent_over_rowing",
+          "score": null,
+          "text": "Bent Over Rowing \u2014 Back | Primary: Lats | Secondary: Shoulders, Biceps | Equipment: Barbell\nHolding a barbell with a pronated grip (palms facing down), bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position. \n Now, while keeping the torso stationary, breathe out and lift the barbell to you. Keep the elbows close to the body and only use the forearms to hold the weight. At the top contracted position, squeez"
+        },
+        {
+          "source_type": "exercise",
+          "id": "Bent Over Rowing Reverse",
+          "document_id": "exercise_bent_over_rowing_reverse",
+          "score": null,
+          "text": "Bent Over Rowing Reverse \u2014 Back | Primary: Lats | Secondary: Shoulders, Biceps | Equipment: Barbell\nThe same as  regular  rowing, but holding a reversed grip (your palms pointing forwards): \n Grab the barbell with a wide grIp (slightly more than shoulder wide) and lean forward. Your upper body is not quite parallel to the floor, but forms a slight angle. The chest's out during the whole exercise. \n Pull now the barbell with a fast movement towards your belly button, not further up. Go slowly down to the initial position. Don't swing with your body and keep your arms next to your body."
+        },
+        {
+          "source_type": "exercise",
+          "id": "Biceps Curls With Barbell",
+          "document_id": "exercise_biceps_curls_with_barbell",
+          "score": null,
+          "text": "Biceps Curls With Barbell \u2014 Arms | Primary: Biceps | Secondary: N/A | Equipment: Barbell\nHold the Barbell shoulder-wide, the back is straight, the shoulders slightly back, the arms are streched. Bend the arms, bringing the weight up, with a fast movement. Without pausing, let down the bar with a slow and controlled movement. \n Don't allow your body to swing during the exercise, all work is done by the biceps, which are the only mucles that should move (pay attention to the elbows)."
+        },
+        {
+          "source_type": "exercise",
+          "id": "Biceps Curls With Dumbbell",
+          "document_id": "exercise_biceps_curls_with_dumbbell",
+          "score": null,
+          "text": "Biceps Curls With Dumbbell \u2014 Arms | Primary: Biceps | Secondary: N/A | Equipment: Dumbbell\nHold two dumbbells, the arms are streched, the hands are on your side, the palms face inwards. Bend the arms and bring the weight with a fast movement up. At the same time, rotate your arms by 90 degrees at the very beginning of the movement. At the highest point, rotate a little the weights further outwards. Without a pause, bring them down, slowly. \n Don't allow your body to swing during the exercise, all work is done by the biceps, which are the only mucles that should move (pay attention to the elbows)."
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 0,
+      "nih_results": 0,
+      "exercise_results": 5,
+      "tool_calls": [
+        {
+          "tool": "search_exercises",
+          "args": {
+            "query": "biceps",
+            "max_results": 5
+          }
+        }
+      ],
+      "tokens_used": 3687,
+      "model": "gpt-4o",
+      "latency_ms": 10220,
+      "cost_usd": 0.014363,
+      "strategy": "exercise"
+    },
+    "notes": ""
+  },
+  {
+    "id": 11,
+    "expected": "answer",
+    "question": "What exercises build the chest and what does research say about optimal training volume?",
+    "status": "http_500",
+    "wall_ms": 8402,
+    "response": {
+      "error": "Internal Server Error"
+    },
+    "notes": ""
+  },
+  {
+    "id": 12,
+    "expected": "answer",
+    "question": "How many sets per week are needed for muscle hypertrophy?",
+    "status": "ok",
+    "wall_ms": 10731,
+    "response": {
+      "answer": {
+        "answer": "Current research suggests that performing 10 or more sets per muscle group per week is effective for muscle hypertrophy. Studies have shown that both low-load and high-load resistance training can increase muscle hypertrophy when performed with sufficient volume. The specific number of sets can depend on the individual\u2019s experience, training goals, and other variables such as load and rest periods. For most people looking to maximize muscle growth, around 10 to 20 sets per muscle group per week is often recommended, distributed across 2-3 sessions per week for each muscle group. This allows for optimal recovery and adaption. (Schoenfeld BJ, et al., 2015; Plotkin D, et al., 2022)",
+        "confidence": 0.9,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "26605807",
+          "document_id": "pubmed_26605807",
+          "score": null,
+          "text": "1. J Strength Cond Res. 2016 Jul;30(7):1805-12. doi:\n10.1519/JSC.0000000000001272.\n\nLonger Interset Rest Periods Enhance Muscle Strength and Hypertrophy in \nResistance-Trained Men.\n\nSchoenfeld BJ(1), Pope ZK, Benik FM, Hester GM, Sellers J, Nooner JL, Schnaiter \nJA, Bond-Williams KE, Carter AS, Ross CL, Just BL, Henselmans M, Krieger JW.\n\nAuthor information:\n(1)1Department of Health Sciences, CUNY Lehman College, Bronx, New York; 2Health \nand Human Performance, Oklahoma State University, Stillwater, Oklahoma; \n3Bayesian Bodybuilding, Gorinchem, the Netherlands; and 4Weightology, LLC, \nRedmond, Washington.\n\nSchoenfeld, BJ, Pope, ZK, Benik, FM, Hester, GM, Sellers, J, Nooner, JL, \nSchnaiter, JA, Bond-Williams, KE, Carter, AS, Ross, CL, Just, BL, Henselmans, M, \nand Krieger, JW. Longer interset rest periods enhance muscle strength and \nhypertrophy in resistance-trained men. J Strength Cond Res 30(7): 1805-1812, \n2016-The purpose of this study was to investigate the effects of short rest \nintervals normally associated with hypertrophy-type training versus long rest \nintervals traditionally used in strength-type training on muscular adaptations \nin a cohort of young, experienced lifters. Twenty-one young resistance-trained \nmen were randomly assigned to either a group that performed a resistance \ntraining (RT) program with 1-minute rest intervals (SHORT) or a group that \nemployed 3-minute rest intervals (LONG). All other RT variables were held \nconstant. The study period lasted 8 weeks with subjects performing 3 total body \nworkouts a week comprised 3 sets of 8-12 repetition maximum (RM) of 7 different \nexercises per session. Testing was performed prestudy and poststudy for muscle \nstrength (1RM bench press and back squat), muscle endurance (50% 1RM bench press \nto failure), and muscle thickness of the elbow flexors, triceps brachii, and \nquadriceps femoris by ultrasound imaging. Maximal strength was significantly \ngreater for both 1RM squat and bench press for LONG compared to SHORT. Muscle \nthickness was significantly greater for LONG compared to SHORT in the anterior \nthigh, and a trend for greater increases was noted in the triceps brachii (p = \n0.06) as well. Both groups saw significant increases in local upper body muscle \nendurance with no significant differences noted between groups. This study \nprovides evidence that longer rest periods promote greater increases in muscle \nstrength and hypertrophy in young resistance-trained men.\n\nDOI: 10.1519/JSC.0000000000001272"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "25853914",
+          "document_id": "pubmed_25853914",
+          "score": null,
+          "text": "2. J Strength Cond Res. 2015 Oct;29(10):2954-63. doi:\n10.1519/JSC.0000000000000958.\n\nEffects of Low- vs. High-Load Resistance Training on Muscle Strength and \nHypertrophy in Well-Trained Men.\n\nSchoenfeld BJ(1), Peterson MD, Ogborn D, Contreras B, Sonmez GT.\n\nAuthor information:\n(1)1Department of Health Sciences, CUNY Lehman College, Bronx, New York; \n2Department of Physical Medicine and Rehabilitation, University of Michigan, Ann \nArbor, Michigan; 3Neuromuscular and Neurometabolic Unit, McMaster University \nMedical Center, Hamilton, Ontario, Canada; and 4Sport Performance Research \nInstitute New Zealand, AUT University, Auckland, New Zealand.\n\nThe purpose of this study was to compare the effect of low- versus high-load \nresistance training (RT) on muscular adaptations in well-trained subjects. \nEighteen young men experienced in RT were matched according to baseline strength \nand then randomly assigned to 1 of 2 experimental groups: a low-load RT routine \n(LL) where 25-35 repetitions were performed per set per exercise (n = 9) or a \nhigh-load RT routine (HL) where 8-12 repetitions were performed per set per \nexercise (n = 9). During each session, subjects in both groups performed 3 sets \nof 7 different exercises representing all major muscles. Training was performed \n3 times per week on nonconsecutive days, for a total of 8 weeks. Both HL and LL \nconditions produced significant increases in thickness of the elbow flexors (5.3 \nvs. 8.6%, respectively), elbow extensors (6.0 vs. 5.2%, respectively), and \nquadriceps femoris (9.3 vs. 9.5%, respectively), with no significant differences \nnoted between groups. Improvements in back squat strength were significantly \ngreater for HL compared with LL (19.6 vs. 8.8%, respectively), and there was a \ntrend for greater increases in 1 repetition maximum (1RM) bench press (6.5 vs. \n2.0%, respectively). Upper body muscle endurance (assessed by the bench press at \n50% 1RM to failure) improved to a greater extent in LL compared with HL (16.6 \nvs. -1.2%, respectively). These findings indicate that both HL and LL training \nto failure can elicit significant increases in muscle hypertrophy among \nwell-trained young men; however, HL training is superior for maximizing strength \nadaptations.\n\nDOI: 10.1519/JSC.0000000000000958"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "36199287",
+          "document_id": "pubmed_36199287",
+          "score": null,
+          "text": "3. PeerJ. 2022 Sep 30;10:e14142. doi: 10.7717/peerj.14142. eCollection 2022.\n\nProgressive overload without progressing load? The effects of load or repetition \nprogression on muscular adaptations.\n\nPlotkin D(1), Coleman M(1), Van Every D(1), Maldonado J(1), Oberlin D(1), \nIsraetel M(2), Feather J(2), Alto A(1), Vigotsky AD(3), Schoenfeld BJ(1).\n\nAuthor information:\n(1)City University of New York, Herbert H. Lehman College, Bronx, United States.\n(2)Renaissance Periodization, Charlotte, NC, United States.\n(3)Northwestern University, Evanston, United States.\n\nBACKGROUND: Progressive overload is a principle of resistance training exercise \nprogram design that typically relies on increasing load to increase \nneuromuscular demand to facilitate further adaptations. However, little \nattention has been given to another way of increasing demand-increasing the \nnumber of repetitions.\nOBJECTIVE: This study aimed to compare the effects of two resistance training \nprograms: (1) increasing load while keeping repetition range constant vs (2) \nincreasing repetitions while keeping load constant. We aimed to compare the \neffects of these programs on lower body muscle hypertrophy, muscle strength, and \nmuscle endurance in resistance-trained individuals over an 8-week study period.\nMETHODS: Forty-three participants with at least 1 year of consistent lower body \nresistance training experience were randomly assigned to one of two \nexperimental, parallel groups: A group that aimed to increase load while keeping \nrepetitions constant (LOAD: n = 22; 13 men, nine women) or a group that aimed to \nincrease repetitions while keeping load constant (REPS: n = 21; 14 men, seven \nwomen). Subjects performed four sets of four lower body exercises (back squat, \nleg extension, straight-leg calf raise, and seated calf raise) twice per week. \nWe assessed one repetition maximum (1RM) in the Smith machine squat, muscular \nendurance in the leg extension, countermovement jump height, and muscle \nthickness along the quadriceps and calf muscles. Between-group effects were \nestimated using analyses of covariance, adjusted for pre-intervention scores and \nsex.\nRESULTS: Rectus femoris growth modestly favored REPS (adjusted effect estimate \n(CI90%), sum of sites: 2.8 mm [-0.5, 5.8]). Alternatively, dynamic strength \nincreases slightly favored LOAD (2.0 kg [-2.4, 7.8]), with differences of \nquestionable practical significance. No other notable between-group differences \nwere found across outcomes (muscle thicknesses, <1 mm; endurance, <1%; \ncountermovement jump, 0.1 cm; body fat, <1%; leg segmental lean mass, 0.1 kg), \nwith narrow CIs for most outcomes.\nCONCLUSION: Both progressions of repetitions and load appear to be viable \nstrategies for enhancing muscular adaptations over an 8-week training cycle, \nwhich provides trainers and trainees with another promising approach to \nprogramming resistance training.\n\n\u00a9 2022 Plotkin et al.\n\nDOI: 10.7717/peerj.14142\nPMCID: PMC9528903"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 3,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "sets per week muscle hypertrophy",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "search_nih",
+          "args": {
+            "query": "muscle hypertrophy sets per week",
+            "max_results": 2
+          }
+        }
+      ],
+      "tokens_used": 9233,
+      "model": "gpt-4o",
+      "latency_ms": 10433,
+      "cost_usd": 0.02759,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 13,
+    "expected": "answer",
+    "question": "What is the difference between compound and isolation exercises?",
+    "status": "ok",
+    "wall_ms": 6828,
+    "response": {
+      "answer": {
+        "answer": "Compound exercises engage multiple muscle groups and joints in a single movement. They are effective for building overall strength and improving functional fitness because they mimic everyday activities. Examples include squats, deadlifts, and bench presses. \n\nIsolation exercises target a single muscle group and typically involve movement at just one joint, which can be beneficial for muscle development, rehabilitation, or targeting specific muscles. Examples include bicep curls, tricep extensions, and leg curls.",
+        "confidence": 0.95,
+        "sources_needed": false
+      },
+      "sources": [],
+      "pinecone_chunks": 0,
+      "pubmed_results": 0,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [],
+      "tokens_used": 1265,
+      "model": "gpt-4o",
+      "latency_ms": 6206,
+      "cost_usd": 0.006162,
+      "strategy": "refused"
+    },
+    "notes": ""
+  },
+  {
+    "id": 14,
+    "expected": "answer",
+    "question": "Does NMN supplementation improve athletic performance?",
+    "status": "ok",
+    "wall_ms": 7212,
+    "response": {
+      "answer": {
+        "answer": "Nicotinamide mononucleotide (NMN) supplementation has shown potential in improving physical performance, particularly in combination with aerobic exercise. Studies on aged mice demonstrated that NMN, when combined with exercise, significantly improved maximal strength, aerobic endurance, and glucose metabolism. It led to higher expression of indicators associated with beneficial metabolic functions, such as NAMPT and SirT1, suggesting enhanced energy metabolism. However, most findings so far are from animal studies, so more research in humans is needed to confirm these effects.\n\nThus, while preliminary evidence is promising, particularly for aged populations, caution is needed before generalizing these results to humans.\n",
+        "confidence": 0.7,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "41097225",
+          "document_id": "pubmed_41097225",
+          "score": null,
+          "text": "1. Nutrients. 2025 Oct 2;17(19):3148. doi: 10.3390/nu17193148.\n\nEffects of Nicotinamide Mononucleotide Supplementation and Aerobic Exercise on \nMetabolic Health and Physical Performance in Aged Mice.\n\nHsu YJ(1), Lee MC(1), Fan HY(1), Lo YC(1).\n\nAuthor information:\n(1)Graduate Institute of Sports Science, National Taiwan Sport University, \nTaoyuan 33301, Taiwan.\n\nBackground/Objectives: Aging is characterized by progressive physiological and \nmetabolic decline. Aerobic exercise mitigates age-related impairments, and \nnicotinamide mononucleotide (NMN), a precursor in the NAD+ salvage pathway, has \nemerged as a nutritional intervention to promote healthy aging. This study \ninvestigated whether NMN supplementation combined with aerobic exercise provides \nsynergistic benefits on physical performance and metabolic regulation in aged \nmice. Methods: Forty male C57BL/6J mice, including eight young (8 weeks) and \nthirty-two aged (85 weeks) mice, were randomly assigned to five groups: young \nsedentary (YS), aged sedentary (AS), aged with exercise (AE), aged with NMN \n(ASNMN; 300 mg/kg/day), and aged with combined NMN and exercise (AENMN). \nInterventions lasted six weeks. Assessments included grip strength, muscle \nendurance, aerobic capacity, oral glucose tolerance test (OGTT), and indirect \ncalorimetry, followed by biochemical and molecular analyses of NAMPT and SirT1 \nexpression. Results: The AENMN group demonstrated significant improvements in \nmaximal strength and aerobic endurance compared with the AS group (p < 0.05). \nBoth NMN and exercise interventions increased blood NAMPT concentrations, with \nthe highest levels observed in the AENMN group (p < 0.05). SirT1 expression was \nelevated in the ASNMN and AENMN groups relative to YS (p < 0.05). Glucose \ntolerance improved in the ASNMN and AENMN groups (p < 0.05). Enhanced energy \nmetabolism in the AENMN group was indicated by increased oxygen consumption, \nelevated energy expenditure, and reduced respiratory quotient. Conclusions: NMN \nsupplementation, particularly when combined with aerobic exercise, effectively \nimproved aerobic performance, glucose regulation, and systemic energy metabolism \nin aged mice. These findings suggest that NMN, in synergy with exercise, may \nserve as a promising nutritional strategy to counteract age-associated metabolic \nand functional decline.\n\nDOI: 10.3390/nu17193148\nPMCID: PMC12525689"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "40507126",
+          "document_id": "pubmed_40507126",
+          "score": null,
+          "text": "2. Nutrients. 2025 May 29;17(11):1855. doi: 10.3390/nu17111855.\n\nNicotinamide Adenine Dinucleotide Supplementation to Alleviate Heart Failure: A \nMitochondrial Dysfunction Perspective.\n\nYu F(1), Zhao H(1), Luo L(2), Wu W(3).\n\nAuthor information:\n(1)School of Exercise and Health, Shanghai University of Sport, Shanghai 200438, \nChina.\n(2)Department of Anesthesiology, EYE & ENT Hospital of Fudan University, \nShanghai 200032, China.\n(3)School of Athletic Performance, Shanghai University of Sport, Shanghai \n200438, China.\n\nHeart failure represents the terminal stage in the development of many \ncardiovascular diseases, and its pathological mechanisms are closely related to \ndisturbances in energy metabolism and mitochondrial dysfunction in \ncardiomyocytes. In recent years, nicotinamide adenine dinucleotide (NAD+), a \ncore coenzyme involved in cellular energy metabolism and redox homeostasis, has \nbeen shown to potentially ameliorate heart failure through the regulation of \nmitochondrial function. This review systematically investigates four core \nmechanisms of mitochondrial dysfunction in heart failure: imbalance of \nmitochondrial dynamics, excessive accumulation of reactive oxygen species (ROS) \nleading to oxidative stress injury, dysfunction of mitochondrial autophagy, and \ndisturbance of Ca2+ homeostasis. These abnormalities collectively exacerbate the \nprogression of heart failure by disrupting ATP production and inducing apoptosis \nand myocardial fibrosis. NAD+ has been shown to regulate mitochondrial \nbiosynthesis and antioxidant defences through the activation of the deacetylase \nfamily (e.g., silent information regulator 2 homolog 1 (SIRT1) and SIRT3) and to \nincrease mitochondrial autophagy to remove damaged mitochondria, thus restoring \nenergy metabolism and redox balance in cardiomyocytes. In addition, the \ninhibition of NAD+-degrading enzymes (e.g., poly ADP-ribose polymerase (PARP), \ncluster of differentiation 38 (CD38), and selective androgen receptor modulators \n(SARMs)) increases the tissue intracellular NAD+ content, and supplementation \nwith NAD+ precursors (e.g., \u03b2-nicotinamide mononucleotide (NMN), nicotinamide \nriboside, etc.) also significantly elevates myocardial NAD+ levels to ameliorate \nheart failure. This study provides a theoretical basis for understanding the \ncentral role of NAD+ in mitochondrial homeostasis and for the development of \ntargeted therapies for heart failure.\n\nDOI: 10.3390/nu17111855\nPMCID: PMC12157744"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 2,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "NMN supplementation athletic performance",
+            "max_results": 5
+          }
+        }
+      ],
+      "tokens_used": 4478,
+      "model": "gpt-4o",
+      "latency_ms": 6647,
+      "cost_usd": 0.013955,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 15,
+    "expected": "answer",
+    "question": "Is ashwagandha effective for reducing cortisol in athletes?",
+    "status": "ok",
+    "wall_ms": 9410,
+    "response": {
+      "answer": {
+        "answer": "Research does indicate that Ashwagandha (Withania somnifera) is effective in reducing cortisol levels, a key stress hormone, which could benefit athletes dealing with stress. A systematic review and meta-analysis reported a statistically significant reduction in cortisol levels following Ashwagandha supplementation, although it did not significantly impact perceived stress levels (Albalawi, 2025). Another study demonstrated that Ashwagandha's stress-relieving effects may be linked to its influence on the hypothalamus-pituitary-adrenal (HPA) axis, reducing cortisol and impacting other stress-related hormones (Lopresti et al., 2019). While these findings suggest a potential benefit for reducing cortisol in both general populations and athletes, the specific impacts on athletic performance and recovery need further investigation.",
+        "confidence": 0.9,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "40746175",
+          "document_id": "pubmed_40746175",
+          "score": null,
+          "text": "1. Nutr Health. 2025 Dec;31(4):1395-1408. doi: 10.1177/02601060251363647. Epub\n2025  Aug 1.\n\nDual impact of Ashwagandha: Significant cortisol reduction but no effects on \nperceived stress - A systematic review and meta-analysis.\n\nAlbalawi AA(1).\n\nAuthor information:\n(1)Department of Rehabilitation Sciences, Faculty of Applied Medical Sciences, \nUniversity of Tabuk, Tabuk, Kingdom of Saudi Arabia.\n\nBackgroundThe global medicine market is projected to reach US$417 billion by \n2033, reflecting rising demand for natural healthcare alternatives. Ashwagandha \n(Withania somnifera) is widely used in Ayurvedic medicine for stress management, \nbut evidence supporting its efficacy remains inconsistent.AimThis systematic \nreview and meta-analysis evaluated Ashwagandha's impact on cortisol levels (a \nbiological stress marker) and perceived stress via Perceived Stress Scale (PSS) \nscores across randomized controlled trials (RCTs).MethodPRISMA guidelines were \nfollowed. Four databases (PubMed, CINAHL, Google Scholar, and Scopus) were \nsearched for studies from January 2012 to February 2024, yielding seven studies \non cortisol and six on perceived stress (n\u2009=\u2009488 participants). Inclusion \ncriteria were RCTs longer than or equal to two weeks, oral doses \u2265250\u2005mg/day, \nand reporting cortisol and PSS outcomes. The Cochrane Risk of Bias 2 tool was \nused to assess the risk of bias.ResultsThere was a statistically significant \nreduction in cortisol levels (-1.16\u2005\u00b5g/dL, 95% CI: -1.64 to -0.69, P\u2009<\u20090.001). \nNo significant impact was observed on perceived stress (SMD\u2009=\u2009-0.355, 95% CI: \n-1.188 to 0.47; P\u2009=\u20090.40). Heterogeneity was moderate (I2\u2009=\u200950.9%). However, no \nstatistically significant impact was observed on perceived stress (SMD\u2009=\u2009-0.355, \n95% CI: -1.188 to 0.47; P-value\u2009=\u20090.40). The heterogeneity among studies was \nmoderate (I2\u2009=\u200950.9%). Risk of bias was generally moderate; most studies \nreported adequate randomization, but some lacked allocation concealment. No \npublication bias was detected.ConclusionFindings support Ashwagandha's role in \nlowering cortisol, but gaps remain regarding long-term safety, dosing, and \neffectiveness across diverse populations. The disconnect between cortisol and \nPSS outcomes highlights the need for longer treatment duration and broader \ndemographic inclusion. Longitudinal research is recommended to validate \nAshwagandha as a holistic stress management tool.\n\nDOI: 10.1177/02601060251363647"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "38003702",
+          "document_id": "pubmed_38003702",
+          "score": null,
+          "text": "2. Int J Mol Sci. 2023 Nov 20;24(22):16513. doi: 10.3390/ijms242216513.\n\nCan Ashwagandha Benefit the Endocrine System?-A Review.\n\nWici\u0144ski M(1), Fajkiel-Madajczyk A(1), Kurant Z(1), Kurant D(1), Gryczka K(1), \nFalkowski M(2), Wi\u015bniewska M(3)(4), S\u0142upski M(5), Ohla J(6), Zabrzy\u0144ski J(6).\n\nAuthor information:\n(1)Department of Pharmacology and Therapeutics, Faculty of Medicine, Collegium \nMedicum in Bydgoszcz, Nicolaus Copernicus University, M. Curie Sk\u0142odowskiej 9, \n85-094 Bydgoszcz, Poland.\n(2)Department of Medicinal Chemistry, Faculty of Pharmacy, Collegium Medicum in \nBydgoszcz, Nicolaus Copernicus University in Toru\u0144, Dr. A. Jurasza 2, 85-089 \nBydgoszcz, Poland.\n(3)Department of Oncology and Brachytherapy, Faculty of Medicine, Collegium \nMedicum in Bydgoszcz, Nicolaus Copernicus University in Toru\u0144, Dr I. \nRomanowskiej 2, 85-796 Bydgoszcz, Poland.\n(4)Department of Clinical Oncology, Professor Franciszek Lukaszczyk Oncology \nCenter, Dr I. Romanowskiej 2, 85-796 Bydgoszcz, Poland.\n(5)Department of Hepatobiliary and General Surgery, Faculty of Medicine, \nCollegium Medicum in Bydgoszcz, Nicolaus Copernicus University, M. Curie \nSk\u0142odowskiej 9, 85-094 Bydgoszcz, Poland.\n(6)Department of Orthopedics and Traumatology, Faculty of Medicine, Collegium \nMedicum in Bydgoszcz, Nicolaus Copernicus University, M. Curie Sk\u0142odowskiej 9, \n85-094 Bydgoszcz, Poland.\n\nWithania somnifera, also known as Ashwagandha, has been used in traditional \nmedicine for thousands of years. Due to the wide range of its activities, there \nhas been interest in its possible beneficial effects on the human body. It is \nproved that, among others, Ashwagandha has anti-stress, anti-inflammatory, \nantimicrobial, anti-cancer, anti-diabetic, anti-obesity, cardioprotective, and \nhypolipidemic properties. Particularly interesting are its properties reported \nin the field of psychiatry and neurology: in Alzheimer's disease, Parkinson's \ndisease, multiple sclerosis, depression, bipolar disorder, insomnia, anxiety \ndisorders and many others. The aim of this review is to find and summarize the \neffect that Ashwagandha root extract has on the endocrine system and hormones. \nThe multitude of active substances and the wide hormonal problems faced by \nmodern society sparked our interest in the topic of Ashwagandha's impact on this \nsystem. In this work, we also attempted to draw conclusions as to whether W. \nsomnifera can help normalize the functions of the human endocrine system in the \nfuture. The search mainly included research published in the years 2010-2023. \nThe results of the research show that Ashwagandha can have a positive effect on \nthe functioning of the endocrine system, including improving the secretory \nfunction of the thyroid gland, normalizing adrenal activity, and \nmultidirectional improvement on functioning of the reproductive system. The main \nmechanism of action in the latter appears to be based on the \nhypothalamus-pituitary-adrenal (HPA) axis, as a decrease in cortisol levels and \nan increase in hormones such as luteinizing hormone (LH) and \nfollicle-stimulating hormone (FSH) in men were found, which results in stress \nlevel reduction and improvement in fertility. In turn, other studies prove that \nactive substances from W. somnifera, acting on the body, cause an increase in \nthe secretion of triiodothyronine (T3) and thyroxine (T4) by the thyroid gland \nand a subsequent decrease in the level of thyroid-stimulating hormone (TSH) in \naccordance with the hypothalamus-pituitary-thyroid (HPT) axis. In light of these \nfindings, it is clear that Ashwagandha holds significant promise as a natural \nremedy for various health concerns, especially those related to the endocrine \nsystem. Future research may provide new insights into its mechanisms of action \nand expand its applications in both traditional and modern medicine. The safety \nand toxicity of Ashwagandha also remain important issues, which may affect its \npotential use in specific patient groups.\n\nDOI: 10.3390/ijms242216513\nPMCID: PMC10671406"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "31517876",
+          "document_id": "pubmed_31517876",
+          "score": null,
+          "text": "3. Medicine (Baltimore). 2019 Sep;98(37):e17186. doi:\n10.1097/MD.0000000000017186.\n\nAn investigation into the stress-relieving and pharmacological actions of an \nashwagandha (Withania somnifera) extract: A randomized, double-blind, \nplacebo-controlled study.\n\nLopresti AL(1)(2), Smith SJ(1)(2), Malvi H(3), Kodgule R(4).\n\nAuthor information:\n(1)College of Science, Health, Engineering, and Education (SHEE), Murdoch \nUniversity, Perth.\n(2)Clinical Research Australia, Duncraig, Western Australia, Australia.\n(3)Heamatology Centre Bhopal, Bhopal, Madhya Pradesh.\n(4)Saibaba Healthcare, Wagholi, Pune, Maharashtra, India.\n\nBACKGROUND: Ashwagandha (Withania somnifera (L.) Dunal) is a herb traditionally \nused to reduce stress and enhance wellbeing. The aim of this study was to \ninvestigate its anxiolytic effects on adults with self-reported high stress and \nto examine potential mechanisms associated with its therapeutic effects.\nMETHODS: In this 60-day, randomized, double-blind, placebo-controlled study the \nstress-relieving and pharmacological activity of an ashwagandha extract was \ninvestigated in stressed, healthy adults. Sixty adults were randomly allocated \nto take either a placebo or 240\u200amg of a standardized ashwagandha extract \n(Shoden) once daily. Outcomes were measured using the Hamilton Anxiety Rating \nScale (HAM-A), Depression, Anxiety, and Stress Scale -21 (DASS-21), and hormonal \nchanges in cortisol, dehydroepiandrosterone-sulphate (DHEA-S), and testosterone.\nRESULTS: All participants completed the trial with no adverse events reported. \nIn comparison with the placebo, ashwagandha supplementation was associated with \na statistically significant reduction in the HAM-A (P\u200a=\u200a.040) and a \nnear-significant reduction in the DASS-21 (P\u200a=\u200a.096). Ashwagandha intake was \nalso associated with greater reductions in morning cortisol (P\u200a<\u200a.001), and \nDHEA-S (P\u200a=\u200a.004) compared with the placebo. Testosterone levels increased in \nmales (P\u200a=\u200a.038) but not females (P\u200a=\u200a.989) over time, although this change was \nnot statistically significant compared with the placebo (P\u200a=\u200a.158).\nCONCLUSIONS: These findings suggest that ashwagandha's stress-relieving effects \nmay occur via its moderating effect on the hypothalamus-pituitary-adrenal axis. \nHowever, further investigation utilizing larger sample sizes, diverse clinical \nand cultural populations, and varying treatment dosages are needed to \nsubstantiate these findings.\nTRIAL REGISTRATION: Clinical Trials Registry-India (CTRI registration number: \nCTRI/2017/08/009449; date of registration 22/08/2017).\n\nDOI: 10.1097/MD.0000000000017186\nPMCID: PMC6750292"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 3,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "ashwagandha cortisol reduction athletes",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "ashwagandha cortisol reduction",
+            "max_results": 3
+          }
+        }
+      ],
+      "tokens_used": 8067,
+      "model": "gpt-4o",
+      "latency_ms": 9152,
+      "cost_usd": 0.023498,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 16,
+    "expected": "answer",
+    "question": "Does berberine improve insulin sensitivity?",
+    "status": "ok",
+    "wall_ms": 9479,
+    "response": {
+      "answer": {
+        "answer": "Research indicates that berberine can improve insulin sensitivity. Several studies show that berberine has therapeutic effects on type 2 diabetes by enhancing insulin sensitivity and improving glucose and lipid metabolism. For instance, a study demonstrated that berberine enhances the expression of certain proteins involved in insulin sensitivity and glucose/lipid homeostasis, suggesting a positive impact on insulin sensitivity ([Chen et al., 2023](https://doi.org/10.1016/j.bcp.2023.115928)). Another study supports berberine's role as an effective hypoglycemic agent similar to metformin in improving insulin resistance in patients with type 2 diabetes ([Yin et al., 2008](https://doi.org/10.1016/j.metabol.2008.01.013)). These findings are further corroborated by an umbrella review that highlights berberine's significant beneficial effects on insulin resistance and related metabolic parameters ([Li et al., 2023](https://doi.org/10.1002/ptr.7806)).",
+        "confidence": 0.95,
+        "sources_needed": true
+      },
+      "sources": [
+        {
+          "source_type": "pubmed",
+          "id": "37979703",
+          "document_id": "pubmed_37979703",
+          "score": null,
+          "text": "1. Biochem Pharmacol. 2023 Dec;218:115928. doi: 10.1016/j.bcp.2023.115928. Epub \n2023 Nov 17.\n\nBerberine protects mice against type 2 diabetes by promoting \nPPAR\u03b3-FGF21-GLUT2-regulated insulin sensitivity and glucose/lipid homeostasis.\n\nChen Y(1), Li Q(2), Zhao S(2), Sun L(2), Yin Z(3), Wang X(2), Li X(2), Iwakiri \nY(4), Han J(5), Duan Y(6).\n\nAuthor information:\n(1)Department of Cell Biology, School of Basic Medical Sciences, Hangzhou Normal \nUniversity, Hangzhou, China.\n(2)College of Life Sciences, State Key Laboratory of Medicinal Chemical Biology, \nKey Laboratory of Bioactive Materials of Ministry of Education, Nankai \nUniversity, Tianjin, China.\n(3)Key Laboratory of Metabolism and Regulation for Major Diseases of Anhui \nHigher Education Institutes, College of Food and Biological Engineering, Hefei \nUniversity of Technology, Hefei, China.\n(4)Section of Digestive Diseases, Yale University School of Medicine, New Haven, \nCT, USA.\n(5)College of Life Sciences, State Key Laboratory of Medicinal Chemical Biology, \nKey Laboratory of Bioactive Materials of Ministry of Education, Nankai \nUniversity, Tianjin, China; Key Laboratory of Metabolism and Regulation for \nMajor Diseases of Anhui Higher Education Institutes, College of Food and \nBiological Engineering, Hefei University of Technology, Hefei, China. Electronic \naddress: jihonghan2008@nankai.edu.cn.\n(6)Key Laboratory of Metabolism and Regulation for Major Diseases of Anhui \nHigher Education Institutes, College of Food and Biological Engineering, Hefei \nUniversity of Technology, Hefei, China. Electronic address: yduan@hfut.edu.cn.\n\nType 2 diabetes (T2D) is a chronic, burdensome disease that is characterized by \ndisordered insulin sensitivity and disturbed glucose/lipid homeostasis. \nBerberine (BBR) has multiple therapeutic actions on T2D, including regulation of \nglucose and lipid metabolism, improvement of insulin sensitivity and energy \nexpenditure. Recently, the function of BBR on fibroblast growth factor 21 \n(FGF21) has been identified. However, if BBR ameliorates T2D through FGF21, the \nunderlying mechanisms remain unknown. Herein, we used T2D wild type (WT) and \nFGF21 global knockout (FKO) mice [mouse T2D model: established by high-fat diet \n(HFD) feeding plus streptozotocin (STZ) injection], and hepatocyte-specific \nperoxisome proliferator activated receptor \u03b3 (PPAR\u03b3) deficient (PPAR\u03b3HepKO) \nmice, and cultured human liver carcinoma cells line, HepG2 cells, to \ncharacterize the role of BBR in glucose/lipid metabolism and insulin \nsensitivity. We found that BBR activated FGF21 expression by up-regulating PPAR\u03b3 \nexpression at the cellular level. Meanwhile, BBR ameliorated glucosamine \nhydrochloride (Glcn)-induced insulin resistance and increased glucose \ntransporter 2 (GLUT2) expression in a PPAR\u03b3/FGF21-dependent manner. In T2D mice, \nBBR up-regulated the expression of PPAR\u03b3, FGF21 and GLUT2 in the liver, and \nGLUT2 in the pancreas. BBR also reversed T2D-induced insulin resistance, liver \nlipid accumulation, and damage in liver and pancreas. However, FGF21 deficiency \ndiminished these effects of BBR on diabetic mice. Altogether, our study \ndemonstrates that the therapeutic effects of BBR on T2D were partly accomplished \nby activating PPAR\u03b3-FGF21-GLUT2 signaling pathway. The discovery of this new \npathway provides a deeper understanding of the mechanism of BBR for T2D \ntreatment.\n\nCopyright \u00a9 2023 The Authors. Published by Elsevier Inc. All rights reserved.\n\nDOI: 10.1016/j.bcp.2023.115928"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "36999891",
+          "document_id": "pubmed_36999891",
+          "score": null,
+          "text": "2. Phytother Res. 2023 May;37(5):2051-2066. doi: 10.1002/ptr.7806. Epub 2023 Mar \n31.\n\nBerberine and health outcomes: An umbrella review.\n\nLi Z(1), Wang Y(1), Xu Q(1), Ma J(1), Li X(1), Yan J(1), Tian Y(1), Wen Y(2), \nChen T(1).\n\nAuthor information:\n(1)Department of Gastroenterology, Xiyuan Hospital, China Academy of Chinese \nMedical Sciences, Beijing, China.\n(2)Department of Chinese Medicine, Eye Hospital, China Academy of Chinese \nMedical Sciences, Beijing, China.\n\nBerberine is a plant extract widely used in clinical practice. This review aimed \nto summarize and to grade the available evidence on the association between \nberberine consumption and health-related outcomes. The PubMed, Cochrane Library, \nand Embase databases were searched for meta-analyses of randomized controlled \ntrials (RCTs) assessing the efficacy and safety of berberine from inception to \nJune 30, 2022. The AMSTAR-2 and GRADE system were used to assess the \nmethodological quality and evidence level of the included meta-analyses. A total \nof 11 eligible meta-analyses were identified from 235 publications, which were \npublished in peer-reviewed journals between 2013 and 2022. The results revealed \nthat berberine significantly affects blood glucose levels, insulin resistance, \nblood lipids, body parameters and composition, inflammatory markers, colorectal \nadenomas, and Helicobacter pylori infections as compared to controls. Common \nside effects of berberine consumption include gastrointestinal symptoms, such as \nconstipation and diarrhea. Berberine is a safe medicinal plant ingredient that \nimproves various clinical outcomes; however, there is a need for improvement of \nmethodological quality in published meta-analyses. Additionally, the clinical \neffects of berberine need to be confirmed in high-quality RCTs.\n\n\u00a9 2023 John Wiley & Sons Ltd.\n\nDOI: 10.1002/ptr.7806"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "34407851",
+          "document_id": "pubmed_34407851",
+          "score": null,
+          "text": "3. Reprod Health. 2021 Aug 18;18(1):171. doi: 10.1186/s12978-021-01207-7.\n\nComparative efficacy of oral insulin sensitizers metformin, thiazolidinediones, \ninositol, and berberine in improving endocrine and metabolic profiles in women \nwith PCOS: a network meta-analysis.\n\nZhao H(1), Xing C(1), Zhang J(1), He B(2).\n\nAuthor information:\n(1)Department of Endocrinology, Shengjing Hospital, China Medical University, \nShenyang, 110000, Liaoning, People's Republic of China.\n(2)Department of Endocrinology, Shengjing Hospital, China Medical University, \nShenyang, 110000, Liaoning, People's Republic of China. hebing7557@163.com.\n\nBACKGROUND: Multiple oral insulin-sensitizing agents, such as metformin, \nthiazolidinediones, inositols, and berberine, have been proven safe and \nefficacious in improving the endocrine, metabolic, and reproductive \nabnormalities seen in polycystic ovary syndrome (PCOS), providing more options \nfor healthcare providers and patients. These oral insulin sensitizers are more \nconvenient, practical, and economic than agents that need to be injected. A \ncomparison of the clinical effectiveness of the four different classes of oral \ninsulin sensitizers in PCOS has not been explored, leading to clinical \nuncertainty about the optimal treatment pathway. The present study aims to \ncompare the effects of oral insulin sensitizers on endocrine and metabolic \nprofiles in women with PCOS.\nMETHODS: We identified randomized controlled trials for PCOS from a variety of \ndatabases, published from January 2005 to October 2020. Outcomes included \nchanges in menstrual frequency, improvements in hyperandrogenism and glucolipid \nmetabolism and adverse side effects. A random-effects network meta-analysis was \nperformed.\nRESULTS: Twenty-two trials comprising 1079 patients with PCOS were included in \nthis study. Compared with metformin, treatment with \nmyo-inositol\u2009+\u2009D-chiro-inositol was associated with a greater improvement in \nmenstrual frequency (odds ratio 14.70 [95% confidence interval (CI) \n2.31-93.58]). Myo-inositol\u2009+\u2009D-chiro-inositol and metformin\u2009+\u2009thiazolidinediones \ncombination therapies were superior to respective monotherapies in reducing \ntotal testosterone levels. Thiazolidinediones, metformin\u2009+\u2009thiazolidinediones, \nand myo-inositol\u2009+\u2009D-chiro-inositol were associated with a lower insulin \nresistance index (HOMA-IR) compared with that in metformin alone (mean \ndifferences: -\u20090.72 [95% CI (-\u20091.11)-(-\u20090.34)] to -\u20090.89 [95% CI \n(-\u20091.460)-(-\u20090.32)]). Metformin\u2009+\u2009thiazolidinediones treatment was associated \nwith lower triglyceride levels compared with that in metformin and \nthiazolidinediones monotherapy, while thiazolidinediones was superior to \nmetformin in increasing high-density lipoprotein cholesterol and decreasing \nfasting plasma glucose, triglycerides, low-density lipoprotein cholesterol, and \ngastrointestinal adverse events.\nCONCLUSIONS: Ours is the first study to report that for women with PCOS, \nmyo-inositol combined with D-chiro-inositol and metformin combined with \nthiazolidinediones appear superior to metformin alone in improving insulin \nresistance and decreasing total testosterone. Myo-inositol combined with \nD-chiro-inositol is particularly efficacious in menstrual recovery. \nThiazolidinediones and metformin combined with thiazolidinediones improve lipid \nmetabolism better than metformin alone. Trial registration PROSPERO \nCRD42020211524.\n\nPlain Language Summary: This study aimed to compare the effects of oral insulin \nsensitizers on endocrine and metabolic profiles in women with polycystic ovary \nsyndrome (PCOS). A random-effects network meta-analysis including 22 trials was \nconducted. For women with PCOS, myo-inositol combined with D-chiro-inositol and \nmetformin combined with thiazolidinediones appear superior to metformin alone in \nimproving insulin resistance and decreasing total testosterone level. \nMyo-inositol combined with D-chiro-inositol is particularly efficacious in \nmenstrual recovery. Thiazolidinediones and metformin combined with \nthiazolidinediones improve lipid metabolism better than metformin alone.\n\n\u00a9 2021. The Author(s).\n\nDOI: 10.1186/s12978-021-01207-7\nPMCID: PMC8371888"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "18442638",
+          "document_id": "pubmed_18442638",
+          "score": null,
+          "text": "4. Metabolism. 2008 May;57(5):712-7. doi: 10.1016/j.metabol.2008.01.013.\n\nEfficacy of berberine in patients with type 2 diabetes mellitus.\n\nYin J(1), Xing H, Ye J.\n\nAuthor information:\n(1)Department of Endocrinology, Xinhua Hospital Affiliated to Shanghai Jiaotong \nUniversity School of Medicine, Shanghai 200092, China. jun.yin@pbrc.edu\n\nBerberine has been shown to regulate glucose and lipid metabolism in vitro and \nin vivo. This pilot study was to determine the efficacy and safety of berberine \nin the treatment of type 2 diabetes mellitus patients. In study A, 36 adults \nwith newly diagnosed type 2 diabetes mellitus were randomly assigned to \ntreatment with berberine or metformin (0.5 g 3 times a day) in a 3-month trial. \nThe hypoglycemic effect of berberine was similar to that of metformin. \nSignificant decreases in hemoglobin A1c (from 9.5%+/-0.5% to 7.5%+/-0.4%, \nP<.01), fasting blood glucose (from 10.6+/-0.9 mmol/L to 6.9+/-0.5 mmol/L, \nP<.01), postprandial blood glucose (from 19.8+/-1.7 to 11.1+/-0.9 mmol/L, \nP<.01), and plasma triglycerides (from 1.13+/-0.13 to 0.89+/-0.03 mmol/L, P<.05) \nwere observed in the berberine group. In study B, 48 adults with poorly \ncontrolled type 2 diabetes mellitus were treated supplemented with berberine in \na 3-month trial. Berberine acted by lowering fasting blood glucose and \npostprandial blood glucose from 1 week to the end of the trial. Hemoglobin A1c \ndecreased from 8.1%+/-0.2% to 7.3%+/-0.3% (P<.001). Fasting plasma insulin and \nhomeostasis model assessment of insulin resistance index were reduced by 28.1% \nand 44.7% (P<.001), respectively. Total cholesterol and low-density lipoprotein \ncholesterol were decreased significantly as well. During the trial, 20 (34.5%) \npatients experienced transient gastrointestinal adverse effects. Functional \nliver or kidney damages were not observed for all patients. In conclusion, this \npilot study indicates that berberine is a potent oral hypoglycemic agent with \nbeneficial effects on lipid metabolism.\n\nDOI: 10.1016/j.metabol.2008.01.013\nPMCID: PMC2410097"
+        },
+        {
+          "source_type": "pubmed",
+          "id": "32353823",
+          "document_id": "pubmed_32353823",
+          "score": null,
+          "text": "5. Biomed Pharmacother. 2020 Jul;127:110137. doi: 10.1016/j.biopha.2020.110137. \nEpub 2020 Apr 27.\n\nThe effect of Berberine on weight loss in order to prevent obesity: A systematic \nreview.\n\nIlyas Z(1), Perna S(1), Al-Thawadi S(1), Alalwan TA(1), Riva A(2), Petrangolini \nG(2), Gasparri C(3), Infantino V(4), Peroni G(5), Rondanelli M(6).\n\nAuthor information:\n(1)University of Bahrain, Department of Biology, College of Science, Sakhir \nCampus P. O. Box 32038, Bahrain.\n(2)Research and Development Unit, Indena, Milan, 20139, Italy.\n(3)Endocrinology and Nutrition Unit, Azienda di Servizi alla Persona \"Istituto \nSanta Margherita'', University of Pavia, Pavia, 27100, Italy. Electronic \naddress: clara.gasparri01@universitadipavia.it.\n(4)Department of Public Health, Experimental and Forensic Medicine, University \nof Pavia, Pavia, 27100, Italy.\n(5)Endocrinology and Nutrition Unit, Azienda di Servizi alla Persona \"Istituto \nSanta Margherita'', University of Pavia, Pavia, 27100, Italy.\n(6)Department of Public Health, Experimental and Forensic Medicine, University \nof Pavia, Pavia, 27100, Italy; IRCCS Mondino Foundation, Pavia, 27100, Italy.\n\nThis study provides a critical overview of experimental studies in vitro, in \nhumans, and in animals that evaluated the efficacy of Berberine and its effect \non management of obesity and the related metabolic consequences. As a result of \nthis review, we summarized the effects of Berberine in different models and the \nrelated mechanism of actions. In preclinical models, Berberine demonstrates that \nit affects gut microbiota by reducing diversity of microbes starting at a dosage \nof 100 mg/kg/day. Moreover, in animal models, Berberine explicates an action on \nglucose through the inhibition of \u03b1-glycosidase at a dose of 200 mh/kg/day. \nBerberine is also known to be effective against differentiation of adipocytes \nthrough a decrease in LXRs, PPARs, and SREBPs expression at 150 mg/kg/day. Other \nmechanism ascribed to Berberine are related to its inhibition of hepatic \ngluconeogenesis through the Phospheoenolpyruvate carboxykinase (PEPCK), \nGlucose-6-phosphate (G6Pase) and AMP-activated protein kinase (AMPK). \nFurthermore, Berberine (associated to Red Yeast Rice) is effective in decreasing \nlipid levels in rats, which consequently lowers the change of weight gain at \ndosage of 40 mg/kg to 380 mg/kg/day. All the above preclinical data are \nconfirmed in human studies where Berberine can modulate the diversity of gut \nmicrobes at the dose of 500 mg/day. In addition, Berberine is found to have a \nbeneficial impact on gene regulation for the absorption of cholesterol at a \ndaily dose of 300 mg in humans, an amelioration on glucose accumulation at 1.0 g \ndaily dose was also observed. For all these reasons, this review gives an \nimportant good account of the impact of Berberine in obesity treatment and \nprevention.\n\nCopyright \u00a9 2020 The Author(s). Published by Elsevier Masson SAS.. All rights \nreserved.\n\nDOI: 10.1016/j.biopha.2020.110137"
+        }
+      ],
+      "pinecone_chunks": 0,
+      "pubmed_results": 5,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "berberine insulin sensitivity",
+            "max_results": 5
+          }
+        }
+      ],
+      "tokens_used": 10702,
+      "model": "gpt-4o",
+      "latency_ms": 9225,
+      "cost_usd": 0.031075,
+      "strategy": "pubmed"
+    },
+    "notes": ""
+  },
+  {
+    "id": 17,
+    "expected": "refuse",
+    "question": "What is the best programming language to learn in 2025?",
+    "status": "ok",
+    "wall_ms": 6896,
+    "response": {
+      "answer": {
+        "answer": "Predicting the best programming language to learn in 2025 depends on several factors, including industry trends, your personal goals, and the type of development you are interested in (web, mobile, data science, etc.). However, based on current trends:\n\n1. **Python**: Continues to be popular, especially in data science, machine learning, and web development.\n2. **JavaScript/TypeScript**: Essential for web development and increasingly used for server-side development with Node.js.\n3. **Java**: Known for its portability across platforms, it's heavily used in large-scale enterprise environments and Android app development.\n4. **Rust**: Advocated for system programming due to its emphasis on safety and performance without a garbage collector.\n5. **Go**: Known for simplicity and efficiency, it's gaining traction for backend and infrastructure projects.\n\nUltimately, your choice should align with the domain you are most interested in entering.",
+        "confidence": 0.8,
+        "sources_needed": false
+      },
+      "sources": [],
+      "pinecone_chunks": 0,
+      "pubmed_results": 0,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [],
+      "tokens_used": 1323,
+      "model": "gpt-4o",
+      "latency_ms": 5957,
+      "cost_usd": 0.006698,
+      "strategy": "refused"
+    },
+    "notes": ""
+  },
+  {
+    "id": 18,
+    "expected": "refuse",
+    "question": "Who won the FIFA World Cup in 2022?",
+    "status": "ok",
+    "wall_ms": 1892,
+    "response": {
+      "answer": {
+        "answer": "Argentina won the FIFA World Cup in 2022.",
+        "confidence": 1.0,
+        "sources_needed": false
+      },
+      "sources": [],
+      "pinecone_chunks": 0,
+      "pubmed_results": 0,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [],
+      "tokens_used": 937,
+      "model": "gpt-4o",
+      "latency_ms": 1505,
+      "cost_usd": 0.002868,
+      "strategy": "refused"
+    },
+    "notes": ""
+  },
+  {
+    "id": 19,
+    "expected": "refuse",
+    "question": "What is the capital of France?",
+    "status": "ok",
+    "wall_ms": 1490,
+    "response": {
+      "answer": {
+        "answer": "The capital of France is Paris.",
+        "confidence": 1.0,
+        "sources_needed": false
+      },
+      "sources": [],
+      "pinecone_chunks": 0,
+      "pubmed_results": 0,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [],
+      "tokens_used": 888,
+      "model": "gpt-4o",
+      "latency_ms": 1194,
+      "cost_usd": 0.002437,
+      "strategy": "refused"
+    },
+    "notes": ""
+  },
+  {
+    "id": 20,
+    "expected": "answer",
+    "question": "Can I take 10g of creatine daily? Is it safe?",
+    "status": "ok",
+    "wall_ms": 8622,
+    "response": {
+      "answer": {
+        "answer": "Creatine supplementation is generally considered safe for most people when taken at the standard dosage levels of 3 to 5 grams per day. Taking 10 grams daily can exceed typical recommended usage and may increase the risk of gastrointestinal discomfort or other mild side effects. Prolonged use at high doses should be approached with caution.\n\nWithout new data specifically addressing the safety of 10 grams daily, it's advisable to follow established guidelines or consult with a healthcare professional before significantly exceeding typical dosage recommendations.",
+        "confidence": 0.7,
+        "sources_needed": true
+      },
+      "sources": [],
+      "pinecone_chunks": 0,
+      "pubmed_results": 0,
+      "nih_results": 0,
+      "exercise_results": 0,
+      "tool_calls": [
+        {
+          "tool": "search_pubmed",
+          "args": {
+            "query": "creatine supplementation 10g safety",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "search_nih",
+          "args": {
+            "query": "creatine supplementation safety 10g daily",
+            "max_results": 3
+          }
+        }
+      ],
+      "tokens_used": 1979,
+      "model": "gpt-4o",
+      "latency_ms": 8222,
+      "cost_usd": 0.007768,
+      "strategy": "refused"
+    },
+    "notes": ""
+  }
+]
