@@ -72,14 +72,9 @@ export default function Home() {
       <footer className="border-t border-border bg-card">
         <div className="mx-auto max-w-6xl px-6 py-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground text-sm font-bold select-none">S</div>
-                <span className="font-bold text-foreground">Synapse</span>
-              </div>
-              <p className="text-xs text-muted-foreground max-w-xs leading-relaxed">
-                A research-grounded fitness &amp; nutrition assistant built on an agentic RAG pipeline with dynamic tool selection.
-              </p>
+            <div className="flex items-center gap-2">
+              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground text-sm font-bold select-none">S</div>
+              <span className="font-bold text-foreground">Synapse</span>
             </div>
 
             <div className="flex gap-12 text-xs">
