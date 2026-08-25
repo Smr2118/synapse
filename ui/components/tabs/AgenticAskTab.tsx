@@ -28,6 +28,7 @@ export function AgenticAskTab({ apiUrl, initialQuestion = "" }: { apiUrl: string
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<Record<string, unknown> | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [showTrace, setShowTrace] = useState(false);
 
   async function handleAsk() {
     setLoading(true);
@@ -84,20 +85,30 @@ export function AgenticAskTab({ apiUrl, initialQuestion = "" }: { apiUrl: string
       {result && answer && (
         <div className="space-y-4">
           {/* Think / Act / Observe trace */}
-          <div className="rounded-lg border border-border bg-card p-4 space-y-2 text-sm font-mono">
-            <p className="font-semibold text-[10px] uppercase tracking-widest text-accent mb-3">Agent decision loop</p>
-            {toolCalls.length > 0 ? (
-              <p className="text-muted-foreground">🧠 <span className="font-semibold text-foreground">THINK</span> — LLM decided to call: <span className="text-primary">{toolCalls.map((tc) => tc.tool).join(", ")}</span></p>
-            ) : (
-              <p className="text-muted-foreground">🧠 <span className="font-semibold text-foreground">THINK</span> — LLM judged local context sufficient, no tools needed</p>
-            )}
-            {toolCalls.map((tc, i) => (
-              <div key={i} className="space-y-1 pl-4 border-l-2 border-accent/40">
-                <p className="text-muted-foreground">{TOOL_ICON[tc.tool] ?? "🔧"} <span className="font-semibold text-accent">ACT</span> — <code className="text-primary">{tc.tool}</code> → <code className="text-xs">{tc.args?.query ?? JSON.stringify(tc.args)}</code></p>
-                <p className="text-muted-foreground">👁️ <span className="font-semibold text-foreground">OBSERVE</span> — returned <strong className="text-primary">{resultCounts[tc.tool] ?? "?"}</strong> result(s)</p>
+          <div className="rounded-lg border border-border bg-card text-sm font-mono">
+            <button
+              onClick={() => setShowTrace((v) => !v)}
+              className="w-full flex items-center justify-between px-4 py-3 hover:bg-muted/30 transition-colors"
+            >
+              <span className="font-semibold text-[10px] uppercase tracking-widest text-accent">Agent decision loop</span>
+              <span className="text-[10px] text-muted-foreground">{showTrace ? "▲ hide" : "▼ show"}</span>
+            </button>
+            {showTrace && (
+              <div className="px-4 pb-4 space-y-2 border-t border-border pt-3">
+                {toolCalls.length > 0 ? (
+                  <p className="text-muted-foreground">🧠 <span className="font-semibold text-foreground">THINK</span> — LLM decided to call: <span className="text-primary">{toolCalls.map((tc) => tc.tool).join(", ")}</span></p>
+                ) : (
+                  <p className="text-muted-foreground">🧠 <span className="font-semibold text-foreground">THINK</span> — LLM judged local context sufficient, no tools needed</p>
+                )}
+                {toolCalls.map((tc, i) => (
+                  <div key={i} className="space-y-1 pl-4 border-l-2 border-accent/40">
+                    <p className="text-muted-foreground">{TOOL_ICON[tc.tool] ?? "🔧"} <span className="font-semibold text-accent">ACT</span> — <code className="text-primary">{tc.tool}</code> → <code className="text-xs">{tc.args?.query ?? JSON.stringify(tc.args)}</code></p>
+                    <p className="text-muted-foreground">👁️ <span className="font-semibold text-foreground">OBSERVE</span> — returned <strong className="text-primary">{resultCounts[tc.tool] ?? "?"}</strong> result(s)</p>
+                  </div>
+                ))}
+                <p className="text-muted-foreground">✅ <span className="font-semibold text-foreground">ANSWER</span> — confidence <span className="text-primary">{((answer.confidence as number) * 100).toFixed(0)}%</span>, from {sources.length} source(s)</p>
               </div>
-            ))}
-            <p className="text-muted-foreground">✅ <span className="font-semibold text-foreground">ANSWER</span> — confidence <span className="text-primary">{((answer.confidence as number) * 100).toFixed(0)}%</span>, from {sources.length} source(s)</p>
+            )}
           </div>
 
           <Alert className={sources.length ? "border-green-500 bg-green-50 dark:bg-green-950" : "border-yellow-500 bg-yellow-50 dark:bg-yellow-950"}>
