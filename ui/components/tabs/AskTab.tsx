@@ -11,8 +11,8 @@ import { callApi } from "@/lib/api";
 
 const MODELS = ["gpt-4o", "gpt-4o-mini", "o3-mini"];
 
-export function AskTab({ apiUrl }: { apiUrl: string }) {
-  const [question, setQuestion] = useState("");
+export function AskTab({ apiUrl, initialQuestion = "" }: { apiUrl: string; initialQuestion?: string }) {
+  const [question, setQuestion] = useState(initialQuestion);
   const [model, setModel] = useState("gpt-4o");
   const [forceBad, setForceBad] = useState(false);
   const [loading, setLoading] = useState(false);

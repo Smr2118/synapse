@@ -9,6 +9,7 @@ import { AgenticAskTab } from "@/components/tabs/AgenticAskTab";
 import { IngestTab } from "@/components/tabs/IngestTab";
 import { DocumentsTab } from "@/components/tabs/DocumentsTab";
 import { DebugTab } from "@/components/tabs/DebugTab";
+import { SamplesTab } from "@/components/tabs/SamplesTab";
 import { DEFAULT_API_URL } from "@/lib/api";
 
 const STACK = ["FastAPI", "OpenAI", "Pinecone", "Pydantic", "Next.js"];
@@ -33,6 +34,13 @@ const FEATURES = [
 
 export default function Home() {
   const [apiUrl, setApiUrl] = useState(DEFAULT_API_URL);
+  const [activeTab, setActiveTab] = useState("ask");
+  const [prefilledQuestion, setPrefilledQuestion] = useState("");
+
+  function handleTrySample(question: string) {
+    setPrefilledQuestion(question);
+    setActiveTab("ask");
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -92,7 +100,6 @@ export default function Home() {
             Synapse retrieves peer-reviewed evidence from PubMed, NIH guidelines, and an exercise database — then synthesises a cited, confidence-scored answer.
           </p>
 
-          {/* Feature cards */}
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
             {FEATURES.map((f) => (
               <div key={f.title} className="rounded-xl border border-border bg-card p-5">
@@ -107,19 +114,23 @@ export default function Home() {
 
       {/* Tabs */}
       <main className="mx-auto max-w-6xl px-6 py-8">
-        <Tabs defaultValue="ask">
+        <Tabs value={activeTab} onValueChange={setActiveTab}>
           <TabsList className="mb-8 h-auto gap-1 bg-card border border-border p-1">
             <TabsTrigger value="ask" className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">💬 Ask</TabsTrigger>
             <TabsTrigger value="agent" className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">🤖 Agent Ask</TabsTrigger>
             <TabsTrigger value="agentic" className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">🧠 Agentic Ask</TabsTrigger>
+            <TabsTrigger value="samples" className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">✨ Samples</TabsTrigger>
             <TabsTrigger value="ingest" className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">📥 Ingest</TabsTrigger>
             <TabsTrigger value="documents" className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">📚 Documents</TabsTrigger>
             <TabsTrigger value="debug" className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">🔍 Debug</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="ask"><AskTab apiUrl={apiUrl} /></TabsContent>
+          <TabsContent value="ask">
+            <AskTab apiUrl={apiUrl} initialQuestion={prefilledQuestion} />
+          </TabsContent>
           <TabsContent value="agent"><AgentAskTab apiUrl={apiUrl} /></TabsContent>
           <TabsContent value="agentic"><AgenticAskTab apiUrl={apiUrl} /></TabsContent>
+          <TabsContent value="samples"><SamplesTab onTry={handleTrySample} /></TabsContent>
           <TabsContent value="ingest"><IngestTab apiUrl={apiUrl} /></TabsContent>
           <TabsContent value="documents"><DocumentsTab apiUrl={apiUrl} /></TabsContent>
           <TabsContent value="debug"><DebugTab apiUrl={apiUrl} /></TabsContent>
