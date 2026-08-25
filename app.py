@@ -43,7 +43,7 @@ with st.sidebar:
     st.markdown("FastAPI · OpenAI · Pinecone · Pydantic")
 
 # ── Tabs ───────────────────────────────────────────────────────────────────────
-ask_tab, agent_tab, agentic_tab, ingest_tab, debug_tab, evals_tab = st.tabs(["💬 Ask", "🤖 Agent Ask", "🧠 Agentic Ask", "📥 Ingest", "🔍 Debug Retrieve", "📊 Evals"])
+ask_tab, agent_tab, agentic_tab, ingest_tab, docs_tab, debug_tab, evals_tab = st.tabs(["💬 Ask", "🤖 Agent Ask", "🧠 Agentic Ask", "📥 Ingest", "📚 Documents", "🔍 Debug Retrieve", "📊 Evals"])
 
 
 # ── Ask ────────────────────────────────────────────────────────────────────────
@@ -300,6 +300,49 @@ with ingest_tab:
             st.error(data.get("error", data) if isinstance(data, dict) else data)
         else:
             st.success(f"Ingested **{data['document_id']}** — {data['chunks']} chunks, {data['tokens_used']} tokens used")
+
+
+# ── Documents ──────────────────────────────────────────────────────────────────
+with docs_tab:
+    st.header("Indexed documents")
+    st.caption("Lists every document in Pinecone with its chunk count. Delete removes all vectors for that document.")
+
+    col_refresh, col_spacer = st.columns([1, 4])
+    with col_refresh:
+        refresh = st.button("Refresh", type="primary")
+
+    if refresh:
+        with st.spinner("Loading documents..."):
+            status, data = call("get", f"{base_url}/documents")
+
+        if status == 0 or "error" in (data if isinstance(data, dict) else {}):
+            st.error(data.get("error", data))
+        elif status != 200:
+            st.error(f"HTTP {status}: {data}")
+        else:
+            documents = data.get("documents", [])
+            m1, m2 = st.columns(2)
+            m1.metric("Total documents", data.get("total_documents", 0))
+            m2.metric("Total chunks", data.get("total_chunks", 0))
+
+            if not documents:
+                st.info("No documents indexed yet.")
+            else:
+                st.divider()
+                for doc in documents:
+                    col_name, col_chunks, col_del = st.columns([4, 1, 1])
+                    with col_name:
+                        st.text(doc["document_id"])
+                    with col_chunks:
+                        st.caption(f"{doc['chunks']} chunks")
+                    with col_del:
+                        if st.button("Delete", key=f"del_{doc['document_id']}"):
+                            del_status, del_data = call("delete", f"{base_url}/documents/{doc['document_id']}")
+                            if del_status == 200:
+                                st.success(f"Deleted {del_data.get('deleted_chunks', 0)} chunks")
+                                st.rerun()
+                            else:
+                                st.error(del_data.get("detail", del_data))
 
 
 # ── Debug Retrieve ─────────────────────────────────────────────────────────────

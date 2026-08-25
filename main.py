@@ -9,6 +9,7 @@ logging.basicConfig(level=logging.INFO)
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
 from pinecone import Pinecone
 from pydantic import BaseModel, Field, ValidationError
@@ -18,6 +19,17 @@ _ENV_PATH = Path(__file__).resolve().parent / ".env"
 load_dotenv(_ENV_PATH)
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://synapse-ui-gamma.vercel.app",
+        "http://localhost:3000",
+    ],
+    allow_methods=["GET", "POST", "DELETE"],
+    allow_headers=["Content-Type"],
+)
+
 client = OpenAI()
 _pc = Pinecone(api_key=os.environ["PINECONE_API_KEY"])
 _index = _pc.Index(os.getenv("PINECONE_INDEX", "synapse"))
@@ -374,6 +386,63 @@ def agentic_ask(body: AskRequest) -> AgenticAskResponse:
         cost_usd=result["cost_usd"],
         strategy=result["strategy"],
     )
+
+
+@app.get("/health")
+def health() -> dict:
+    return {"status": "ok"}
+
+
+class DocumentInfo(BaseModel):
+    document_id: str
+    chunks: int
+
+
+class DocumentsResponse(BaseModel):
+    documents: list[DocumentInfo]
+    total_documents: int
+    total_chunks: int
+
+
+@app.get("/documents")
+def list_documents() -> DocumentsResponse:
+    """List all documents indexed in Pinecone with chunk counts."""
+    doc_chunks: dict[str, int] = {}
+    for page in _index.list():
+        for item in page.vectors:
+            doc_id = item.id.rsplit("#", 1)[0]
+            doc_chunks[doc_id] = doc_chunks.get(doc_id, 0) + 1
+
+    documents = sorted(
+        [DocumentInfo(document_id=d, chunks=c) for d, c in doc_chunks.items()],
+        key=lambda x: x.document_id,
+    )
+    return DocumentsResponse(
+        documents=documents,
+        total_documents=len(documents),
+        total_chunks=sum(d.chunks for d in documents),
+    )
+
+
+class DeleteResponse(BaseModel):
+    document_id: str
+    deleted_chunks: int
+
+
+@app.delete("/documents/{document_id}")
+def delete_document(document_id: str) -> DeleteResponse:
+    """Delete all vectors for a document from Pinecone."""
+    ids_to_delete = [
+        item.id
+        for page in _index.list(prefix=f"{document_id}#")
+        for item in page.vectors
+    ]
+
+    if not ids_to_delete:
+        raise HTTPException(status_code=404, detail=f"Document '{document_id}' not found")
+
+    _index.delete(ids=ids_to_delete)
+    return DeleteResponse(document_id=document_id, deleted_chunks=len(ids_to_delete))
 
 
 class RetrievedChunk(BaseModel):
