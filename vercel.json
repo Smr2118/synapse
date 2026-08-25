@@ -1,0 +1,26 @@
+{
+  "services": {
+    "synapse": {
+      "root": "."
+    },
+    "synapse-ui": {
+      "root": "."
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/synapse-ui(/.*)?",
+      "destination": {
+        "type": "service",
+        "service": "synapse-ui"
+      }
+    },
+    {
+      "source": "/api/synapse(/.*)?",
+      "destination": {
+        "type": "service",
+        "service": "synapse"
+      }
+    }
+  ]
+}
