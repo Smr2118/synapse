@@ -22,6 +22,7 @@ A research-grounded fitness and nutrition assistant — answers questions about 
 - **MCP servers** — three FastMCP tools: PubMed live search, NIH MedlinePlus guidelines, Wger exercise database
 - **Multi-agent pipeline** — orchestrator runs Pinecone retrieval + live PubMed search, synthesises from both
 - **Agentic tool use** — raw-SDK agent loop (OpenAI function calling): LLM decides which MCP tools to call at runtime. Think / Act / Observe trace visible in logs and Streamlit UI
+- **Persistent memory** — SQLite-backed conversation store; prior turns are injected into the LLM context window at the next request so the agent recalls earlier exchanges across sessions
 - **Evals** — TRACE suite measuring grounding, hallucination, and refusal accuracy *(coming)*
 
 ## How RAG works in this project
@@ -79,6 +80,7 @@ Three tabs covering the full pipeline:
 | 💬 **Ask** | Question input, model selector, `force_bad` toggle — shows answer, confidence, latency, cost, and retrieved sources with scores |
 | 🤖 **Agent Ask** | Multi-agent pipeline — Pinecone retrieval + live PubMed search via MCP tool. Shows strategy, sources from both, and per-source text |
 | 🧠 **Agentic Ask** | True agentic tool use — LLM decides which of three MCP tools to call (PubMed, NIH, exercise DB). Shows Think / Act / Observe trace and `tool_calls` with the exact query the LLM formulated |
+| 🧠 **Memory Chat** | Persistent multi-turn chat. Each session has a shareable ID. Ask Q1, copy the ID, restart the app, paste the ID back — the agent recalls the prior exchange and builds on it |
 | 📥 **Ingest** | Document ID + text area — chunks, embeds, and stores in Pinecone. Shows chunks created and tokens used |
 | 🔍 **Debug Retrieve** | Query input with top_k slider — returns raw Pinecone chunks with similarity scores. No LLM call |
 
@@ -229,8 +231,43 @@ Returns `400` if `q` is empty.
 - [x] Multi-agent pipeline — Pinecone retrieval + PubMed via MCP, synthesised answer with dual sources
 - [x] Agentic tool use — raw-SDK agent loop (OpenAI function calling): LLM decides which MCP tool to call at runtime. Think / Act / Observe trace in logs and Streamlit UI
 - [x] Three MCP servers — `search_pubmed` (PubMed), `search_nih` (NIH MedlinePlus), `search_exercises` (Wger exercise DB)
-- [ ] Memory — remember user goals and dietary restrictions across sessions
+- [x] Memory — SQLite-backed conversation store; prior turns injected into LLM context for cross-session recall
 - [ ] Evals — TRACE suite: grounding, hallucination, refusal accuracy
+
+## Memory
+
+Synapse stores conversation history in SQLite and injects prior turns into the LLM context window, giving the agent cross-session recall.
+
+### Five memory questions
+
+| Question | Answer |
+|----------|--------|
+| **What do we keep?** | Every user question and every assistant answer, ordered by time within a session. Lightweight metadata (confidence, model, cost, strategy) is stored alongside each assistant turn so the Streamlit UI can surface it. |
+| **When do we write?** | Immediately after each `/agentic/ask` call that carries a `session_id`. The user's question is written first, the assistant answer second, so the store is always in a consistent state even if the process crashes mid-response. |
+| **Where does it live?** | A SQLite file (`synapse_memory.db`) at the project root. The path is overridable via the `MEMORY_DB_PATH` env var — set it to a Render persistent-disk mount path for production durability. |
+| **How do we retrieve?** | `GET /memory/sessions/{session_id}` returns the full turn list. When a new `/agentic/ask` arrives with a `session_id`, the last 6 messages (3 turns) are loaded and prepended to the LLM message array before the current question — no summarisation, raw injection. |
+| **How do we forget?** | `DELETE /memory/sessions/{session_id}` wipes all messages for that session and removes the session row. The **🗑️ Forget** button in the Memory Chat tab calls this endpoint. |
+
+### Memory API
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `POST` | `/memory/sessions` | Create a new session, returns `session_id` |
+| `GET` | `/memory/sessions` | List all sessions with message counts |
+| `GET` | `/memory/sessions/{id}` | Return all messages for a session |
+| `DELETE` | `/memory/sessions/{id}` | Delete a session and all its messages |
+
+Pass `session_id` in the request body to any `/agentic/ask` call to activate memory for that turn:
+
+```bash
+curl -s -X POST https://synapse-5w9z.onrender.com/agentic/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What is the best creatine dose?", "session_id": "my-session-abc"}'
+```
+
+> **Durability note:** On Render's free tier the SQLite file resets on each redeploy but persists across process restarts within a deployment. To survive redeployments, set `MEMORY_DB_PATH` to a path on a Render Persistent Disk, or swap `memory/store.py` for a PostgreSQL-backed implementation.
+
+---
 
 ## Data sources
 

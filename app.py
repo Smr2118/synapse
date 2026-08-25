@@ -43,7 +43,7 @@ with st.sidebar:
     st.markdown("FastAPI · OpenAI · Pinecone · Pydantic")
 
 # ── Tabs ───────────────────────────────────────────────────────────────────────
-ask_tab, agent_tab, agentic_tab, ingest_tab, docs_tab, debug_tab, evals_tab = st.tabs(["💬 Ask", "🤖 Agent Ask", "🧠 Agentic Ask", "📥 Ingest", "📚 Documents", "🔍 Debug Retrieve", "📊 Evals"])
+ask_tab, agent_tab, agentic_tab, memory_tab, ingest_tab, docs_tab, debug_tab, evals_tab = st.tabs(["💬 Ask", "🤖 Agent Ask", "🧠 Agentic Ask", "🧠 Memory Chat", "📥 Ingest", "📚 Documents", "🔍 Debug Retrieve", "📊 Evals"])
 
 
 # ── Ask ────────────────────────────────────────────────────────────────────────
@@ -276,6 +276,106 @@ with agentic_tab:
                 for s in exercise_sources:
                     with st.expander(s["id"]):
                         st.write(s.get("text", ""))
+
+
+# ── Memory Chat ────────────────────────────────────────────────────────────────
+with memory_tab:
+    st.header("🧠 Memory Chat")
+    st.caption(
+        "Conversations are stored in SQLite and survive process restarts. "
+        "Copy your Session ID, close this tab, reopen it, paste the ID back — the agent remembers."
+    )
+
+    # Session management row
+    col_sid, col_new, col_forget = st.columns([4, 1, 1])
+    with col_sid:
+        typed_sid = st.text_input(
+            "Session ID",
+            value=st.session_state.get("memory_session_id", ""),
+            placeholder="Paste an existing ID or click New Session →",
+            key="memory_sid_input",
+        )
+    with col_new:
+        st.write("")  # vertical align
+        if st.button("New Session", key="btn_new_session"):
+            status, data = call("post", f"{base_url}/memory/sessions")
+            if status == 200:
+                st.session_state["memory_session_id"] = data["session_id"]
+                st.rerun()
+            else:
+                st.error("Could not create session.")
+    with col_forget:
+        st.write("")
+        if st.button("🗑️ Forget", key="btn_forget_session"):
+            sid_to_forget = typed_sid or st.session_state.get("memory_session_id", "")
+            if sid_to_forget:
+                call("delete", f"{base_url}/memory/sessions/{sid_to_forget}")
+                st.session_state.pop("memory_session_id", None)
+                st.success("Session forgotten.")
+                st.rerun()
+
+    # Resolve active session ID (typed input wins, else st.session_state)
+    active_sid = typed_sid.strip() or st.session_state.get("memory_session_id", "")
+    if active_sid:
+        st.session_state["memory_session_id"] = active_sid
+
+    if not active_sid:
+        st.info("Click **New Session** to start a conversation, or paste an existing Session ID above.")
+    else:
+        st.success(f"Session: `{active_sid}`")
+
+        # Load and display history
+        h_status, h_data = call("get", f"{base_url}/memory/sessions/{active_sid}")
+        if h_status == 200:
+            messages = h_data.get("messages", [])
+            if messages:
+                st.subheader("Conversation history")
+                for m in messages:
+                    if m["role"] == "user":
+                        with st.chat_message("user"):
+                            st.write(m["content"])
+                    else:
+                        with st.chat_message("assistant"):
+                            st.write(m["content"])
+                            meta = m.get("metadata") or {}
+                            if meta.get("confidence") is not None:
+                                st.caption(
+                                    f"Confidence: {meta['confidence']:.0%} · "
+                                    f"Model: {meta.get('model', '?')} · "
+                                    f"Cost: ${meta.get('cost_usd', 0):.6f}"
+                                )
+            else:
+                st.info("No messages yet. Ask your first question below.")
+
+        st.divider()
+
+        # New question input
+        mem_q = st.text_input(
+            "Your question",
+            placeholder="What does research say about protein timing after workouts?",
+            key="memory_question",
+        )
+        mem_model = st.selectbox("Model", ["gpt-4o", "gpt-4o-mini", "o3-mini"], key="memory_model")
+
+        if st.button("Ask", type="primary", key="btn_memory_ask", disabled=not mem_q.strip()):
+            with st.spinner("Reasoning with memory context…"):
+                status, data = call(
+                    "post",
+                    f"{base_url}/agentic/ask",
+                    json={"question": mem_q, "model": mem_model, "session_id": active_sid},
+                )
+            if status != 200:
+                err = data.get("detail", data) if isinstance(data, dict) else data
+                st.error(f"HTTP {status}: {err}")
+            else:
+                answer = data.get("answer", {})
+                st.success(answer.get("answer", ""))
+                m1, m2, m3, m4 = st.columns(4)
+                m1.metric("Confidence", f"{answer.get('confidence', 0):.0%}")
+                m2.metric("Latency", f"{data.get('latency_ms', 0)} ms")
+                m3.metric("Cost", f"${data.get('cost_usd', 0):.6f}")
+                m4.metric("Sources", len(data.get("sources", [])))
+                st.rerun()
 
 
 # ── Ingest ─────────────────────────────────────────────────────────────────────

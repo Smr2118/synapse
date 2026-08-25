@@ -3,6 +3,7 @@
 import logging
 import os
 import time
+import uuid
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO)
@@ -13,12 +14,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
 from pinecone import Pinecone
 from pydantic import BaseModel, Field, ValidationError
+import memory.store as mem_store
 
 # Load .env from this folder so the key is found regardless of shell working directory.
 _ENV_PATH = Path(__file__).resolve().parent / ".env"
 load_dotenv(_ENV_PATH)
 
 app = FastAPI()
+mem_store.init_db()
 
 app.add_middleware(
     CORSMiddleware,
@@ -61,6 +64,7 @@ class AskRequest(BaseModel):
     question: str
     force_bad: bool = False  # Stage 3 demo knob — first attempt breaks schema on purpose.
     model: str | None = None  # Stage 4 — optional override to swap models live.
+    session_id: str | None = None  # Stage 6 — memory: attach turn to a conversation session.
 
 
 class Source(BaseModel):
@@ -363,10 +367,20 @@ def agentic_ask(body: AskRequest) -> AgenticAskResponse:
     The model receives Pinecone context and a tool definition. It invokes the
     PubMed MCP tool only when it judges the local context insufficient.
     tool_calls in the response shows exactly what the LLM chose to call.
+
+    Pass session_id to enable cross-session memory: prior turns are injected
+    into the LLM context and this turn is appended to the store.
     """
     from agents.agentic import run as agentic_run
 
     model = body.model or DEFAULT_MODEL
+
+    # Load prior conversation turns if a session is active
+    session_id = body.session_id
+    history: list[dict] = []
+    if session_id:
+        mem_store.create_session(session_id)
+        history = mem_store.get_messages(session_id, limit=6)
 
     result = agentic_run(
         question=body.question,
@@ -377,7 +391,23 @@ def agentic_ask(body: AskRequest) -> AgenticAskResponse:
         system_prompt=AGENTIC_SYSTEM_PROMPT,
         answer_schema=Answer,
         compute_cost_fn=compute_cost_usd,
+        conversation_history=history,
     )
+
+    # Persist this turn so future calls can recall it
+    if session_id:
+        mem_store.add_message(session_id, "user", body.question)
+        mem_store.add_message(
+            session_id,
+            "assistant",
+            result["answer"].answer,
+            metadata={
+                "confidence": result["answer"].confidence,
+                "model": result["model"],
+                "cost_usd": result["cost_usd"],
+                "strategy": result["strategy"],
+            },
+        )
 
     return AgenticAskResponse(
         answer=result["answer"],
@@ -393,6 +423,35 @@ def agentic_ask(body: AskRequest) -> AgenticAskResponse:
         cost_usd=result["cost_usd"],
         strategy=result["strategy"],
     )
+
+
+# ── Memory endpoints ───────────────────────────────────────────────────────────
+
+@app.post("/memory/sessions")
+def create_memory_session() -> dict:
+    """Create a new conversation session and return its ID."""
+    sid = mem_store.create_session()
+    return {"session_id": sid}
+
+
+@app.get("/memory/sessions")
+def list_memory_sessions() -> dict:
+    """List all stored sessions with message counts."""
+    return {"sessions": mem_store.list_sessions()}
+
+
+@app.get("/memory/sessions/{session_id}")
+def get_memory_session(session_id: str) -> dict:
+    """Return all messages for a session."""
+    messages = mem_store.get_messages(session_id)
+    return {"session_id": session_id, "messages": messages}
+
+
+@app.delete("/memory/sessions/{session_id}")
+def delete_memory_session(session_id: str) -> dict:
+    """Permanently delete a session and all its messages."""
+    deleted = mem_store.delete_session(session_id)
+    return {"session_id": session_id, "deleted_messages": deleted}
 
 
 @app.get("/health")

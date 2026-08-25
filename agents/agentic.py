@@ -126,6 +126,7 @@ def run(
     system_prompt: str,
     answer_schema,
     compute_cost_fn,
+    conversation_history: list[dict] | None = None,
 ) -> dict:
     """Run the agentic loop and return a result dict.
 
@@ -160,10 +161,14 @@ def run(
     else:
         system_content += "Local knowledge base returned no relevant chunks for this question."
 
-    messages: list[dict] = [
-        {"role": "system", "content": system_content},
-        {"role": "user", "content": question},
-    ]
+    messages: list[dict] = [{"role": "system", "content": system_content}]
+
+    # Inject prior turns so the LLM can recall earlier context
+    for m in (conversation_history or [])[-6:]:
+        if m.get("role") in ("user", "assistant"):
+            messages.append({"role": m["role"], "content": m["content"]})
+
+    messages.append({"role": "user", "content": question})
 
     tool_calls_log: list[dict] = []
     pubmed_results: list[dict] = []
