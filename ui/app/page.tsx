@@ -136,6 +136,52 @@ export default function Home() {
           <TabsContent value="debug"><DebugTab apiUrl={apiUrl} /></TabsContent>
         </Tabs>
       </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border bg-card mt-16">
+        <div className="mx-auto max-w-6xl px-6 py-8">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+            {/* Brand */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground text-sm font-bold select-none">
+                  S
+                </div>
+                <span className="font-bold text-foreground">Synapse</span>
+              </div>
+              <p className="text-xs text-muted-foreground max-w-xs leading-relaxed">
+                A research-grounded fitness &amp; nutrition assistant built on an agentic RAG pipeline with dynamic tool selection.
+              </p>
+            </div>
+
+            {/* Links */}
+            <div className="flex gap-12 text-xs">
+              <div className="space-y-2">
+                <p className="font-semibold text-accent uppercase tracking-widest text-[10px]">Project</p>
+                <ul className="space-y-1.5 text-muted-foreground">
+                  <li><a href={`${apiUrl}/docs`} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">API Docs</a></li>
+                  <li><a href="https://github.com/Smr2118/synapse" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">GitHub</a></li>
+                  <li><a href="https://synapse-5w9z.onrender.com" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">Backend (Render)</a></li>
+                </ul>
+              </div>
+
+              <div className="space-y-2">
+                <p className="font-semibold text-accent uppercase tracking-widest text-[10px]">Stack</p>
+                <ul className="space-y-1.5 text-muted-foreground">
+                  <li>FastAPI · Pydantic</li>
+                  <li>OpenAI · Pinecone</li>
+                  <li>Next.js · Vercel</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 border-t border-border pt-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between text-[10px] text-muted-foreground">
+            <p>Built by Smitha Rajasenan · Capstone Project 2026</p>
+            <p>Powered by OpenAI GPT-4o &amp; Pinecone</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
