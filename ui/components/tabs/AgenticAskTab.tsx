@@ -84,6 +84,26 @@ export function AgenticAskTab({ apiUrl, initialQuestion = "" }: { apiUrl: string
 
       {result && answer && (
         <div className="space-y-4">
+          <div className={`rounded-xl border-l-4 p-5 ${sources.length ? "border-l-primary bg-primary/10" : "border-l-accent bg-accent/10"}`}>
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-2">Answer</p>
+            <p className="text-base leading-relaxed text-foreground">{answer.answer as string}</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-7">
+            <MetricCard label="Confidence" value={`${((answer.confidence as number) * 100).toFixed(0)}%`} />
+            <MetricCard label="Pinecone" value={result.pinecone_chunks as number} />
+            <MetricCard label="PubMed" value={result.pubmed_results as number} />
+            <MetricCard label="NIH" value={result.nih_results as number} />
+            <MetricCard label="Exercise" value={result.exercise_results as number} />
+            <MetricCard label="Latency" value={`${result.latency_ms as number} ms`} />
+            <MetricCard label="Cost" value={`$${(result.cost_usd as number).toFixed(6)}`} />
+          </div>
+
+          {pinecone.length > 0 && <SourceList title="📦 Pinecone sources" sources={pinecone as Parameters<typeof SourceList>[0]["sources"]} />}
+          {pubmed.length > 0 && <SourceList title="🔬 PubMed results" sources={pubmed as Parameters<typeof SourceList>[0]["sources"]} />}
+          {nih.length > 0 && <SourceList title="🏛️ NIH guidelines" sources={nih as Parameters<typeof SourceList>[0]["sources"]} />}
+          {exercise.length > 0 && <SourceList title="🏋️ Exercises" sources={exercise as Parameters<typeof SourceList>[0]["sources"]} />}
+
           {/* Think / Act / Observe trace */}
           <div className="rounded-lg border border-border bg-card text-sm font-mono">
             <button
@@ -110,26 +130,6 @@ export function AgenticAskTab({ apiUrl, initialQuestion = "" }: { apiUrl: string
               </div>
             )}
           </div>
-
-          <div className={`rounded-xl border-l-4 p-5 ${sources.length ? "border-l-primary bg-primary/10" : "border-l-accent bg-accent/10"}`}>
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-2">Answer</p>
-            <p className="text-base leading-relaxed text-foreground">{answer.answer as string}</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-7">
-            <MetricCard label="Confidence" value={`${((answer.confidence as number) * 100).toFixed(0)}%`} />
-            <MetricCard label="Pinecone" value={result.pinecone_chunks as number} />
-            <MetricCard label="PubMed" value={result.pubmed_results as number} />
-            <MetricCard label="NIH" value={result.nih_results as number} />
-            <MetricCard label="Exercise" value={result.exercise_results as number} />
-            <MetricCard label="Latency" value={`${result.latency_ms as number} ms`} />
-            <MetricCard label="Cost" value={`$${(result.cost_usd as number).toFixed(6)}`} />
-          </div>
-
-          {pinecone.length > 0 && <SourceList title="📦 Pinecone sources" sources={pinecone as Parameters<typeof SourceList>[0]["sources"]} />}
-          {pubmed.length > 0 && <SourceList title="🔬 PubMed results" sources={pubmed as Parameters<typeof SourceList>[0]["sources"]} />}
-          {nih.length > 0 && <SourceList title="🏛️ NIH guidelines" sources={nih as Parameters<typeof SourceList>[0]["sources"]} />}
-          {exercise.length > 0 && <SourceList title="🏋️ Exercises" sources={exercise as Parameters<typeof SourceList>[0]["sources"]} />}
         </div>
       )}
     </div>
