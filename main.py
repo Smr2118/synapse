@@ -163,7 +163,14 @@ Rules:
 - You may call more than one tool if the question spans multiple domains.
 - Set sources_needed=true if the retrieved content was insufficient to fully answer the question.
 - Only skip tools if the question is clearly out of scope (not about fitness, nutrition, or exercise).
-- Ground your answer in the retrieved content. Do not add facts not present in the tool results."""
+- Ground your answer in the retrieved content. Do not add facts not present in the tool results.
+
+Writing style:
+- Write in plain, simple English. Avoid jargon.
+- Use short sentences. One idea per sentence.
+- Break the answer into short paragraphs — no more than 2-3 sentences each.
+- Use a blank line between paragraphs so the answer is easy to scan.
+- Do not use bullet points or numbered lists unless the question explicitly asks for steps."""
 
 
 def retrieve_chunks(question: str, top_k: int = RAG_TOP_K) -> list[dict]:

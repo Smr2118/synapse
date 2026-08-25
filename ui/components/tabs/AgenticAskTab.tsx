@@ -86,7 +86,7 @@ export function AgenticAskTab({ apiUrl, initialQuestion = "" }: { apiUrl: string
         <div className="space-y-4">
           <div className={`rounded-xl border-l-4 p-5 ${sources.length ? "border-l-primary bg-primary/10" : "border-l-accent bg-accent/10"}`}>
             <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-2">Answer</p>
-            <p className="text-base leading-relaxed text-foreground">{answer.answer as string}</p>
+            <p className="text-base leading-relaxed text-foreground whitespace-pre-line">{answer.answer as string}</p>
           </div>
 
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-7">
