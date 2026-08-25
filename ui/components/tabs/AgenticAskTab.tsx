@@ -55,13 +55,6 @@ export function AgenticAskTab({ apiUrl, initialQuestion = "" }: { apiUrl: string
 
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold">Agentic ask</h2>
-        <p className="text-sm text-muted-foreground">
-          The LLM dynamically selects tools — PubMed research, NIH guidelines, exercise DB — based on your question.
-        </p>
-      </div>
-
       <div className="space-y-3">
         <div className="space-y-1">
           <Label>Question</Label>

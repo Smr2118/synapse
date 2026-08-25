@@ -38,7 +38,6 @@ export default function Home() {
       {/* Hero heading */}
       <div className="border-b border-border bg-card/50">
         <div className="mx-auto max-w-6xl px-6 py-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">Agentic RAG Pipeline</p>
           <h2 className="text-4xl font-bold text-foreground leading-tight max-w-2xl">
             Research-grounded answers to your fitness &amp; nutrition questions
           </h2>
