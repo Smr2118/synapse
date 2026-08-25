@@ -22,8 +22,8 @@ interface ToolCall {
   args: Record<string, string>;
 }
 
-export function AgenticAskTab({ apiUrl }: { apiUrl: string }) {
-  const [question, setQuestion] = useState("");
+export function AgenticAskTab({ apiUrl, initialQuestion = "" }: { apiUrl: string; initialQuestion?: string }) {
+  const [question, setQuestion] = useState(initialQuestion);
   const [model, setModel] = useState("gpt-4o");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<Record<string, unknown> | null>(null);
