@@ -36,6 +36,16 @@ CREATE TABLE IF NOT EXISTS messages (
     created_at TEXT    NOT NULL,
     FOREIGN KEY (session_id) REFERENCES sessions(id)
 );
+
+CREATE TABLE IF NOT EXISTS user_profiles (
+    username      TEXT PRIMARY KEY,
+    goal          TEXT,
+    dietary       TEXT,
+    fitness_level TEXT,
+    notes         TEXT,
+    created_at    TEXT NOT NULL,
+    updated_at    TEXT NOT NULL
+);
 """
 
 
@@ -89,6 +99,41 @@ def delete_session(session_id: str) -> int:
         n = con.execute("DELETE FROM messages WHERE session_id = ?", (session_id,)).rowcount
         con.execute("DELETE FROM sessions WHERE id = ?", (session_id,))
     return n
+
+
+def get_profile(username: str) -> dict | None:
+    with _conn() as con:
+        row = con.execute(
+            "SELECT username, goal, dietary, fitness_level, notes, created_at, updated_at "
+            "FROM user_profiles WHERE username = ?",
+            (username,),
+        ).fetchone()
+    return dict(row) if row else None
+
+
+def upsert_profile(username: str, goal: str, dietary: str, fitness_level: str, notes: str) -> dict:
+    now = datetime.now(timezone.utc).isoformat()
+    with _conn() as con:
+        existing = con.execute(
+            "SELECT created_at FROM user_profiles WHERE username = ?", (username,)
+        ).fetchone()
+        created_at = existing["created_at"] if existing else now
+        con.execute(
+            """INSERT INTO user_profiles (username, goal, dietary, fitness_level, notes, created_at, updated_at)
+               VALUES (?, ?, ?, ?, ?, ?, ?)
+               ON CONFLICT(username) DO UPDATE SET
+                 goal=excluded.goal, dietary=excluded.dietary,
+                 fitness_level=excluded.fitness_level, notes=excluded.notes,
+                 updated_at=excluded.updated_at""",
+            (username, goal, dietary, fitness_level, notes, created_at, now),
+        )
+    return get_profile(username)
+
+
+def delete_profile(username: str) -> bool:
+    with _conn() as con:
+        n = con.execute("DELETE FROM user_profiles WHERE username = ?", (username,)).rowcount
+    return n > 0
 
 
 def list_sessions(limit: int = 50) -> list[dict]:

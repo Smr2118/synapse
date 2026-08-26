@@ -65,6 +65,7 @@ class AskRequest(BaseModel):
     force_bad: bool = False  # Stage 3 demo knob — first attempt breaks schema on purpose.
     model: str | None = None  # Stage 4 — optional override to swap models live.
     session_id: str | None = None  # Stage 6 — memory: attach turn to a conversation session.
+    username: str | None = None   # Stage 6 — memory: load user profile for personalised answers.
 
 
 class Source(BaseModel):
@@ -375,6 +376,27 @@ def agentic_ask(body: AskRequest) -> AgenticAskResponse:
 
     model = body.model or DEFAULT_MODEL
 
+    # Load user profile for personalised system prompt
+    profile_context = ""
+    if body.username:
+        profile = mem_store.get_profile(body.username)
+        if profile:
+            parts = []
+            if profile.get("goal"):
+                parts.append(f"Goal: {profile['goal']}")
+            if profile.get("dietary"):
+                parts.append(f"Dietary restrictions: {profile['dietary']}")
+            if profile.get("fitness_level"):
+                parts.append(f"Fitness level: {profile['fitness_level']}")
+            if profile.get("notes"):
+                parts.append(f"Additional context: {profile['notes']}")
+            if parts:
+                profile_context = "User profile — " + " | ".join(parts) + "."
+
+    system_prompt = AGENTIC_SYSTEM_PROMPT
+    if profile_context:
+        system_prompt = f"{AGENTIC_SYSTEM_PROMPT}\n\n{profile_context}\nAlways tailor your answer to this user's profile."
+
     # Load prior conversation turns if a session is active
     session_id = body.session_id
     history: list[dict] = []
@@ -388,7 +410,7 @@ def agentic_ask(body: AskRequest) -> AgenticAskResponse:
         build_context_fn=build_context,
         model=model,
         client=client,
-        system_prompt=AGENTIC_SYSTEM_PROMPT,
+        system_prompt=system_prompt,
         answer_schema=Answer,
         compute_cost_fn=compute_cost_usd,
         conversation_history=history,
@@ -452,6 +474,47 @@ def delete_memory_session(session_id: str) -> dict:
     """Permanently delete a session and all its messages."""
     deleted = mem_store.delete_session(session_id)
     return {"session_id": session_id, "deleted_messages": deleted}
+
+
+# ── User profile endpoints ─────────────────────────────────────────────────────
+
+class ProfileRequest(BaseModel):
+    goal: str = ""
+    dietary: str = ""
+    fitness_level: str = ""
+    notes: str = ""
+
+
+@app.get("/profile/{username}")
+def get_profile(username: str) -> dict:
+    """Return profile for a username. 404 if not found."""
+    profile = mem_store.get_profile(username)
+    if not profile:
+        raise HTTPException(status_code=404, detail=f"No profile found for '{username}'")
+    return profile
+
+
+@app.post("/profile/{username}")
+def upsert_profile(username: str, body: ProfileRequest) -> dict:
+    """Create or update a user profile."""
+    if not username.strip():
+        raise HTTPException(status_code=400, detail="username must not be empty")
+    return mem_store.upsert_profile(
+        username=username.strip().lower(),
+        goal=body.goal,
+        dietary=body.dietary,
+        fitness_level=body.fitness_level,
+        notes=body.notes,
+    )
+
+
+@app.delete("/profile/{username}")
+def delete_profile(username: str) -> dict:
+    """Delete a user profile."""
+    deleted = mem_store.delete_profile(username)
+    if not deleted:
+        raise HTTPException(status_code=404, detail=f"No profile found for '{username}'")
+    return {"username": username, "deleted": True}
 
 
 @app.get("/health")

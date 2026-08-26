@@ -9,11 +9,13 @@ import { DebugTab } from "@/components/tabs/DebugTab";
 import { SamplesTab } from "@/components/tabs/SamplesTab";
 import { AboutTab } from "@/components/tabs/AboutTab";
 import { DEFAULT_API_URL } from "@/lib/api";
+import { UserProfile } from "@/components/UserProfile";
 
 export default function Home() {
   const [apiUrl, setApiUrl] = useState(DEFAULT_API_URL);
   const [activeTab, setActiveTab] = useState("agentic");
   const [prefilledQuestion, setPrefilledQuestion] = useState("");
+  const [username, setUsername] = useState("");
 
   function handleTrySample(question: string) {
     setPrefilledQuestion(question);
@@ -28,10 +30,11 @@ export default function Home() {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground text-lg font-bold select-none">
             S
           </div>
-          <div>
+          <div className="flex-1">
             <h1 className="text-2xl font-bold tracking-tight text-foreground leading-none">Synapse</h1>
             <p className="text-xs text-muted-foreground mt-0.5">Fitness &amp; nutrition research assistant</p>
           </div>
+          <UserProfile apiUrl={apiUrl} username={username} onUsernameChange={setUsername} />
         </div>
       </header>
 
@@ -57,7 +60,7 @@ export default function Home() {
             <TabsTrigger value="about"    className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">ℹ️ About</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="agentic"><AgenticAskTab apiUrl={apiUrl} initialQuestion={prefilledQuestion} /></TabsContent>
+          <TabsContent value="agentic"><AgenticAskTab apiUrl={apiUrl} initialQuestion={prefilledQuestion} username={username} /></TabsContent>
           <TabsContent value="samples"><SamplesTab onTry={handleTrySample} /></TabsContent>
           <TabsContent value="journey"><JourneyTab apiUrl={apiUrl} /></TabsContent>
           <TabsContent value="ingest"><IngestTab apiUrl={apiUrl} /></TabsContent>

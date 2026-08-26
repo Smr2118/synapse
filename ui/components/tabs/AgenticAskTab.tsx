@@ -22,7 +22,7 @@ interface ToolCall {
   args: Record<string, string>;
 }
 
-export function AgenticAskTab({ apiUrl, initialQuestion = "" }: { apiUrl: string; initialQuestion?: string }) {
+export function AgenticAskTab({ apiUrl, initialQuestion = "", username = "" }: { apiUrl: string; initialQuestion?: string; username?: string }) {
   const [question, setQuestion] = useState(initialQuestion);
   const [model, setModel] = useState("gpt-4o");
   const [loading, setLoading] = useState(false);
@@ -34,7 +34,7 @@ export function AgenticAskTab({ apiUrl, initialQuestion = "" }: { apiUrl: string
     setLoading(true);
     setError(null);
     setResult(null);
-    const { status, data } = await callApi("POST", `${apiUrl}/agentic/ask`, { question, model });
+    const { status, data } = await callApi("POST", `${apiUrl}/agentic/ask`, { question, model, ...(username ? { username } : {}) });
     setLoading(false);
     if (status === 200) setResult(data);
     else setError((data as Record<string, string>).detail ?? JSON.stringify(data));
@@ -85,7 +85,10 @@ export function AgenticAskTab({ apiUrl, initialQuestion = "" }: { apiUrl: string
       {result && answer && (
         <div className="space-y-4">
           <div className={`rounded-xl border-l-4 p-5 ${sources.length ? "border-l-primary bg-primary/10" : "border-l-accent bg-accent/10"}`}>
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-2">Answer</p>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Answer</p>
+              {username && <p className="text-[10px] text-muted-foreground">personalised for <span className="text-primary font-medium">{username}</span></p>}
+            </div>
             <p className="text-base leading-relaxed text-foreground whitespace-pre-line">{answer.answer as string}</p>
           </div>
 
