@@ -238,15 +238,7 @@ Returns `400` if `q` is empty.
 
 Synapse stores conversation history in SQLite and injects prior turns into the LLM context window, giving the agent cross-session recall.
 
-### Five memory questions
-
-| Question | Answer |
-|----------|--------|
-| **What do we keep?** | Every user question and every assistant answer, ordered by time within a session. Lightweight metadata (confidence, model, cost, strategy) is stored alongside each assistant turn so the Streamlit UI can surface it. |
-| **When do we write?** | Immediately after each `/agentic/ask` call that carries a `session_id`. The user's question is written first, the assistant answer second, so the store is always in a consistent state even if the process crashes mid-response. |
-| **Where does it live?** | A SQLite file (`synapse_memory.db`) at the project root. The path is overridable via the `MEMORY_DB_PATH` env var — set it to a Render persistent-disk mount path for production durability. |
-| **How do we retrieve?** | `GET /memory/sessions/{session_id}` returns the full turn list. When a new `/agentic/ask` arrives with a `session_id`, the last 6 messages (3 turns) are loaded and prepended to the LLM message array before the current question — no summarisation, raw injection. |
-| **How do we forget?** | `DELETE /memory/sessions/{session_id}` wipes all messages for that session and removes the session row. The **🗑️ Forget** button in the Memory Chat tab calls this endpoint. |
+Synapse stores two things in SQLite: a **user profile** (username, goal, dietary restrictions, fitness level, free-text notes) and **conversation turns** (each user question and assistant answer, timestamped and keyed to a session ID). Both are written immediately after a successful `/agentic/ask` response — the user message first, the assistant message second — so the store is always consistent even if the process restarts mid-request. The database lives in `synapse_memory.db` at the project root, overridable via the `MEMORY_DB_PATH` env var for a persistent-disk mount. Retrieval happens in two ways: the user profile is fetched by username and injected into the system prompt on every request so the agent knows who it is talking to without being told again; prior conversation turns are fetched by session ID and prepended to the LLM message array so the agent can follow up across turns. Forgetting is explicit — `DELETE /profile/{username}` removes a profile and `DELETE /memory/sessions/{id}` removes a conversation — but there is no automatic expiry yet: old sessions accumulate until a user or admin deletes them, which is acceptable for a single-user demo but would need a TTL or retention policy in a multi-user deployment.
 
 ### Memory API
 
