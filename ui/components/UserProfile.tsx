@@ -30,6 +30,8 @@ export function UserProfile({ apiUrl, username, onUsernameChange }: Props) {
   const [profile, setProfile] = useState<Profile>({ goal: "", dietary: "", fitness_level: "", notes: "" });
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [lookingUp, setLookingUp] = useState(false);
+  const [profileStatus, setProfileStatus] = useState<"existing" | "new" | null>(null);
 
   // On mount: restore username from localStorage, load profile from backend
   useEffect(() => {
@@ -53,6 +55,27 @@ export function UserProfile({ apiUrl, username, onUsernameChange }: Props) {
     }
   }
 
+  async function handleUsernameBlur() {
+    const u = draft.trim().toLowerCase();
+    if (!u) return;
+    setLookingUp(true);
+    setProfileStatus(null);
+    const { status, data } = await callApi("GET", `${apiUrl}/profile/${encodeURIComponent(u)}`);
+    if (status === 200) {
+      setProfile({
+        goal: (data.goal as string) ?? "",
+        dietary: (data.dietary as string) ?? "",
+        fitness_level: (data.fitness_level as string) ?? "",
+        notes: (data.notes as string) ?? "",
+      });
+      setProfileStatus("existing");
+    } else {
+      setProfile({ goal: "", dietary: "", fitness_level: "", notes: "" });
+      setProfileStatus("new");
+    }
+    setLookingUp(false);
+  }
+
   async function handleSave() {
     if (!draft.trim()) return;
     setSaving(true);
@@ -68,6 +91,7 @@ export function UserProfile({ apiUrl, username, onUsernameChange }: Props) {
 
   function handleOpen() {
     setDraft(username);
+    setProfileStatus(null);
     setOpen(true);
   }
 
@@ -105,9 +129,17 @@ export function UserProfile({ apiUrl, username, onUsernameChange }: Props) {
             <Input
               placeholder="e.g. smitha"
               value={draft}
-              onChange={(e) => setDraft(e.target.value)}
+              onChange={(e) => { setDraft(e.target.value); setProfileStatus(null); }}
+              onBlur={handleUsernameBlur}
               className="h-8 text-sm"
             />
+            {lookingUp && <p className="text-[10px] text-muted-foreground">Looking up…</p>}
+            {!lookingUp && profileStatus === "existing" && (
+              <p className="text-[10px] text-primary font-medium">✓ Existing profile loaded</p>
+            )}
+            {!lookingUp && profileStatus === "new" && (
+              <p className="text-[10px] text-muted-foreground">New profile — fill in your details below</p>
+            )}
           </div>
 
           <div className="space-y-1">
