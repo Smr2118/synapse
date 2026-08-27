@@ -68,6 +68,8 @@ export function UserProfile({ apiUrl, username, onUsernameChange }: Props) {
         fitness_level: (data.fitness_level as string) ?? "",
         notes: (data.notes as string) ?? "",
       });
+      saveUsername(u);
+      onUsernameChange(u);
       setProfileStatus("existing");
     } else {
       setProfile({ goal: "", dietary: "", fitness_level: "", notes: "" });
@@ -135,10 +137,10 @@ export function UserProfile({ apiUrl, username, onUsernameChange }: Props) {
             />
             {lookingUp && <p className="text-[10px] text-muted-foreground">Looking up…</p>}
             {!lookingUp && profileStatus === "existing" && (
-              <p className="text-[10px] text-primary font-medium">✓ Existing profile loaded</p>
+              <p className="text-[10px] text-primary font-medium">✓ Profile active. Edit fields below to make changes.</p>
             )}
             {!lookingUp && profileStatus === "new" && (
-              <p className="text-[10px] text-muted-foreground">New profile — fill in your details below</p>
+              <p className="text-[10px] text-muted-foreground">New profile. Fill in your details and save.</p>
             )}
           </div>
 
@@ -180,7 +182,7 @@ export function UserProfile({ apiUrl, username, onUsernameChange }: Props) {
 
           <div className="flex gap-2 pt-1">
             <Button size="sm" onClick={handleSave} disabled={!draft.trim() || saving} className="flex-1">
-              {saving ? "Saving…" : saved ? "Saved ✓" : "Save profile"}
+              {saving ? "Saving…" : saved ? "Saved ✓" : profileStatus === "existing" ? "Save changes" : "Save profile"}
             </Button>
             <Button size="sm" variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
           </div>
